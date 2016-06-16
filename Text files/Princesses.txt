@@ -1,5 +1,5 @@
 FORMAT
-Princess Name
+#Princess Name
 Princess img
 Color
 Location
@@ -25,7 +25,7 @@ Lust img
 Lust desc
 Subtext
 
-Kobold Princess
+#Kobold Princess
 //
 Green
 Canopy Cave Kingdom
