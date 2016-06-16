@@ -1,0 +1,52 @@
+FORMAT
+Princess Name
+Princess img
+Color
+Location
+Pro 1
+Pro 2
+Pro 3
+Con 1
+Con 2
+(Love) 1-5
+(Lust) 1-5
+(Wealth) 1-5
+(Power) 1-5
+Like1
+Like2
+Dislike
+Dowry1 img
+Dowry1 desc
+Dowry2 img
+Dowry2 desc
+Totem img
+Totem desc
+Lust img
+Lust desc
+Subtext
+
+Kobold Princess
+//
+Green
+Canopy Cave Kingdom
+Prehensile tongue & tail
+Shares body heat by cuddling
+Adventurous and clever
+Can't stand the cold
+Lifespan half the length of yours
+3
+2
+3
+1
+Hugs
+Cuddling
+Chivalry
+//
+Red Candle - Match a lifespan to your own
+//
+Warm Ore - Produce strong aura of heat
+//
+//
+//
+//
+A naive kobold with a sense of curiosity that often gets her into trouble. She wants to learn more about human culture.
