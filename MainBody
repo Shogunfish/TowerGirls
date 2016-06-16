@@ -5,3 +5,7 @@ Public class TowerGirls
 
 
 }
+
+Public class Item
+{
+}
