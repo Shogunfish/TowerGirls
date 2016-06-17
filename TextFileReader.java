@@ -21,7 +21,7 @@ public class TextFileReader {
 		String line = "";
 		while ((line = reader.readLine()) != null) {
 			if (line.equals("#" + princessName)) {
-				princess.add(princessName + " Princess");
+				princess.add(princessName);
 				while(!line.equals("") && (line = reader.readLine()) != null) {
 					princess.add(line);
 				}
@@ -32,18 +32,13 @@ public class TextFileReader {
 	}
 	
 	public static void buildPrincess (ArrayList princessObject) {
-		Color color;
-		try {
-		    Field field = Class.forName("java.awt.Color").getField(princess.get(2));
-		    color = (Color)field.get(null);
-		} catch (Exception e) {
-		    color = null; // Not defined
-		}
-		Princess1 kobold = new Princess1(princess.get(0), princess.get(1), color, princess.get(3), princess.get(princess.size()-1));
+
+		int princessColor = Integer.parseInt(princess.get(2));
+		Princess1 kobold = new Princess1(princess.get(0), princess.get(1), princessColor, princess.get(3), princess.get(princess.size()-1));
 		
-		Item dowry1 = new Item(princess.get(17),princess.get(18));
-		Item dowry2 = new Item(princess.get(19),princess.get(20));
-		Item lustGift = new Item(princess.get(21),princess.get(22));
+		Item dowry1 = new Item(princess.get(16),princess.get(16));
+		Item dowry2 = new Item(princess.get(17),princess.get(17));
+		Item lustGift = new Item(princess.get(19),princess.get(19));
 		kobold.setGifts(dowry1, dowry2, lustGift);
 		
 		Preference kink1 = new Preference(princess.get(13),true);
@@ -55,6 +50,8 @@ public class TextFileReader {
 		
 		kobold.setStats(Integer.parseInt(princess.get(9)), Integer.parseInt(princess.get(10)), Integer.parseInt(princess.get(11)), Integer.parseInt(princess.get(12)));
 		
+		PrincessCard frame = new PrincessCard(kobold);
+		frame.setVisible(true);
 	}
 }
 
@@ -64,6 +61,14 @@ class Item
 	public String image;
 	
 	Item(String n, String i){name = n; image = i;}
+
+	  public String getName() {
+		  return name;
+	  }
+	  
+	  public String getImage() {
+		  return image;
+	  }
 }
 
 class Preference
@@ -74,20 +79,28 @@ class Preference
   Preference(String n, Boolean k) {name = n; good = k;}
   
   public void corrupt() {good = !good;}
+  
+  public String getName() {
+	  return name;
+  }
+  
+  public Boolean likesIt() {
+	  return good;
+  }
 }
 
 class Character extends Item
 {
-  Character(String n, String i, Color c, String k, String d) 
+  Character(String n, String i, int c, String k, String d) 
   {
 	  super(n,i); 
 	  col = c;
 	  kingdom = k;
 	  description = d;
 	  effects = new ArrayList<Effect>();
-	  }
+  }
   
-  public Color col;
+  public int col;
   public String kingdom;
   public String description;
   
@@ -110,6 +123,16 @@ class Character extends Item
 	  lust = lu;
 	  wealth = we;
 	  power = po;
+  }
+  
+  public String[] getTitle() {
+	  String[] out = new String[]{kingdom,description};
+	  return out;
+  }
+  
+  public int getColor()
+  {
+	  return col;
   }
   
   public int[] getStats()
@@ -142,7 +165,7 @@ class Character extends Item
 class Princess1 extends Character 
 {
 
-  Princess1(String n, String i, Color c, String k, String d) {
+  Princess1(String n, String i, int c, String k, String d) {
 		super(n, i, c, k, d);
 	}
   public Item dowry1;
@@ -171,3 +194,4 @@ class Power
 	
 	Power(String n){ name = n;}
 }
+
