@@ -2,10 +2,12 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.awt.Color;
 
 public class TextFileReader {
-	static ArrayList princess = new ArrayList();
+	static ArrayList<String> princess = new ArrayList<String>();
 	public static void main (String[] args) throws IOException {
 		doIt();
 	}
@@ -26,13 +28,146 @@ public class TextFileReader {
 			}
 		}
 		
-		outPut(princess);
+		buildPrincess(princess);
 	}
 	
-	public static void outPut (ArrayList princessObject) {
-		//This should be sending to the princess builder instead
-		for(int i=0; i<princess.size(); i++) {
-			System.out.println(princess.get(i));
+	public static void buildPrincess (ArrayList princessObject) {
+		Color color;
+		try {
+		    Field field = Class.forName("java.awt.Color").getField(princess.get(2));
+		    color = (Color)field.get(null);
+		} catch (Exception e) {
+		    color = null; // Not defined
 		}
+		Princess1 kobold = new Princess1(princess.get(0), princess.get(1), color, princess.get(3), princess.get(princess.size()-1));
+		
+		Item dowry1 = new Item(princess.get(17),princess.get(18));
+		Item dowry2 = new Item(princess.get(19),princess.get(20));
+		Item lustGift = new Item(princess.get(21),princess.get(22));
+		kobold.setGifts(dowry1, dowry2, lustGift);
+		
+		Preference kink1 = new Preference(princess.get(13),true);
+		Preference kink2 = new Preference(princess.get(14),true);
+		Preference kink3 = new Preference(princess.get(15),false);
+		kobold.setKinks(kink1, kink2, kink3);
+		
+		kobold.setAttr(princess.get(4),princess.get(5),princess.get(6),princess.get(7),princess.get(8));
+		
+		kobold.setStats(Integer.parseInt(princess.get(19)), Integer.parseInt(princess.get(20)), Integer.parseInt(princess.get(21)), Integer.parseInt(princess.get(22)));
+		
 	}
+}
+
+class Item
+{
+	public String name;
+	public String image;
+	
+	Item(String n, String i){name = n; image = i;}
+}
+
+class Preference
+{
+  public String name;
+  public Boolean good;
+  
+  Preference(String n, Boolean k) {name = n; good = k;}
+  
+  public void corrupt() {good = !good;}
+}
+
+class Character extends Item
+{
+  Character(String n, String i, Color c, String k, String d) 
+  {
+	  super(n,i); 
+	  col = c;
+	  kingdom = k;
+	  description = d;
+	  effects = new ArrayList<Effect>();
+	  }
+  
+  public Color col;
+  public String kingdom;
+  public String description;
+  
+  public int love;
+  public int lust;
+  public int wealth;
+  public int power;
+  
+  public String[] good;
+  public String[] bad;
+  
+  public Preference[] kinks;
+  public Preference turnoff;
+
+  public ArrayList<Effect> effects;
+  
+  public void setStats(int lo, int lu, int we, int po)
+  {
+	  love = lo;
+	  lust = lu;
+	  wealth = we;
+	  power = po;
+  }
+  
+  public int[] getStats()
+  {
+	  int[] out = new int[]{love, lust, wealth, power};
+	  return out;
+  }
+  
+  public void setAttr(String g1, String g2, String g3, String b1, String b2)
+  {
+	  good = new String[]{g1,g2,g3};
+	  bad = new String[]{b1,b2};
+  }
+  
+  public String[] getGood() {return good;}
+  public String[] getBad() {return bad;}
+  
+  public void setKinks(Preference k1, Preference k2, Preference t1)
+  {
+	  kinks = new Preference[]{k1,k2};
+	  turnoff = t1;
+  }
+  public Preference[] getKinks() {return kinks;}
+  public Preference getTurnOff() {return turnoff;}
+  public void corrupt() {turnoff.corrupt();}
+}
+
+
+
+class Princess1 extends Character 
+{
+
+  Princess1(String n, String i, Color c, String k, String d) {
+		super(n, i, c, k, d);
+	}
+  public Item dowry1;
+  public Item dowry2;
+  public Item lustGift;
+  
+  public void setGifts(Item d1, Item d2, Item lg)
+  {
+	  dowry1=d1;
+	  dowry2=d2;
+	  lustGift=lg;
+  }
+  
+  public Item[] getGifts(){
+  return new Item[]{dowry1,dowry2,lustGift};
+  }
+}
+class Effect
+{
+	public String image;
+	public String description;
+}
+class Power
+{
+	public String name;
+	
+	Power(String n){ name = n;}
 }
