@@ -53,7 +53,7 @@ public class TextFileReader {
 		
 		kobold.setAttr(princess.get(4),princess.get(5),princess.get(6),princess.get(7),princess.get(8));
 		
-		kobold.setStats(Integer.parseInt(princess.get(19)), Integer.parseInt(princess.get(20)), Integer.parseInt(princess.get(21)), Integer.parseInt(princess.get(22)));
+		kobold.setStats(Integer.parseInt(princess.get(9)), Integer.parseInt(princess.get(10)), Integer.parseInt(princess.get(11)), Integer.parseInt(princess.get(12)));
 		
 	}
 }
