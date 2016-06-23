@@ -1,0 +1,5 @@
+How to make Eclipse use GitHub:
+1. Import Git project
+2. do all that shit
+3. Import as General Project
+4. It Just Werks
