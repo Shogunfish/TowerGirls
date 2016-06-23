@@ -3,3 +3,7 @@ How to make Eclipse use GitHub:
 2. do all that shit
 3. Import as General Project
 4. It Just Werks
+
+Committing things:
+1. Right-click, team>commit
+Right now I don't know how to make push/pull happen
