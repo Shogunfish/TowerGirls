@@ -1,5 +1,5 @@
 FORMAT
-#Princess Name
+Princess Name
 Princess img
 Color
 Location
@@ -15,19 +15,15 @@ Con 2
 Like1
 Like2
 Dislike
-Dowry1 img
 Dowry1 desc
-Dowry2 img
 Dowry2 desc
-Totem img
 Totem desc
-Lust img
 Lust desc
 Subtext
 
-#Kobold Princess
-//
-Green
+#Kobold
+/Girls/Frog.png
+317256
 Canopy Cave Kingdom
 Prehensile tongue & tail
 Shares body heat by cuddling
@@ -38,15 +34,11 @@ Lifespan half the length of yours
 2
 3
 1
-Hugs
-Cuddling
-Chivalry
-//
+Anal
+Tail Pulling
+Cum on Horns
 Red Candle - Match a lifespan to your own
-//
 Warm Ore - Produce strong aura of heat
-//
-//
-//
-//
+Totem
+Gemstone Plug - Can only be removed by a knight
 A naive kobold with a sense of curiosity that often gets her into trouble. She wants to learn more about human culture.
