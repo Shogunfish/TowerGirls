@@ -1,4 +1,4 @@
-package project;
+package testing;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -13,6 +13,8 @@ import java.awt.Image;
 import javax.swing.JLabel;
 import java.awt.GridBagConstraints;
 import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+
 import java.awt.Insets;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
@@ -20,16 +22,18 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import net.miginfocom.swing.MigLayout;
+import testing.TextFileTesting.Princess1;
+
 import java.awt.Color;
 
-public class PrincessCard extends JFrame {
+public class PrincessTesting extends JFrame {
 
 	private JPanel contentPane;
 
 	/**
 	 * Create the frame.
 	 */
-	public PrincessCard(Princess1 princess) {
+	public PrincessTesting(Princess1 princess) {
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 385, 543);
@@ -38,7 +42,7 @@ public class PrincessCard extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new MigLayout("", "[125px,grow]", "[175px,grow][grow][67.00,grow][14px]"));
-		ImageIcon love = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Love.png"));
+		ImageIcon love = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Love.png"));
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.WHITE);
@@ -51,7 +55,7 @@ public class PrincessCard extends JFrame {
 		
 		//Avatar
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(PrincessCard.class.getResource("/Girls/" + princess.getName() + ".png")));
+		label.setIcon(new ImageIcon(PrincessTesting.class.getResource("/Girls/" + princess.getName() + ".png")));
 		panel.add(label, "cell 0 0 0 2,alignx left,aligny top");
 		
 		//Get traits
@@ -68,28 +72,28 @@ public class PrincessCard extends JFrame {
 		//This process turns the icon into an image and back again, resizing it according to the final numbers, below
 		statLove.setIcon((new ImageIcon(getScaledImage(love.getImage(),20,20))));
 		JLabel grid1 = new JLabel("");
-		ImageIcon grid = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Stat bar.png"));
+		ImageIcon grid = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Stat bar.png"));
 		grid1.setIcon((new ImageIcon(getScaledImage(grid.getImage(),80,20))));
 		panel_1.add(grid1, "cell 1 0");
 
 		//Lust stat and grid
 		JLabel statLust = new JLabel("");
 		panel_1.add(statLust, "cell 0 1");
-		ImageIcon lust = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Lust.png"));
+		ImageIcon lust = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Lust.png"));
 		statLust.setIcon((new ImageIcon(getScaledImage(lust.getImage(),20,20))));
 		JLabel grid2 = new JLabel("");
-		grid = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Stat bar.png"));
+		grid = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Stat bar.png"));
 		grid2.setIcon((new ImageIcon(getScaledImage(grid.getImage(),80,20))));
 		panel_1.add(grid2, "cell 1 1");
 		
 		//Wealth stat and grid
 		JLabel statWealth = new JLabel("");
 		panel_1.add(statWealth, "flowy,cell 0 2");
-		ImageIcon wealth = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Wealth.png"));
+		ImageIcon wealth = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Wealth.png"));
 		statWealth.setIcon((new ImageIcon(getScaledImage(wealth.getImage(),20,20))));
-		ImageIcon power = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Power.png"));
+		ImageIcon power = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Power.png"));
 		JLabel grid3 = new JLabel("");
-		grid = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Stat bar.png"));
+		grid = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Stat bar.png"));
 		grid3.setIcon((new ImageIcon(getScaledImage(grid.getImage(),80,20))));
 		panel_1.add(grid3, "cell 1 2");
 		
@@ -98,10 +102,10 @@ public class PrincessCard extends JFrame {
 		panel_1.add(statPower, "cell 0 3");
 		statPower.setIcon((new ImageIcon(getScaledImage(power.getImage(),20,20))));
 		JLabel grid4 = new JLabel("");
-		grid = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Stat bar.png"));
+		grid = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Stat bar.png"));
 		grid4.setIcon((new ImageIcon(getScaledImage(grid.getImage(),80,20))));
 		panel_1.add(grid4, "cell 1 3");
-		ImageIcon kink = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Likes.png"));
+		ImageIcon kink = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Likes.png"));
 		
 		//Dowries
 		//Regex matches "words words words -" and divides that from "- words words words" with a new line
@@ -118,7 +122,7 @@ public class PrincessCard extends JFrame {
 		//Dowry images pull from /Dowries/name_of_dowry (BE SURE FILES ARE CAPITALIZED, e.g. Red Candle the Blue)
 		JLabel dowry1Img = new JLabel();
 		String dowryLoc = "/Dowries/" + regexMatcher.group(0);
-		ImageIcon dowry = new ImageIcon(PrincessCard.class.getResource(dowryLoc.substring(0,dowryLoc.length()-1)+".png"));
+		ImageIcon dowry = new ImageIcon(PrincessTesting.class.getResource(dowryLoc.substring(0,dowryLoc.length()-1)+".png"));
 		dowry1Img.setIcon((new ImageIcon(getScaledImage(dowry.getImage(),30,40))));
 		panel_1.add(dowry1Img, "cell 2 0 1 2,alignx right");
 		
@@ -136,7 +140,7 @@ public class PrincessCard extends JFrame {
 		//2nd dowry image
 		JLabel dowry2Img = new JLabel("");
 		dowryLoc = "/Dowries/" + regexMatcher.group(0);
-		dowry = new ImageIcon(PrincessCard.class.getResource(dowryLoc.substring(0,dowryLoc.length()-1)+".png"));
+		dowry = new ImageIcon(PrincessTesting.class.getResource(dowryLoc.substring(0,dowryLoc.length()-1)+".png"));
 		dowry2Img.setIcon((new ImageIcon(getScaledImage(dowry.getImage(),30,40))));
 		panel_1.add(dowry2Img, "cell 2 2 1 2,alignx right");
 		
@@ -156,7 +160,7 @@ public class PrincessCard extends JFrame {
 
 		JLabel kink3 = new JLabel(princess.getTurnOff().getName());
 		panel_2.add(kink3, "cell 0 2");
-		kink = new ImageIcon(PrincessCard.class.getResource("/Stat icons/Dislikes.png"));
+		kink = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Dislikes.png"));
 		kink3.setIcon((new ImageIcon(getScaledImage(kink.getImage(),20,20))));
 		
 		//Lust item w/ regex
@@ -168,13 +172,12 @@ public class PrincessCard extends JFrame {
         regexMatcher2 = regex.matcher(princess.getGifts()[2].getName());
         if (regexMatcher2.find()) {
         }
-        System.out.println(princess.getGifts()[2].getName());
 		JLabel lustItem = new JLabel("<html>" + regexMatcher.group(0) + "-<br>" + regexMatcher2.group(1) + "</html>");
 		panel_2.add(lustItem, "cell 2 0 1 2");
 		//Lust item
 		JLabel lustImg = new JLabel("");
 		String lustLoc = "/LustItems/" + regexMatcher.group(0);
-		lust = new ImageIcon(PrincessCard.class.getResource(lustLoc.substring(0,lustLoc.length()-1) + ".png"));
+		lust = new ImageIcon(PrincessTesting.class.getResource(lustLoc.substring(0,lustLoc.length()-1) + ".png"));
 		lustImg.setIcon((new ImageIcon(getScaledImage(lust.getImage(),40,40))));
 		panel_2.add(lustImg, "cell 1 0 1 2");
 		
@@ -194,4 +197,7 @@ public class PrincessCard extends JFrame {
 	    return resizedImg;
 	}
 
+	JComponent provideInput () {
+		return contentPane;
+	}
 }

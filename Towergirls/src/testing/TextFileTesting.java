@@ -1,4 +1,4 @@
-package project;
+package testing;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -8,17 +8,14 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.awt.Color;
 
-public class TextFileReader {
+public class TextFileTesting {
 	static ArrayList<String> princess = new ArrayList<String>();
-	public static void main (String[] args) throws IOException {
-		doIt();
+	Princess1 kobold;
+	
+	public TextFileTesting(){
 	}
 	
-	public static void doIt() throws IOException {
-		readTextFile("src/Text files/Princesses.txt", "Kobold");
-	}
-	
-	public static void readTextFile (String location, String princessName) throws IOException {
+	public void readTextFile (String location, String princessName) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(location));
 		String line = "";
 		while ((line = reader.readLine()) != null) {
@@ -33,10 +30,10 @@ public class TextFileReader {
 		buildPrincess(princess);
 	}
 	
-	public static void buildPrincess (ArrayList princessObject) {
+	public void buildPrincess (ArrayList princessObject) {
 
 		int princessColor = Integer.parseInt(princess.get(2));
-		Princess1 kobold = new Princess1(princess.get(0), princess.get(1), princessColor, princess.get(3), princess.get(princess.size()-1));
+		kobold = new Princess1(princess.get(0), princess.get(1), princessColor, princess.get(3), princess.get(princess.size()-1));
 		
 		Item dowry1 = new Item(princess.get(16),princess.get(16));
 		Item dowry2 = new Item(princess.get(17),princess.get(17));
@@ -51,11 +48,12 @@ public class TextFileReader {
 		kobold.setAttr(princess.get(4),princess.get(5),princess.get(6),princess.get(7),princess.get(8));
 		
 		kobold.setStats(Integer.parseInt(princess.get(9)), Integer.parseInt(princess.get(10)), Integer.parseInt(princess.get(11)), Integer.parseInt(princess.get(12)));
-		
-		PrincessCard frame = new PrincessCard(kobold);
-		frame.setVisible(true);
 	}
-}
+
+
+	public Princess1 givePrincess() {
+		return kobold;
+	}
 
 class Item
 {
@@ -195,4 +193,5 @@ class Power
 	public String name;
 	
 	Power(String n){ name = n;}
+}
 }
