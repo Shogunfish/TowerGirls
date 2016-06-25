@@ -1,12 +1,9 @@
 package testing;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.awt.Color;
 
 public class TextFileTesting {
 	static ArrayList<String> princess = new ArrayList<String>();
@@ -16,6 +13,7 @@ public class TextFileTesting {
 	}
 	
 	public void readTextFile (String location, String princessName) throws IOException {
+		@SuppressWarnings("resource")
 		BufferedReader reader = new BufferedReader(new FileReader(location));
 		String line = "";
 		while ((line = reader.readLine()) != null) {
@@ -30,7 +28,7 @@ public class TextFileTesting {
 		buildPrincess(princess);
 	}
 	
-	public void buildPrincess (ArrayList princessObject) {
+	public void buildPrincess (ArrayList<String> princessObject) {
 
 		int princessColor = Integer.parseInt(princess.get(1));
 		kobold = new Princess1(princess.get(0), "../Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
