@@ -20,12 +20,17 @@ public class TextFileTesting {
 		while ((line = reader.readLine()) != null) {
 			if (line.equals("#" + princessName)) {
 				princess.add(princessName);
-				while(!line.equals("") && (line = reader.readLine()) != null) {
+				line = reader.readLine();
+				while(line != null && !line.isEmpty() ) {
 					princess.add(line);
+					line = reader.readLine();
 				}
+				break;
 			}
 		}
-		
+		//for(int i=0; i<princess.size(); i++) {
+			//System.out.println("'" + princess.get(i) + "'");
+		//}
 		buildPrincess(princess);
 	}
 	
