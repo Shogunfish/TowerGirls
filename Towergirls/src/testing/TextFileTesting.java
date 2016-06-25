@@ -32,22 +32,22 @@ public class TextFileTesting {
 	
 	public void buildPrincess (ArrayList princessObject) {
 
-		int princessColor = Integer.parseInt(princess.get(2));
-		kobold = new Princess1(princess.get(0), princess.get(1), princessColor, princess.get(3), princess.get(princess.size()-1));
+		int princessColor = Integer.parseInt(princess.get(1));
+		kobold = new Princess1(princess.get(0), "../Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
 		
-		Item dowry1 = new Item(princess.get(16),princess.get(16));
-		Item dowry2 = new Item(princess.get(17),princess.get(17));
-		Item lustGift = new Item(princess.get(19),princess.get(19));
+		Item dowry1 = new Item(princess.get(15),princess.get(15));
+		Item dowry2 = new Item(princess.get(16),princess.get(16));
+		Item lustGift = new Item(princess.get(18),princess.get(18));
 		kobold.setGifts(dowry1, dowry2, lustGift);
 		
-		Preference kink1 = new Preference(princess.get(13),true);
-		Preference kink2 = new Preference(princess.get(14),true);
-		Preference kink3 = new Preference(princess.get(15),false);
+		Preference kink1 = new Preference(princess.get(12),true);
+		Preference kink2 = new Preference(princess.get(13),true);
+		Preference kink3 = new Preference(princess.get(14),false);
 		kobold.setKinks(kink1, kink2, kink3);
 		
-		kobold.setAttr(princess.get(4),princess.get(5),princess.get(6),princess.get(7),princess.get(8));
+		kobold.setAttr(princess.get(3),princess.get(4),princess.get(5),princess.get(6),princess.get(7));
 		
-		kobold.setStats(Integer.parseInt(princess.get(9)), Integer.parseInt(princess.get(10)), Integer.parseInt(princess.get(11)), Integer.parseInt(princess.get(12)));
+		kobold.setStats(Integer.parseInt(princess.get(8)), Integer.parseInt(princess.get(9)), Integer.parseInt(princess.get(10)), Integer.parseInt(princess.get(11)));
 	}
 
 
