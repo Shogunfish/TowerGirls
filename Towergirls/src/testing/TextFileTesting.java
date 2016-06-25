@@ -6,13 +6,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class TextFileTesting {
-	static ArrayList<String> princess = new ArrayList<String>();
+	static ArrayList<String> princess;
 	Princess1 kobold;
 	
 	public TextFileTesting(){
 	}
 	
 	public void readTextFile (String location, String princessName) throws IOException {
+		princess = new ArrayList<String>();
 		@SuppressWarnings("resource")
 		BufferedReader reader = new BufferedReader(new FileReader(location));
 		String line = "";
@@ -30,8 +31,9 @@ public class TextFileTesting {
 	
 	public void buildPrincess (ArrayList<String> princessObject) {
 
-		int princessColor = Integer.parseInt(princess.get(1));
-		kobold = new Princess1(princess.get(0), "../Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
+		System.out.println(princess.get(0));
+		String princessColor = princess.get(1);
+		kobold = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
 		
 		Item dowry1 = new Item(princess.get(15),princess.get(15));
 		Item dowry2 = new Item(princess.get(16),princess.get(16));
@@ -89,7 +91,7 @@ class Preference
 
 class Character extends Item
 {
-  Character(String n, String i, int c, String k, String d) 
+  Character(String n, String i, String c, String k, String d) 
   {
 	  super(n,i); 
 	  col = c;
@@ -98,7 +100,7 @@ class Character extends Item
 	  effects = new ArrayList<Effect>();
   }
   
-  public int col;
+  public String col;
   public String kingdom;
   public String description;
   
@@ -128,7 +130,7 @@ class Character extends Item
 	  return out;
   }
   
-  public int getColor()
+  public String getColor()
   {
 	  return col;
   }
@@ -163,7 +165,7 @@ class Character extends Item
 class Princess1 extends Character 
 {
 
-  Princess1(String n, String i, int c, String k, String d) {
+  Princess1(String n, String i, String c, String k, String d) {
 		super(n, i, c, k, d);
 	}
   public Item dowry1;
