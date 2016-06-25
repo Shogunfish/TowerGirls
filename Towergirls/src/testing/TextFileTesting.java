@@ -31,7 +31,6 @@ public class TextFileTesting {
 	
 	public void buildPrincess (ArrayList<String> princessObject) {
 
-		System.out.println(princess.get(0));
 		String princessColor = princess.get(1);
 		kobold = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
 		

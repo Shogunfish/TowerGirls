@@ -1,16 +1,21 @@
 package testing;
 
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
 import java.awt.Graphics2D;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.GridBagLayout;
 import java.awt.Image;
 
 import javax.swing.JLabel;
+import java.awt.GridBagConstraints;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 
+import java.awt.Insets;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.util.regex.Matcher;
