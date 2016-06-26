@@ -1,7 +1,8 @@
 package testing;
-
+import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
@@ -16,6 +17,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JWindow;
+import javax.swing.OverlayLayout;
+
 import testing.TextFileTesting;
 
 public class HoverTest extends JFrame {
@@ -37,7 +40,6 @@ public class HoverTest extends JFrame {
 				}
 			}
 		});
-		//TextFileReader.doIt();
 	}
 
 	/**
@@ -122,8 +124,12 @@ public class HoverTest extends JFrame {
 					e.printStackTrace();
 				}
 				PrincessTesting princess = new PrincessTesting(test.givePrincess());
-				
-				window.add(princess.provideInput());
+				JPanel panel = new JPanel();
+				panel.setLayout(new OverlayLayout(panel));
+				panel.add(new BoxTesting(panel,3), BorderLayout.CENTER);
+				panel.add(princess.provideInput(), BorderLayout.CENTER);
+				window.setLayout(new BorderLayout());
+				window.add(panel);
 				window.setSize(300,600);
 				window.setLocation(me.getLocationOnScreen());
 				window.setVisible(true);
