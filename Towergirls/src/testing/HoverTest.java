@@ -87,6 +87,28 @@ public class HoverTest extends JFrame {
 				paintImage(Knight);
 				//Add mouse hover listener
 				addHover(Knight);
+				
+		//Mimic JLabel
+				JLabel Mimic = new JLabel("");
+				//Set the name of the JLabel, used for lookup later
+				Mimic.setName("Mimic");
+				contentPane.add(Mimic);
+				Mimic.setLocation(220,10);
+				//Paint the image (half size)
+				paintImage(Mimic);
+				//Add mouse hover listener
+				addHover(Mimic);
+				
+		//Dragon JLabel
+				JLabel Dragon = new JLabel("");
+				//Set the name of the JLabel, used for lookup later
+				Dragon.setName("Dragon");
+				contentPane.add(Dragon);
+				Dragon.setLocation(290,10);
+				//Paint the image (half size)
+				paintImage(Dragon);
+				//Add mouse hover listener
+				addHover(Dragon);
 		
 	}
 	
