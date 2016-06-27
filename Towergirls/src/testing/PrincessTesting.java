@@ -200,7 +200,7 @@ public class PrincessTesting extends JPanel {
 		bottom.add(lustItem, "cell 2 0 0 3");
 		//Lust item
 		JLabel lustImg = new JLabel("");
-		String lustLoc = "/LustItems/" + regexMatcher.group(0);
+		String lustLoc = "/Lust items/" + regexMatcher.group(0);
 		lust = new ImageIcon(PrincessTesting.class.getResource(lustLoc.substring(0,lustLoc.length()-1) + ".png"));
 		lustImg.setIcon((new ImageIcon(getScaledImage(lust.getImage(),40,40))));
 		bottom.add(lustImg, "cell 1 0 0 3");
