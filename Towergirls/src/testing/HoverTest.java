@@ -124,13 +124,8 @@ public class HoverTest extends JFrame {
 					e.printStackTrace();
 				}
 				PrincessTesting princess = new PrincessTesting(test.givePrincess());
-				JPanel panel = new JPanel();
-				panel.setLayout(new OverlayLayout(panel));
-				panel.add(new BoxTesting(panel,3), BorderLayout.CENTER);
-				panel.add(princess.provideInput(), BorderLayout.CENTER);
-				window.setLayout(new BorderLayout());
-				window.add(panel);
-				window.setSize(300,600);
+				window.add(princess.provideInput());
+				window.setSize(350,475);
 				window.setLocation(me.getLocationOnScreen());
 				window.setVisible(true);
 			}

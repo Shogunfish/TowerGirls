@@ -1,16 +1,13 @@
 package testing;
 import java.awt.Font;
 import java.awt.FontFormatException;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import java.awt.Image;
-
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
@@ -26,6 +23,7 @@ import net.miginfocom.swing.MigLayout;
 import testing.TextFileTesting.Princess1;
 
 import java.awt.Color;
+import java.awt.Dimension;
 
 public class PrincessTesting extends JPanel {
 
@@ -39,12 +37,12 @@ public class PrincessTesting extends JPanel {
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new MigLayout("", "[125px,grow]", "[175px,grow][grow][67.00,grow][14px]"));
+		contentPane.setLayout(new MigLayout("", "[]", "[grow][][][]"));
 
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
-		contentPane.add(panel, "cell 0 0,grow");
-		panel.setLayout(new MigLayout("", "[125px][]", "[175px][]"));
+		JPanel header = new JPanel();
+		header.setBackground(Color.WHITE);
+		contentPane.add(header, "cell 0 0,grow");
+		header.setLayout(new MigLayout("", "[grow][]", "[grow][]"));
 		
 		//Grab fonts (should this be done every time? Ideally not)
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -70,64 +68,61 @@ public class PrincessTesting extends JPanel {
 		}
 		
 		//Kingdom and name
-		JLabel title = new JLabel("<html><font style='font-family:Bebas Neue Bold;font-size:19;color:" + princess.getColor()+ ";'" + ">" +princess.getTitle()[0]+"'s<br><font style='font-family:04b_19;font-size:20px;'>"+princess.getName()+" Princess"+"</font></html>");
-		panel.add(title, "cell 1 0");
+		JLabel title = new JLabel("<html><font style='font-family:Bebas Neue Bold;font-size:19;'>" +princess.getTitle()[0]+"'s<br><font style='font-family:04b_19;font-size:20px;'>"+princess.getName()+" Princess"+"</font></html>");
+		title.setForeground(princess.getColor());
+		header.add(title, "cell 1 0");
 		
 		//Avatar
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon(PrincessTesting.class.getResource("/Girls/" + princess.getName() + ".png")));
-		panel.add(label, "cell 0 0 0 2,alignx left,aligny top");
+		JLabel avatar = new JLabel("");
+		avatar.setIcon(new ImageIcon(PrincessTesting.class.getResource("/Girls/" + princess.getName() + ".png")));
+		header.add(avatar, "cell 0 0 0 2,alignx left,aligny top");
 		
 		//Get traits
-		JLabel lblNewLabel_2 = new JLabel("<html>+ " + princess.getGood()[0] +"<br>+ " + princess.getGood()[1] + "<br>+ " + princess.getGood()[2] + "<br>- " + princess.getBad()[0] + "<br>- " + princess.getBad()[1] + "</html>");
-		lblNewLabel_2.setFont(mainFont.deriveFont(16f));
-		panel.add(lblNewLabel_2, "cell 1 1");
+		JLabel traits = new JLabel("<html>+ " + princess.getGood()[0] +"<br>+ " + princess.getGood()[1] + "<br>+ " + princess.getGood()[2] + "<br>- " + princess.getBad()[0] + "<br>- " + princess.getBad()[1] + "</html>");
+		traits.setFont(mainFont.deriveFont(16f));
+		header.add(traits, "cell 1 1");
 		
-		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1, "cell 0 1,grow");
-		panel_1.setLayout(new MigLayout("", "[][][][]", "[][][][]"));
+		JPanel middle = new JPanel();
+		contentPane.add(middle, "cell 0 1");
+		middle.setLayout(new MigLayout("", "[][][]", "[][][][]"));
 		
 		//Love stat and grid
 		JLabel statLove = new JLabel("");
-		panel_1.add(statLove, "cell 0 0");
+		middle.add(statLove, "cell 0 0");
 		//This process turns the icon into an image and back again, resizing it according to the final numbers, below
 		ImageIcon love = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Love.png"));
 		statLove.setIcon((new ImageIcon(getScaledImage(love.getImage(),20,20))));
-		JLabel grid1 = new JLabel("");
-		ImageIcon grid = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Stat bar.png"));
-		grid1.setIcon((new ImageIcon(getScaledImage(grid.getImage(),80,20))));
-		panel_1.add(grid1, "cell 1 0");
+		//Add grid
+		BoxTesting boxTest = new BoxTesting(princess.getStats()[0],princess.getColor());
+		boxTest.setMinimumSize(new Dimension(90,20));
+		middle.add(boxTest, "cell 0 0,grow,flowy");
 
 		//Lust stat and grid
 		JLabel statLust = new JLabel("");
-		panel_1.add(statLust, "cell 0 1");
+		middle.add(statLust, "cell 0 1");
 		ImageIcon lust = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Lust.png"));
 		statLust.setIcon((new ImageIcon(getScaledImage(lust.getImage(),20,20))));
-		JLabel grid2 = new JLabel("");
-		grid = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Stat bar.png"));
-		grid2.setIcon((new ImageIcon(getScaledImage(grid.getImage(),80,20))));
-		panel_1.add(grid2, "cell 1 1");
+		//Add grid
+		boxTest = new BoxTesting(princess.getStats()[1],princess.getColor());
+		middle.add(boxTest, "cell 0 1,grow,flowy");
 		
 		//Wealth stat and grid
 		JLabel statWealth = new JLabel("");
-		panel_1.add(statWealth, "flowy,cell 0 2");
+		middle.add(statWealth, "cell 0 2");
 		ImageIcon wealth = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Wealth.png"));
 		statWealth.setIcon((new ImageIcon(getScaledImage(wealth.getImage(),20,20))));
-		ImageIcon power = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Power.png"));
-		JLabel grid3 = new JLabel("");
-		grid = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Stat bar.png"));
-		grid3.setIcon((new ImageIcon(getScaledImage(grid.getImage(),80,20))));
-		panel_1.add(grid3, "cell 1 2");
+		//Add grid
+		boxTest = new BoxTesting(princess.getStats()[2],princess.getColor());
+		middle.add(boxTest, "cell 0 2,grow,flowy");
 		
 		//Power stat and grid
 		JLabel statPower = new JLabel("");
-		panel_1.add(statPower, "cell 0 3");
+		middle.add(statPower, "cell 0 3");
+		ImageIcon power = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Power.png"));
 		statPower.setIcon((new ImageIcon(getScaledImage(power.getImage(),20,20))));
-		JLabel grid4 = new JLabel("");
-		grid = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Stat bar.png"));
-		grid4.setIcon((new ImageIcon(getScaledImage(grid.getImage(),80,20))));
-		panel_1.add(grid4, "cell 1 3");
-		ImageIcon kink = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Likes.png"));
+		//Add grid
+		boxTest = new BoxTesting(princess.getStats()[3],princess.getColor());
+		middle.add(boxTest, "cell 0 3,grow");
 		
 		//Dowries
 		//Regex matches "words words words -" and divides that from "- words words words" with a new line
@@ -141,13 +136,13 @@ public class PrincessTesting extends JPanel {
         }
 		JLabel dowry1 = new JLabel("<html>" + regexMatcher.group(0) + "-<br>" + regexMatcher2.group(1) + "</html>");
 		dowry1.setFont(mainFont.deriveFont(16f));
-		panel_1.add(dowry1, "cell 3 0 1 2,alignx right");
+		middle.add(dowry1, "cell 2 0 1 2,alignx right");
 		//Dowry images pull from /Dowries/name_of_dowry (BE SURE FILES ARE CAPITALIZED, e.g. Red Candle the Blue)
 		JLabel dowry1Img = new JLabel();
 		String dowryLoc = "/Dowries/" + regexMatcher.group(0);
 		ImageIcon dowry = new ImageIcon(PrincessTesting.class.getResource(dowryLoc.substring(0,dowryLoc.length()-1)+".png"));
 		dowry1Img.setIcon((new ImageIcon(getScaledImage(dowry.getImage(),30,40))));
-		panel_1.add(dowry1Img, "cell 2 0 1 2,alignx right");
+		middle.add(dowry1Img, "cell 1 0 1 2,alignx right");
 		
 		//2nd dowry
 		regex = Pattern.compile("^[^\\-]*");
@@ -160,33 +155,34 @@ public class PrincessTesting extends JPanel {
         }
 		JLabel dowry2 = new JLabel("<html>" + regexMatcher.group(0) + "-<br>" + regexMatcher2.group(1) + "</html>");
 		dowry2.setFont(mainFont.deriveFont(16f));
-		panel_1.add(dowry2, "cell 3 2 1 2,alignx right");
+		middle.add(dowry2, "cell 2 2 1 2,alignx right");
 		//2nd dowry image
 		JLabel dowry2Img = new JLabel("");
 		dowryLoc = "/Dowries/" + regexMatcher.group(0);
 		dowry = new ImageIcon(PrincessTesting.class.getResource(dowryLoc.substring(0,dowryLoc.length()-1)+".png"));
 		dowry2Img.setIcon((new ImageIcon(getScaledImage(dowry.getImage(),30,40))));
-		panel_1.add(dowry2Img, "cell 2 2 1 2,alignx right");
+		middle.add(dowry2Img, "cell 1 2 1 2,alignx right");
 		
 		
-		JPanel panel_2 = new JPanel();
-		contentPane.add(panel_2, "cell 0 2,grow");
-		panel_2.setLayout(new MigLayout("", "[][][]", "[][][]"));
+		JPanel bottom = new JPanel();
+		contentPane.add(bottom, "cell 0 2");
+		bottom.setLayout(new MigLayout("", "[][][]", "[][][]"));
 		
 		//Kinks
 		JLabel kink1 = new JLabel(princess.getKinks()[0].getName());
 		kink1.setFont(mainFont.deriveFont(16f));
-		panel_2.add(kink1, "cell 0 0");
+		bottom.add(kink1, "cell 0 0");
+		ImageIcon kink = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Likes.png"));
 		kink1.setIcon((new ImageIcon(getScaledImage(kink.getImage(),20,20))));
 		
 		JLabel kink2 = new JLabel(princess.getKinks()[1].getName());
 		kink2.setFont(mainFont.deriveFont(16f));
-		panel_2.add(kink2, "cell 0 1");
+		bottom.add(kink2, "cell 0 1");
 		kink2.setIcon((new ImageIcon(getScaledImage(kink.getImage(),20,20))));
 
 		JLabel kink3 = new JLabel(princess.getTurnOff().getName());
 		kink3.setFont(mainFont.deriveFont(16f));
-		panel_2.add(kink3, "cell 0 2");
+		bottom.add(kink3, "cell 0 2");
 		kink = new ImageIcon(PrincessTesting.class.getResource("/Stat icons/Dislikes.png"));
 		kink3.setIcon((new ImageIcon(getScaledImage(kink.getImage(),20,20))));
 		
@@ -201,16 +197,17 @@ public class PrincessTesting extends JPanel {
         }
 		JLabel lustItem = new JLabel("<html>" + regexMatcher.group(0) + "-<br>" + regexMatcher2.group(1) + "</html>");
 		lustItem.setFont(mainFont.deriveFont(16f));
-		panel_2.add(lustItem, "cell 2 0 1 2");
+		bottom.add(lustItem, "cell 2 0 0 3");
 		//Lust item
 		JLabel lustImg = new JLabel("");
 		String lustLoc = "/LustItems/" + regexMatcher.group(0);
 		lust = new ImageIcon(PrincessTesting.class.getResource(lustLoc.substring(0,lustLoc.length()-1) + ".png"));
 		lustImg.setIcon((new ImageIcon(getScaledImage(lust.getImage(),40,40))));
-		panel_2.add(lustImg, "cell 1 0 1 2");
+		bottom.add(lustImg, "cell 1 0 0 3");
 		
 		//Description
-		JLabel desc = new JLabel("<html><font color=" + princess.getColor() + " size='4'>\"" + princess.getTitle()[1] +  "\"</font></html>");
+		JLabel desc = new JLabel("<html><font size='4'>\"" + princess.getTitle()[1] +  "\"</font></html>");
+		desc.setForeground(princess.getColor());
 		desc.setFont(mainFont);
 		contentPane.add(desc, "cell 0 3, alignx center");
 	}

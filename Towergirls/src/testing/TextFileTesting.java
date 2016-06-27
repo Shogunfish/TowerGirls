@@ -1,4 +1,5 @@
 package testing;
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -35,7 +36,7 @@ public class TextFileTesting {
 	
 	public void buildPrincess (ArrayList<String> princessObject) {
 
-		String princessColor = princess.get(1);
+		Color princessColor = Color.decode("#" + princess.get(1));
 		kobold = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
 		
 		Item dowry1 = new Item(princess.get(15),princess.get(15));
@@ -94,7 +95,7 @@ class Preference
 
 class Character extends Item
 {
-  Character(String n, String i, String c, String k, String d) 
+  Character(String n, String i, Color c, String k, String d) 
   {
 	  super(n,i); 
 	  col = c;
@@ -103,7 +104,7 @@ class Character extends Item
 	  effects = new ArrayList<Effect>();
   }
   
-  public String col;
+  public Color col;
   public String kingdom;
   public String description;
   
@@ -133,7 +134,7 @@ class Character extends Item
 	  return out;
   }
   
-  public String getColor()
+  public Color getColor()
   {
 	  return col;
   }
@@ -168,8 +169,8 @@ class Character extends Item
 class Princess1 extends Character 
 {
 
-  Princess1(String n, String i, String c, String k, String d) {
-		super(n, i, c, k, d);
+  Princess1(String n, String i, Color princessColor, String k, String d) {
+		super(n, i, princessColor, k, d);
 	}
   public Item dowry1;
   public Item dowry2;

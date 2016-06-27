@@ -43,7 +43,7 @@ Gemstone Plug - Can only be removed by a knight
 A naive kobold with a sense of curiosity that often gets her into trouble. She wants to learn more about human culture.
 
 #Human
-eca69c
+c8676e
 High Forest Kingdom
 Soft & Fluffy
 Cooks enormous banquets
@@ -64,7 +64,7 @@ Mithril Rings - Anything placed through one ring will emerge from the other
 The official princess of the human race. Born with a silver spoon in her mouth and raised to be a housewife, she longs for a life of adventure.
 
 #Knight
-294052
+263e50
 Band of the Moon
 Skilled warrior with a broadsword
 Petite chest
