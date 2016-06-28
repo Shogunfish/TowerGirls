@@ -109,6 +109,28 @@ public class HoverTest extends JFrame {
 				paintImage(Dragon);
 				//Add mouse hover listener
 				addHover(Dragon);
+				
+		//Dragon JLabel
+				JLabel Insect = new JLabel("");
+				//Set the name of the JLabel, used for lookup later
+				Insect.setName("Insect");
+				contentPane.add(Insect);
+				Insect.setLocation(10,100);
+				//Paint the image (half size)
+				paintImage(Insect);
+				//Add mouse hover listener
+				addHover(Insect);
+				
+		//Dragon JLabel
+				JLabel Skeleton = new JLabel("");
+				//Set the name of the JLabel, used for lookup later
+				Skeleton.setName("Skeleton");
+				contentPane.add(Skeleton);
+				Skeleton.setLocation(80,100);
+				//Paint the image (half size)
+				paintImage(Skeleton);
+				//Add mouse hover listener
+				addHover(Skeleton);
 		
 	}
 	
@@ -147,7 +169,7 @@ public class HoverTest extends JFrame {
 				}
 				PrincessTesting princess = new PrincessTesting(test.givePrincess());
 				window.add(princess.provideInput());
-				window.setSize(350,475);
+				window.setSize(350,550);
 				window.setLocation(me.getLocationOnScreen());
 				window.setVisible(true);
 			}
