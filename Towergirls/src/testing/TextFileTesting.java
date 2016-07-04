@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class TextFileTesting {
 	static ArrayList<String> princess;
-	Princess1 kobold;
+	Princess1 princessBuild;
 	
 	public TextFileTesting(){
 	}
@@ -28,69 +28,48 @@ public class TextFileTesting {
 				break;
 			}
 		}
-		//for(int i=0; i<princess.size(); i++) {
-			//System.out.println("'" + princess.get(i) + "'");
-		//}
 		buildPrincess(princess);
 	}
 	
 	public void buildPrincess (ArrayList<String> princessObject) {
 
 		Color princessColor = Color.decode("#" + princess.get(1));
-		kobold = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
+		princessBuild = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
 		
-		Item dowry1 = new Item(princess.get(15),princess.get(15));
-		Item dowry2 = new Item(princess.get(16),princess.get(16));
-		Item lustGift = new Item(princess.get(18),princess.get(18));
-		kobold.setGifts(dowry1, dowry2, lustGift);
+		princessBuild.dowry1 = new Item(princess.get(15),princess.get(15));
+		princessBuild.dowry2 = new Item(princess.get(16),princess.get(16));
+		princessBuild.lustGift = new Item(princess.get(18),princess.get(18));
 		
-		Preference kink1 = new Preference(princess.get(12),true);
-		Preference kink2 = new Preference(princess.get(13),true);
-		Preference kink3 = new Preference(princess.get(14),false);
-		kobold.setKinks(kink1, kink2, kink3);
+		princessBuild.kinks = (new Preference[]{new Preference(princess.get(12),true), new Preference(princess.get(13),true)});
+		princessBuild.turnoff = new Preference(princess.get(14),false);
 		
-		kobold.setAttr(princess.get(3),princess.get(4),princess.get(5),princess.get(6),princess.get(7));
+		princessBuild.good = new String[]{princess.get(3),princess.get(4),princess.get(5)};
+		princessBuild.bad = new String[]{princess.get(6),princess.get(7)};
 		
-		kobold.setStats(Integer.parseInt(princess.get(8)), Integer.parseInt(princess.get(9)), Integer.parseInt(princess.get(10)), Integer.parseInt(princess.get(11)));
+		princessBuild.love = Integer.parseInt(princess.get(8));
+		princessBuild.lust = Integer.parseInt(princess.get(9));
+		princessBuild.wealth = Integer.parseInt(princess.get(10));
+		princessBuild.power = Integer.parseInt(princess.get(11));
 	}
 
-
-	public Princess1 givePrincess() {
-		return kobold;
-	}
-
-class Item
-{
+class Item {
 	public String name;
 	public String image;
 	
 	Item(String n, String i){name = n; image = i;}
-
-	  public String getName() {
-		  return name;
-	  }
-	  
-	  public String getImage() {
-		  return image;
-	  }
 }
 
-class Preference
-{
+class Preference {
   public String name;
   public Boolean good;
   
   Preference(String n, Boolean k) {name = n; good = k;}
   
-  public void corrupt() {good = !good;}
+//  public void corrupt() {good = !good;}
   
-  public String getName() {
-	  return name;
-  }
-  
-  public Boolean likesIt() {
-	  return good;
-  }
+//  public Boolean likesIt() {
+//	  return good;
+//  }
 }
 
 class Character extends Item
@@ -121,81 +100,30 @@ class Character extends Item
 
   public ArrayList<Effect> effects;
   
-  public void setStats(int lo, int lu, int we, int po)
-  {
-	  love = lo;
-	  lust = lu;
-	  wealth = we;
-	  power = po;
-  }
-  
-  public String[] getTitle() {
-	  String[] out = new String[]{kingdom,description};
-	  return out;
-  }
-  
-  public Color getColor()
-  {
-	  return col;
-  }
-  
-  public int[] getStats()
-  {
-	  int[] out = new int[]{love, lust, wealth, power};
-	  return out;
-  }
-  
-  public void setAttr(String g1, String g2, String g3, String b1, String b2)
-  {
-	  good = new String[]{g1,g2,g3};
-	  bad = new String[]{b1,b2};
-  }
-  
-  public String[] getGood() {return good;}
-  public String[] getBad() {return bad;}
-  
-  public void setKinks(Preference k1, Preference k2, Preference t1)
-  {
-	  kinks = new Preference[]{k1,k2};
-	  turnoff = t1;
-  }
-  public Preference[] getKinks() {return kinks;}
-  public Preference getTurnOff() {return turnoff;}
-  public void corrupt() {turnoff.corrupt();}
+//  public void corrupt() {turnoff.corrupt();}
 }
 
-
-
-class Princess1 extends Character 
-{
+class Princess1 extends Character {
 
   Princess1(String n, String i, Color princessColor, String k, String d) {
 		super(n, i, princessColor, k, d);
-	}
+  }
+  
   public Item dowry1;
   public Item dowry2;
   public Item lustGift;
-  
-  public void setGifts(Item d1, Item d2, Item lg)
-  {
-	  dowry1=d1;
-	  dowry2=d2;
-	  lustGift=lg;
-  }
-  
-  public Item[] getGifts(){
-  return new Item[]{dowry1,dowry2,lustGift};
-  }
 }
-class Effect
-{
-	public String image;
-	public String description;
-}
-class Power
-{
-	public String name;
-	
-	Power(String n){ name = n;}
-}
+
+//For things that don't take up space but have effects
+	class Effect {
+		public String image;
+		public String description;
+	}
+
+//For...?
+	class Power {
+		public String name;
+		
+		Power(String n){ name = n;}
+	}
 }

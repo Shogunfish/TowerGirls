@@ -2,3 +2,4 @@
 2) Make it so it's not building an old window again
 3) fix initial jitter of window?
 4) change frame builder (PrincessTesting) so it also uses Thumbnailator
+5) change frame builder (PrincessTesting) so it sets dimensions based on how much it'll need, not a catch-all

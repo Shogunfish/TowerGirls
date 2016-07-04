@@ -56,7 +56,7 @@ public class MovingTest extends JFrame {
 	            super.paintComponent(g);
 	            BufferedImage img = null;
 				try {
-					img = ImageIO.read(new File("../Girls/Kobold.png"));
+					img = ImageIO.read(new File("src/Girls/Kobold.png"));
 				} catch (IOException e) {
 					e.printStackTrace();
 				}

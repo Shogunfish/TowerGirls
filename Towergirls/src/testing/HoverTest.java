@@ -1,6 +1,7 @@
 package testing;
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Graphics2D;
@@ -10,6 +11,8 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -19,11 +22,13 @@ import javax.swing.JPanel;
 import javax.swing.JWindow;
 import javax.swing.OverlayLayout;
 
+import net.miginfocom.swing.MigLayout;
 import testing.TextFileTesting;
 
 public class HoverTest extends JFrame {
 
 	JPanel contentPane;
+	ArrayList<String> chosen = new ArrayList<String>();
 
 	/**
 	 * Launch the application.
@@ -48,90 +53,38 @@ public class HoverTest extends JFrame {
 	JWindow window;
 	HoverTest() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 320, 510);
 		contentPane = new JPanel();
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
+		paintPrincesses(new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon"},chosen);
+	}
+	
+	void paintPrincesses(String[] princessOrder, ArrayList<String> exclude) {
 		
-		//Later, I should have this auto-pull from an array
-		
-		//Kobold JLabel
-				JLabel Kobold = new JLabel("");
-				//Set the name of the JLabel, used for lookup later
-				Kobold.setName("Kobold");
-				contentPane.add(Kobold);
-				Kobold.setLocation(10,10);
-				//Paint the image (half size)
-				paintImage(Kobold);
-				//Add mouse hover listener
-				addHover(Kobold);
+		//Slap girls onto the window according to princessOrder
+		int xCoord = 10;
+		int yCoord = 10;
+		for(int i=0; i<princessOrder.length; i++) {
+			for(int q=0; q<4 && q+i<princessOrder.length; q++) {
+				if(!exclude.contains(princessOrder[i+q])) {
+					JLabel temp = new JLabel();
+					//Set the name of the JLabel, used for lookup later
+					temp.setName(princessOrder[i+q]);
+					contentPane.add(temp);
+					temp.setLocation(xCoord,yCoord);
+					//Paint the image (half size)
+					paintImage(temp);
+					//Add mouse hover listener
+					addHover(temp);
+				}
 				
-		//Human JLabel
-				JLabel Human = new JLabel("");
-				//Set the name of the JLabel, used for lookup later
-				Human.setName("Human");
-				contentPane.add(Human);
-				Human.setLocation(80,10);
-				//Paint the image (half size)
-				paintImage(Human);
-				//Add mouse hover listener
-				addHover(Human);
-				
-		//Knight JLabel
-				JLabel Knight = new JLabel("");
-				//Set the name of the JLabel, used for lookup later
-				Knight.setName("Knight");
-				contentPane.add(Knight);
-				Knight.setLocation(150,10);
-				//Paint the image (half size)
-				paintImage(Knight);
-				//Add mouse hover listener
-				addHover(Knight);
-				
-		//Mimic JLabel
-				JLabel Mimic = new JLabel("");
-				//Set the name of the JLabel, used for lookup later
-				Mimic.setName("Mimic");
-				contentPane.add(Mimic);
-				Mimic.setLocation(220,10);
-				//Paint the image (half size)
-				paintImage(Mimic);
-				//Add mouse hover listener
-				addHover(Mimic);
-				
-		//Dragon JLabel
-				JLabel Dragon = new JLabel("");
-				//Set the name of the JLabel, used for lookup later
-				Dragon.setName("Dragon");
-				contentPane.add(Dragon);
-				Dragon.setLocation(290,10);
-				//Paint the image (half size)
-				paintImage(Dragon);
-				//Add mouse hover listener
-				addHover(Dragon);
-				
-		//Dragon JLabel
-				JLabel Insect = new JLabel("");
-				//Set the name of the JLabel, used for lookup later
-				Insect.setName("Insect");
-				contentPane.add(Insect);
-				Insect.setLocation(10,100);
-				//Paint the image (half size)
-				paintImage(Insect);
-				//Add mouse hover listener
-				addHover(Insect);
-				
-		//Dragon JLabel
-				JLabel Skeleton = new JLabel("");
-				//Set the name of the JLabel, used for lookup later
-				Skeleton.setName("Skeleton");
-				contentPane.add(Skeleton);
-				Skeleton.setLocation(80,100);
-				//Paint the image (half size)
-				paintImage(Skeleton);
-				//Add mouse hover listener
-				addHover(Skeleton);
-		
+				xCoord += 70;
+			}
+			i+=3;
+			xCoord = 10;
+			yCoord += 90;
+		}
 	}
 	
 	/*
@@ -167,15 +120,27 @@ public class HoverTest extends JFrame {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				PrincessTesting princess = new PrincessTesting(test.givePrincess());
+				PrincessTesting princess = new PrincessTesting(test.princessBuild);
+				
 				window.add(princess.provideInput());
-				window.setSize(350,550);
+				window.setPreferredSize(new Dimension(364,450));
+				window.pack();
 				window.setLocation(me.getLocationOnScreen());
 				window.setVisible(true);
 			}
 			@Override
 			public void mouseExited(MouseEvent me) {
 				window.dispose();
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent me) {
+				chosen.add(me.getComponent().getName());
+				contentPane.removeAll();
+				window.dispose();
+				contentPane.revalidate();
+				contentPane.repaint();
+				paintPrincesses(new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon"},chosen);
 			}
 		});
 	}
