@@ -1,9 +1,8 @@
 package testing;
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.EventQueue;
-import java.awt.FlowLayout;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
@@ -12,23 +11,23 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JWindow;
-import javax.swing.OverlayLayout;
-
-import net.miginfocom.swing.MigLayout;
 import testing.TextFileTesting;
 
 public class HoverTest extends JFrame {
 
-	JPanel contentPane;
+	JPanel princessPane;
+	JPanel choicePane;
 	ArrayList<String> chosen = new ArrayList<String>();
+	JWindow window = new JWindow();
+	boolean first = true;
 
 	/**
 	 * Launch the application.
@@ -50,14 +49,32 @@ public class HoverTest extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	JWindow window;
 	HoverTest() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 320, 510);
-		contentPane = new JPanel();
-		contentPane.setLayout(null);
-		setContentPane(contentPane);
-		paintPrincesses(new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon"},chosen);
+		setBounds(100, 100, 700, 510);
+		princessPane = new JPanel();
+		princessPane.setLayout(null);
+		addHover(princessPane);
+		setContentPane(princessPane);
+		
+		choicePane = new JPanel();
+		choicePane.setSize(new Dimension(380,450));
+		choicePane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		choicePane.setLocation(300,10);
+		
+		TextFileTesting test = new TextFileTesting();
+		try {
+			test.readTextFile("src/Text files/Princesses.txt", "Template");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		PrincessTesting princess = new PrincessTesting(test.princessBuild);
+//		princess.setOutline(Color.RED,princess.dowry1);
+		choicePane.add(princess.provideInput());
+		
+		princessPane.add(choicePane);
+		
+		paintPrincesses(new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon","Template"},chosen);
 	}
 	
 	void paintPrincesses(String[] princessOrder, ArrayList<String> exclude) {
@@ -71,7 +88,7 @@ public class HoverTest extends JFrame {
 					JLabel temp = new JLabel();
 					//Set the name of the JLabel, used for lookup later
 					temp.setName(princessOrder[i+q]);
-					contentPane.add(temp);
+					princessPane.add(temp);
 					temp.setLocation(xCoord,yCoord);
 					//Paint the image (half size)
 					paintImage(temp);
@@ -107,12 +124,41 @@ public class HoverTest extends JFrame {
 		ImageIcon icon = new ImageIcon(resize);
 		((JLabel) comp).setIcon(icon);
 	}
-	
+
 	void addHover(Component comp) {
 		comp.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseEntered(MouseEvent me) {
+//				window = new JWindow();
+//				
+//				TextFileTesting test = new TextFileTesting();
+//				try {
+//					test.readTextFile("src/Text files/Princesses.txt", comp.getName());
+//				} catch (IOException e) {
+//					e.printStackTrace();
+//				}
+//				PrincessTesting princess = new PrincessTesting(test.princessBuild);
+//				
+//				window.add(princess.provideInput());
+//				window.setPreferredSize(new Dimension(364,450));
+//				window.pack();
+//				window.setLocation(me.getLocationOnScreen());
+//				window.setVisible(true);
+//			}
+//			@Override
+//			public void mouseExited(MouseEvent me) {
+//				window.dispose();
+//			}
+
 			@Override
-			public void mouseEntered(MouseEvent me) {
-				window = new JWindow();
+			public void mouseClicked(MouseEvent me) {
+//				chosen.add(me.getComponent().getName());
+//				princessPane.removeAll();
+//				window.dispose();
+//				princessPane.revalidate();
+//				princessPane.repaint();
+//				paintPrincesses(new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon"},chosen);
+//				window.dispose();
 				
 				TextFileTesting test = new TextFileTesting();
 				try {
@@ -121,26 +167,13 @@ public class HoverTest extends JFrame {
 					e.printStackTrace();
 				}
 				PrincessTesting princess = new PrincessTesting(test.princessBuild);
-				
-				window.add(princess.provideInput());
-				window.setPreferredSize(new Dimension(364,450));
-				window.pack();
-				window.setLocation(me.getLocationOnScreen());
-				window.setVisible(true);
-			}
-			@Override
-			public void mouseExited(MouseEvent me) {
-				window.dispose();
-			}
-			
-			@Override
-			public void mouseClicked(MouseEvent me) {
-				chosen.add(me.getComponent().getName());
-				contentPane.removeAll();
-				window.dispose();
-				contentPane.revalidate();
-				contentPane.repaint();
-				paintPrincesses(new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon"},chosen);
+//				if(!first) window.removeAll();
+				choicePane.removeAll();
+				choicePane.add(princess.provideInput());
+				choicePane.validate();
+				choicePane.repaint();
+//				choicePane.setPreferredSize(new Dimension(364,450));
+//				first = false;
 			}
 		});
 	}

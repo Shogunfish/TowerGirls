@@ -119,11 +119,4 @@ class Princess1 extends Character {
 		public String image;
 		public String description;
 	}
-
-//For...?
-	class Power {
-		public String name;
-		
-		Power(String n){ name = n;}
-	}
 }

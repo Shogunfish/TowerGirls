@@ -9,10 +9,13 @@ import javax.swing.border.EmptyBorder;
 
 import java.awt.Image;
 import javax.swing.JLabel;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 
 import java.awt.RenderingHints;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -23,11 +26,13 @@ import net.miginfocom.swing.MigLayout;
 import testing.TextFileTesting.Princess1;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 
 public class PrincessTesting extends JPanel {
 
 	private JPanel contentPane;
+	JLabel dowry1 = new JLabel();
 	
 	/**
 	 * Create the panel.
@@ -67,7 +72,7 @@ public class PrincessTesting extends JPanel {
 		}
 		
 		//Kingdom and name
-		JLabel title = new JLabel("<html><font style='font-family:Bebas Neue Bold;font-size:15;'>" +princess.kingdom+"'s<br><font style='font-family:04b_19;font-size:20px;'>"+princess.name+" Princess"+"</font></html>");
+		JLabel title = new JLabel("<html><font style='font-family:Bebas Neue Bold;font-size:15;'>" +princess.kingdom+"'s<br><font style='font-family:04b_19;font-size:20px;'>"+princess.name.toUpperCase()+" PRINCESS"+"</font></html>");
 		title.setForeground(princess.col);
 		header.add(title, "cell 1 0");
 		
@@ -133,7 +138,7 @@ public class PrincessTesting extends JPanel {
         Matcher regexMatcher2 = regex.matcher(princess.dowry1.name);
         if (regexMatcher2.find()) {
         }
-		JLabel dowry1 = new JLabel("<html>" + regexMatcher.group(0) + "-<br>" + regexMatcher2.group(1) + "</html>");
+		dowry1.setText("<html>" + regexMatcher.group(0) + "-<br>" + regexMatcher2.group(1) + "</html>");
 		dowry1.setFont(mainFont.deriveFont(16f));
 		middle.add(dowry1, "cell 2 0 1 2,left");
 		//Dowry images pull from /Dowries/name_of_dowry (BE SURE FILES ARE CAPITALIZED, e.g. Red Candle the Blue)
@@ -209,6 +214,25 @@ public class PrincessTesting extends JPanel {
 		desc.setForeground(princess.col);
 		desc.setFont(mainFont);
 		contentPane.add(desc, "cell 0 3, left");
+		
+		addChoice(dowry2);
+		addChoice(dowry2Img);
+		addChoice(dowry1);
+		addChoice(dowry1Img);
+	}
+	
+	void setChosen(Color color, Component comp) {
+//		if()
+		((JComponent) comp).setBorder(BorderFactory.createLineBorder(color));
+	}
+	
+	void addChoice(Component comp) {
+		comp.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent me) {
+				setChosen(Color.RED,comp);
+			}
+		});
 	}
 	
 	private Image getScaledImage(Image srcImg, int w, int h){

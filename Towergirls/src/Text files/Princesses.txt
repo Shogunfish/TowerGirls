@@ -1,25 +1,22 @@
-FORMAT
-Princess Name
-Princess img
-Color
-Location
+#Template
+000000
+Template
 Pro 1
 Pro 2
 Pro 3
 Con 1
 Con 2
-(Love) 1-5
-(Lust) 1-5
-(Wealth) 1-5
-(Power) 1-5
-Like1
-Like2
-Dislike
-Dowry1 desc
-Dowry2 desc
-Totem desc
-Lust desc
-Subtext
+0
+0
+0
+0
+Fetish
+Fetish
+Turnoff
+Dowry - click to claim this Dowry if you claim the princess.
+Dowry - Claiming a Dowry will fill a spot in your wagon.
+Totem
+Lust Item - Raising a princess's lust value to maximum will grant you her lust item.
 
 #Kobold
 317256
