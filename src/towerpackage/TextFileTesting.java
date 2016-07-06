@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class TextFileTesting {
-	static ArrayList<String> princess;
+	ArrayList<String> princess;
 	Princess1 princessBuild;
 	
 public TextFileTesting(){

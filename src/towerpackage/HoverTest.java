@@ -76,7 +76,7 @@ public class HoverTest extends JFrame {
 	 */
 	HoverTest() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 510);
+		setBounds(100, 100, 900, 510);
 		princessPane = new JPanel();
 		princessPane.setLayout(null);
 		addHover(princessPane);
@@ -100,6 +100,21 @@ public class HoverTest extends JFrame {
 		princessPane.add(choicePane);
 		
 		paintPrincesses(new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon","Template"},chosen);
+		
+		TextFileTesting b = new TextFileTesting();
+		try {
+			b.readTextFile("src/Text files/Princesses.txt", "Kobold");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Wagon blah = new Wagon(8,"Jimbob");
+		for(int i = 0; i<8; i++)
+		{
+			blah.add(new Item("Draconic Ruby", "src/Dowries/Draconic Ruby.png"));
+		}
+		paintWagon(blah);
+	
 	}
 	
 	void paintPrincesses(String[] princessOrder, ArrayList<String> exclude) {
@@ -107,35 +122,100 @@ public class HoverTest extends JFrame {
 		//Slap girls onto the window according to princessOrder
 		int xCoord = 10;
 		int yCoord = 10;
-		for(int i=0; i<princessOrder.length; i++) {
-			for(int q=0; q<4 && q+i<princessOrder.length; q++) {
-				if(!exclude.contains(princessOrder[i+q])) {
-					JLabel temp = new JLabel();
-					//Set the name of the JLabel, used for lookup later
-					temp.setName(princessOrder[i+q]);
-					princessPane.add(temp);
-					temp.setLocation(xCoord,yCoord);
-					//Paint the image (half size)
-					paintImage(temp);
-					//Add mouse hover listener
-					addHover(temp);
-				}
+		for(int i=0; i<princessOrder.length; i++) 
+		{
+			
+			if(!exclude.contains(princessOrder[i])) 
+			{
+				JLabel temp = new JLabel();
 				
-				xCoord += 70;
+				//Set the name of the JLabel, used for lookup later
+				temp.setName(princessOrder[i]);
+				princessPane.add(temp);
+				temp.setLocation(xCoord,yCoord);
+					
+				
+				TextFileTesting b = new TextFileTesting();
+				try {
+					b.readTextFile("src/Text files/Princesses.txt", princessOrder[i]);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				//Paint the image (half size)
+				paintImage(b.princessBuild,temp);
+					
+				//Add mouse hover listener
+				addHover(temp);
 			}
-			i+=3;
+			
+			//Make the appropriate location adjustment based on the current index
+			if(i%4==3)
+			{
 			xCoord = 10;
 			yCoord += 90;
+			}
+			else
+			{
+			xCoord += 70;
+			}
+		
+		}
+	}
+
+/*
+ * This is the method that paints the wagon. Currently all it does is add two columns of 
+ * hover-enabled princesses over to the right of the card. Things it needs include:
+ * 
+ * It should draw some kind of wagon-like shape around itself
+ * 
+ * It should display the effects currently in play
+ * 
+ * It currently will fail if it has a non-princess item inside it, ultimately it should not do that
+ * 
+ * It should have its own set of interactions which are different from the princesses that are displayed on the left side
+ * rather than just using the same hover behavior
+ * 
+ * It should use a different version of the princess card without dowry items
+ * 
+ */
+	void paintWagon(Wagon wag)
+	{
+		int xCoord = 700;
+		int yCoord = 10;
+		
+		for(int i = 0; i < wag.spaces.length ; i++)
+		{
+			
+			JLabel temp = new JLabel();
+			
+			temp.setName(wag.spaces[i].name);
+			princessPane.add(temp);
+			temp.setLocation(xCoord,yCoord);;
+			paintImage(wag.spaces[i], temp);
+			addHover(temp);
+			
+			if(i%2==1)
+			{
+				xCoord = 700;
+				yCoord += 90;
+			}
+			else
+			{
+				xCoord+=70;
+			}
 		}
 	}
 	
 	/*
 	 * Grabs girl from component name and resizes it, then slaps it onto JLabel
 	 */
-	void paintImage(Component comp) {
+	void paintImage(Item item, Component comp) {
+		comp.setName(item.name);
+		
 		BufferedImage bImg = null;
 		try {
-			bImg = ImageIO.read(new File("src/Girls/" + comp.getName() + ".png"));
+			bImg = ImageIO.read(new File(item.image));
 		} catch (IOException e) {
 			System.out.println("No file");
 			e.printStackTrace();
