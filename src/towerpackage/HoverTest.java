@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -39,11 +38,6 @@ import javax.swing.JWindow;
 //  SSt    ,'    _,'.--,---------'
 //     _.-' _..-'   ),'
 //    ``--''        `
-
-//Jasper is a big fucking doodoo whose Eclipse isn't working and he needs my help
-
-//Jasper likes to suck large pebis
-
 
 
 public class HoverTest extends JFrame {
