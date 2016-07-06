@@ -71,8 +71,10 @@ public class PrincessTesting extends JPanel {
 		addJLabel("" , null, null, "src/Stat icons/Wealth.png", new Dimension(20,20), middle, "cell 0 2");
 		addJLabel("" , null, null, "src/Stat icons/Power.png", new Dimension(20,20), middle, "cell 0 3");
 		//Add stat boxes (FIX ME)
+		int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
+		System.out.println(princess.lust);
 		for(int i=0; i<4; i++) {
-			BoxTesting boxTest = new BoxTesting(princess.love,princess.col);
+			BoxTesting boxTest = new BoxTesting(stat[i],princess.col);
 			boxTest.setMinimumSize(new Dimension(90,20));
 			middle.add(boxTest, "cell 0 " + i + ",grow,flowy");
 		}

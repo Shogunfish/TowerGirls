@@ -1,4 +1,5 @@
 package towerpackage;
+
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,13 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class TextFileTesting {
-	static ArrayList<String> princess;
-	public Princess1 princessBuild;
+	ArrayList<String> princess;
+	Princess1 princessBuild;
 	
-	public TextFileTesting(){
+public TextFileTesting(){
 	}
 	
-	public void readTextFile (String location, String princessName) throws IOException {
+public void readTextFile (String location, String princessName) throws IOException {
 		princess = new ArrayList<String>();
 		@SuppressWarnings("resource")
 		BufferedReader reader = new BufferedReader(new FileReader(location));
@@ -31,7 +32,7 @@ public class TextFileTesting {
 		buildPrincess(princess);
 	}
 	
-	public void buildPrincess (ArrayList<String> princessObject) {
+public void buildPrincess (ArrayList<String> princessObject) {
 
 		Color princessColor = Color.decode("#" + princess.get(1));
 		princessBuild = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
@@ -51,4 +52,6 @@ public class TextFileTesting {
 		princessBuild.wealth = Integer.parseInt(princess.get(10));
 		princessBuild.power = Integer.parseInt(princess.get(11));
 	}
+
+
 }
