@@ -73,7 +73,6 @@ public class HoverTest extends JFrame {
 		setBounds(100, 100, 900, 510);
 		princessPane = new JPanel();
 		princessPane.setLayout(null);
-		addHover(princessPane);
 		setContentPane(princessPane);
 		
 		choicePane = new JPanel();
@@ -105,7 +104,7 @@ public class HoverTest extends JFrame {
 		Wagon blah = new Wagon(8,"Jimbob");
 		for(int i = 0; i<8; i++)
 		{
-			blah.add(new Item("Draconic Ruby", "src/Dowries/Draconic Ruby.png"));
+			blah.add(new Item("Kobold", "src/Girls/Kobold.png"));
 		}
 		paintWagon(blah);
 	
@@ -226,39 +225,9 @@ public class HoverTest extends JFrame {
 
 	void addHover(Component comp) {
 		comp.addMouseListener(new MouseAdapter() {
-//			@Override
-//			public void mouseEntered(MouseEvent me) {
-//				window = new JWindow();
-//				
-//				TextFileTesting test = new TextFileTesting();
-//				try {
-//					test.readTextFile("src/Text files/Princesses.txt", comp.getName());
-//				} catch (IOException e) {
-//					e.printStackTrace();
-//				}
-//				PrincessTesting princess = new PrincessTesting(test.princessBuild);
-//				
-//				window.add(princess.provideInput());
-//				window.setPreferredSize(new Dimension(364,450));
-//				window.pack();
-//				window.setLocation(me.getLocationOnScreen());
-//				window.setVisible(true);
-//			}
-//			@Override
-//			public void mouseExited(MouseEvent me) {
-//				window.dispose();
-//			}
 
 			@Override
 			public void mouseClicked(MouseEvent me) {
-//				chosen.add(me.getComponent().getName());
-//				princessPane.removeAll();
-//				window.dispose();
-//				princessPane.revalidate();
-//				princessPane.repaint();
-//				paintPrincesses(new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon"},chosen);
-//				window.dispose();
-				
 				TextFileTesting test = new TextFileTesting();
 				try {
 					test.readTextFile("src/Text files/Princesses.txt", comp.getName());
@@ -266,13 +235,10 @@ public class HoverTest extends JFrame {
 					e.printStackTrace();
 				}
 				PrincessTesting princess = new PrincessTesting(test.princessBuild);
-//				if(!first) window.removeAll();
 				choicePane.removeAll();
 				choicePane.add(princess.provideInput());
 				choicePane.validate();
 				choicePane.repaint();
-//				choicePane.setPreferredSize(new Dimension(364,450));
-//				first = false;
 			}
 		});
 	}
