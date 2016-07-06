@@ -24,7 +24,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import net.miginfocom.swing.MigLayout;
-import towerpackage.TextFileTesting.Princess1;
 
 import java.awt.Color;
 import java.awt.Component;

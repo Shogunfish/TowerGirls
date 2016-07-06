@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class TextFileTesting {
 	static ArrayList<String> princess;
-	public TextFileTesting.Princess1 princessBuild;
+	public Princess1 princessBuild;
 	
 	public TextFileTesting(){
 	}
@@ -50,73 +50,5 @@ public class TextFileTesting {
 		princessBuild.lust = Integer.parseInt(princess.get(9));
 		princessBuild.wealth = Integer.parseInt(princess.get(10));
 		princessBuild.power = Integer.parseInt(princess.get(11));
-	}
-
-class Item {
-	public String name;
-	public String image;
-	
-	Item(String n, String i){name = n; image = i;}
-}
-
-class Preference {
-  public String name;
-  public Boolean good;
-  
-  Preference(String n, Boolean k) {name = n; good = k;}
-  
-//  public void corrupt() {good = !good;}
-  
-//  public Boolean likesIt() {
-//	  return good;
-//  }
-}
-
-class Character extends Item
-{
-  Character(String n, String i, Color c, String k, String d) 
-  {
-	  super(n,i); 
-	  col = c;
-	  kingdom = k;
-	  description = d;
-	  effects = new ArrayList<Effect>();
-  }
-  
-  public Color col;
-  public String kingdom;
-  public String description;
-  
-  public int love;
-  public int lust;
-  public int wealth;
-  public int power;
-  
-  public String[] good;
-  public String[] bad;
-  
-  public Preference[] kinks;
-  public Preference turnoff;
-
-  public ArrayList<Effect> effects;
-  
-//  public void corrupt() {turnoff.corrupt();}
-}
-
-class Princess1 extends Character {
-
-  Princess1(String n, String i, Color princessColor, String k, String d) {
-		super(n, i, princessColor, k, d);
-  }
-  
-  public Item dowry1;
-  public Item dowry2;
-  public Item lustGift;
-}
-
-//For things that don't take up space but have effects
-	class Effect {
-		public String image;
-		public String description;
 	}
 }

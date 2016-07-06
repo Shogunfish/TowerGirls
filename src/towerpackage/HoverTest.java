@@ -72,7 +72,7 @@ public class HoverTest extends JFrame {
 	 */
 	HoverTest() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 510);
+		setBounds(100, 100, 1200, 510);
 		princessPane = new JPanel();
 		princessPane.setLayout(null);
 		setContentPane(princessPane);
