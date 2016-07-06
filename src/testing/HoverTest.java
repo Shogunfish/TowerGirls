@@ -40,7 +40,8 @@ import testing.TextFileTesting;
 //     _.-' _..-'   ),'
 //    ``--''        `
 
-//Jasper is a big fucking doodoo whose Eclipse isn't working and he needs my help
+
+//Jasper likes to suck large pebis
 
 
 
