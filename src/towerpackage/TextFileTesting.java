@@ -1,4 +1,4 @@
-package testing;
+package towerpackage;
 import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class TextFileTesting {
 	static ArrayList<String> princess;
-	Princess1 princessBuild;
+	public TextFileTesting.Princess1 princessBuild;
 	
 	public TextFileTesting(){
 	}

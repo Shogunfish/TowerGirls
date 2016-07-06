@@ -1,4 +1,4 @@
-package testing;
+package towerpackage;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -19,7 +19,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JWindow;
-import testing.TextFileTesting;
+
+import towerpackage.TextFileTesting;
 
 //¯\_(:))_/¯
 //
@@ -74,7 +75,6 @@ public class HoverTest extends JFrame {
 		setBounds(100, 100, 700, 510);
 		princessPane = new JPanel();
 		princessPane.setLayout(null);
-		addHover(princessPane);
 		setContentPane(princessPane);
 		
 		choicePane = new JPanel();
@@ -89,7 +89,6 @@ public class HoverTest extends JFrame {
 			e.printStackTrace();
 		}
 		PrincessTesting princess = new PrincessTesting(test.princessBuild);
-//		princess.setOutline(Color.RED,princess.dowry1);
 		choicePane.add(princess.provideInput());
 		
 		princessPane.add(choicePane);

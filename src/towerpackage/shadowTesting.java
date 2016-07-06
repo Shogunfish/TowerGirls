@@ -1,4 +1,4 @@
-package testing;
+package towerpackage;
 
 import java.awt.Color;
 import java.awt.Component;

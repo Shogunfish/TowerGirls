@@ -1,4 +1,4 @@
-package testing;
+package towerpackage;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics2D;
@@ -6,6 +6,7 @@ import java.awt.GraphicsEnvironment;
 
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 
 import java.awt.Image;
 import javax.swing.JLabel;
@@ -23,7 +24,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import net.miginfocom.swing.MigLayout;
-import testing.TextFileTesting.Princess1;
+import towerpackage.TextFileTesting.Princess1;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -33,6 +34,7 @@ public class PrincessTesting extends JPanel {
 
 	private JPanel contentPane;
 	JLabel dowry1 = new JLabel();
+	boolean[] itemChoices = new boolean[]{false,false,false};
 	
 	/**
 	 * Create the panel.
@@ -51,18 +53,12 @@ public class PrincessTesting extends JPanel {
 		//Grab fonts (should this be done every time? Ideally not)
 		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 		Font blockFont = null;
+		Font mainFont = null;
 		try {
 			blockFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/Fonts/04B_19__.ttf"));
 			ge.registerFont(blockFont);
 			blockFont.deriveFont(100f);
-		} catch (FontFormatException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		Font mainFont = null;
-		try {
+			
 			mainFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/Fonts/BebasNeue Bold.ttf"));
 			ge.registerFont(mainFont);
 		} catch (FontFormatException e) {
@@ -215,15 +211,23 @@ public class PrincessTesting extends JPanel {
 		desc.setFont(mainFont);
 		contentPane.add(desc, "cell 0 3, left");
 		
-		addChoice(dowry2);
-		addChoice(dowry2Img);
+		dowry1.setName("1");
+		dowry1Img.setName("1");
+		dowry2.setName("2");
+		dowry2Img.setName("2");
+
 		addChoice(dowry1);
 		addChoice(dowry1Img);
+		addChoice(dowry2);
+		addChoice(dowry2Img);
 	}
 	
 	void setChosen(Color color, Component comp) {
-//		if()
 		((JComponent) comp).setBorder(BorderFactory.createLineBorder(color));
+		
+		if(comp.getName().equals("1")) itemChoices[0] = !itemChoices[0];
+		
+		else if(comp.getName().equals("2")) itemChoices[1] = !itemChoices[1];
 	}
 	
 	void addChoice(Component comp) {
