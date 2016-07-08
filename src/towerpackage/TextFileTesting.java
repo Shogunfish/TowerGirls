@@ -5,18 +5,18 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TextFileTesting {
-	ArrayList<String> princess;
-	Princess1 princessBuild;
 	
 public TextFileTesting(){
 	}
 	
-public void readTextFile (String location, String princessName) throws IOException {
-		princess = new ArrayList<String>();
+public Princess1 readTextFile (String textLocation, String princessName) throws IOException {	
+	ArrayList<String> princess = new ArrayList<String>();
 		@SuppressWarnings("resource")
-		BufferedReader reader = new BufferedReader(new FileReader(location));
+		BufferedReader reader = new BufferedReader(new FileReader(textLocation));
 		String line = "";
 		while ((line = reader.readLine()) != null) {
 			if (line.equals("#" + princessName)) {
@@ -29,17 +29,13 @@ public void readTextFile (String location, String princessName) throws IOExcepti
 				break;
 			}
 		}
-		buildPrincess(princess);
-	}
-	
-public void buildPrincess (ArrayList<String> princessObject) {
-
-		Color princessColor = Color.decode("#" + princess.get(1));
-		princessBuild = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
+		//Build princess from arraylist
 		
-		princessBuild.dowry1 = new Item(princess.get(15),princess.get(15));
-		princessBuild.dowry2 = new Item(princess.get(16),princess.get(16));
-		princessBuild.lustGift = new Item(princess.get(18),princess.get(18));
+		Color princessColor = Color.decode("#" + princess.get(1));
+		Princess1 princessBuild = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
+		princessBuild.dowry1 = new Item(regexChecker(princess.get(15))[0].substring(0, regexChecker(princess.get(15))[0].length()-1), "src/Dowries/" + (regexChecker(princess.get(15))[0].substring(0, regexChecker(princess.get(15))[0].length()-1)) + ".png", regexChecker(princess.get(15))[1].substring(1, regexChecker(princess.get(15))[1].length()));
+		princessBuild.dowry2 = new Item(regexChecker(princess.get(16))[0].substring(0, regexChecker(princess.get(16))[0].length()-1), "src/Dowries/" + (regexChecker(princess.get(16))[0].substring(0, regexChecker(princess.get(16))[0].length()-1)) + ".png", regexChecker(princess.get(16))[1].substring(1, regexChecker(princess.get(16))[1].length()));
+		princessBuild.lustGift = new Item(regexChecker(princess.get(18))[0].substring(0, regexChecker(princess.get(18))[0].length()-1), "src/Lust items/" + (regexChecker(princess.get(18))[0].substring(0, regexChecker(princess.get(18))[0].length()-1)) + ".png", regexChecker(princess.get(18))[1].substring(1, regexChecker(princess.get(18))[1].length()));
 		
 		princessBuild.kinks = (new Preference[]{new Preference(princess.get(12),true), new Preference(princess.get(13),true)});
 		princessBuild.turnoff = new Preference(princess.get(14),false);
@@ -51,6 +47,22 @@ public void buildPrincess (ArrayList<String> princessObject) {
 		princessBuild.lust = Integer.parseInt(princess.get(9));
 		princessBuild.wealth = Integer.parseInt(princess.get(10));
 		princessBuild.power = Integer.parseInt(princess.get(11));
+		
+		return princessBuild;
+	}
+
+	String[] regexChecker(String str) {
+		Pattern regex = Pattern.compile("^[^\\-]*");
+	    Matcher regexMatcher = regex.matcher(str);
+	    if (regexMatcher.find()) {
+	    }
+	    regex = Pattern.compile("-(.*)");
+	    Matcher regexMatcher2 = regex.matcher(str);
+	    if (regexMatcher2.find()) {
+	    }
+	    
+	    String[] regexResult = new String[]{regexMatcher.group(0),regexMatcher2.group(1)};
+		return regexResult;
 	}
 
 

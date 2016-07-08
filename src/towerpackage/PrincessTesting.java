@@ -31,72 +31,100 @@ import java.awt.Dimension;
 public class PrincessTesting extends JPanel {
 
 	private JPanel contentPane;
-	JPanel middle;
 	boolean[] choices = new boolean[]{false,false};
 	
 	/**
 	 * Create the panel and add things to it.
 	 */
-	public PrincessTesting(Princess1 princess) {
-		//Set up containers
-		setBackground(Color.WHITE);
-		contentPane = new JPanel();
-		contentPane.setBackground(Color.WHITE);
-		contentPane.setLayout(new MigLayout("", "[350]", "[][][][]"));
+	public PrincessTesting(Item item) {
+		
+		if(item instanceof Princess1) {
+			Princess1 princess = (Princess1) item;
+			
+			//Set up containers
+			contentPane = new JPanel();
+			contentPane.setBackground(Color.WHITE);
+			contentPane.setLayout(new MigLayout("", "[350]", "[][][][]"));
+	
+			JPanel header = new JPanel();
+			header.setBackground(Color.WHITE);
+			contentPane.add(header, "cell 0 0");
+			header.setLayout(new MigLayout("", "[][]", "[][]"));
+			
+			JPanel middle = new JPanel();
+			contentPane.add(middle, "cell 0 1, grow");
+			middle.setLayout(new MigLayout("", "[][][]", "[][][][]"));
+			
+			JPanel bottom = new JPanel();
+			contentPane.add(bottom, "cell 0 2, grow");
+			bottom.setLayout(new MigLayout("", "[120][][]", "[][][]"));
+			
+			//Grab fonts (should this be done every time? Ideally not)
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			Font blockFont = grabFonts("src/Fonts/04B_19__.ttf");
+			ge.registerFont(blockFont);
+			Font mainFont = grabFonts("src/Fonts/BebasNeue Bold.ttf");
+			ge.registerFont(mainFont);
+			
+			//Add elements to card
+			addJLabel(null, "<html><font style='font-family:Bebas Neue Bold;font-size:15;'>" +princess.kingdom+"'s<br><font style='font-family:04b_19;font-size:20px;'>"+princess.name.toUpperCase()+" PRINCESS"+"</font></html>", null, princess.col, null, null, header, "cell 1 0", false);
+			addJLabel(null, "", null, null, princess.image, null, header, "cell 0 0 0 2,alignx left,aligny top", false);
+			addJLabel(null, "<html>+ " + princess.good[0] +"<br>+ " + princess.good[1] + "<br>+ " + princess.good[2] + "<br>- " + princess.bad[0] + "<br>- " + princess.bad[1] + "</html>", mainFont, null, null, null, header, "cell 1 1", false);
+			//Stats
+			addJLabel(null, "" , null, null, "src/Stat icons/Love.png", new Dimension(20,20), middle, "cell 0 0", false);
+			addJLabel(null, "" , null, null, "src/Stat icons/Lust.png", new Dimension(20,20), middle, "cell 0 1", false);
+			addJLabel(null, "" , null, null, "src/Stat icons/Wealth.png", new Dimension(20,20), middle, "cell 0 2", false);
+			addJLabel(null, "" , null, null, "src/Stat icons/Power.png", new Dimension(20,20), middle, "cell 0 3", false);
+			//Add stat boxes
+			int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
+			for(int i=0; i<4; i++) {
+				BoxTesting boxTest = new BoxTesting(stat[i],princess.col);
+				boxTest.setMinimumSize(new Dimension(90,20));
+				middle.add(boxTest, "cell 0 " + i + ",grow,flowy");
+			}
+			//Dowries
+			addJLabel("dowry1", "<html>" + princess.dowry1.name + " -<br>" + princess.dowry1.description + "</html>", mainFont, null, null, null, middle, "cell 2 0 1 2,left", true);
+			addJLabel("dowry1", "", null, null, princess.dowry1.image, new Dimension(30,40), middle, "cell 1 0 1 2", true);
+			addJLabel("dowry2", "<html>" + princess.dowry2.name + " -<br>" + princess.dowry2.description + "</html>", mainFont, null, null, null, middle, "cell 2 2 1 2,left", true);
+			addJLabel("dowry2", "", null, null, princess.dowry2.image, new Dimension(30,40), middle, "cell 1 2 1 2", true);
+			//Kinks
+			addJLabel(null, princess.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
+			addJLabel(null, princess.kinks[1].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 1", false);
+			addJLabel(null, princess.turnoff.name, mainFont, null, "src/Stat icons/Dislikes.png", new Dimension(20,20), bottom, "cell 0 2", false);
+			//Lust Item
+			addJLabel(null, "<html>" + princess.lustGift.name + " -<br>" + princess.lustGift.description + "</html>", mainFont, null, null, null, bottom, "cell 2 0 0 3", false);
+			addJLabel(null, "", null, null, princess.lustGift.image, new Dimension(40,40), bottom, "cell 1 0 0 3", false);
+			
+			addJLabel(null, "<html><font size='4'>\"" + princess.description+  "\"</font></html>", mainFont, princess.col, null, null, contentPane, "cell 0 3, left", false);
+		} else if(item instanceof Item) {
+			contentPane = new JPanel();
+			contentPane.setLayout(new MigLayout("", "[]", "[]"));
 
-		JPanel header = new JPanel();
-		header.setBackground(Color.WHITE);
-		contentPane.add(header, "cell 0 0");
-		header.setLayout(new MigLayout("", "[][]", "[][]"));
-		
-		middle = new JPanel();
-		contentPane.add(middle, "cell 0 1, grow");
-		middle.setLayout(new MigLayout("", "[120][][]", "[][][][]"));
-		
-		JPanel bottom = new JPanel();
-		contentPane.add(bottom, "cell 0 2, grow");
-		bottom.setLayout(new MigLayout("", "[120][][]", "[][][]"));
-		
-		//Grab fonts (should this be done every time? Ideally not)
-		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-		Font blockFont = grabFonts("src/Fonts/04B_19__.ttf");
-		ge.registerFont(blockFont);
-		Font mainFont = grabFonts("src/Fonts/BebasNeue Bold.ttf");
-		ge.registerFont(mainFont);
-		
-		//Add elements to card
-		addJLabel(null, "<html><font style='font-family:Bebas Neue Bold;font-size:15;'>" +princess.kingdom+"'s<br><font style='font-family:04b_19;font-size:20px;'>"+princess.name.toUpperCase()+" PRINCESS"+"</font></html>", null, princess.col, null, null, header, "cell 1 0", false);
-		addJLabel(null, "", null, null, princess.image, null, header, "cell 0 0 0 2,alignx left,aligny top", false);
-		addJLabel(null, "<html>+ " + princess.good[0] +"<br>+ " + princess.good[1] + "<br>+ " + princess.good[2] + "<br>- " + princess.bad[0] + "<br>- " + princess.bad[1] + "</html>", mainFont, null, null, null, header, "cell 1 1", false);
-		//Stats
-		addJLabel(null, "" , null, null, "src/Stat icons/Love.png", new Dimension(20,20), middle, "cell 0 0", false);
-		addJLabel(null, "" , null, null, "src/Stat icons/Lust.png", new Dimension(20,20), middle, "cell 0 1", false);
-		addJLabel(null, "" , null, null, "src/Stat icons/Wealth.png", new Dimension(20,20), middle, "cell 0 2", false);
-		addJLabel(null, "" , null, null, "src/Stat icons/Power.png", new Dimension(20,20), middle, "cell 0 3", false);
-		//Add stat boxes
-		int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
-		for(int i=0; i<4; i++) {
-			BoxTesting boxTest = new BoxTesting(stat[i],princess.col);
-			boxTest.setMinimumSize(new Dimension(90,20));
-			middle.add(boxTest, "cell 0 " + i + ",grow,flowy");
+			//Grab fonts (should this be done every time? Ideally not)
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			Font blockFont = grabFonts("src/Fonts/04B_19__.ttf");
+			ge.registerFont(blockFont);
+			Font mainFont = grabFonts("src/Fonts/BebasNeue Bold.ttf");
+			ge.registerFont(mainFont);
+			
+			JPanel header = new JPanel();
+			header.setBackground(Color.WHITE);
+			header.setLayout(new MigLayout("", "[70][270]", "[30][]"));
+			
+			JPanel panel1 = new JPanel();
+			panel1.setLayout(new MigLayout("", "[]", "[]"));
+			header.add(panel1, "cell 1 0");
+			
+			JPanel panel2 = new JPanel();
+			panel2.setLayout(new MigLayout("", "[]", "[]"));
+			header.add(panel2, "cell 1 1");
+			
+			addJLabel(null, "", null, null, item.image, null, header, "cell 0 0 0 2, center", false);
+			addJLabel(null, item.name.toUpperCase(), blockFont, null, null, null, panel1, "cell 0 0", false);
+			addJLabel(null, "<html>" + item.description + "</html>", mainFont, null, null, null, panel2, "cell 0 0", false);
+			
+			contentPane.add(header, "cell 0 0");
 		}
-		//Dowries
-		addJLabel("dowry1", "<html>" + regexChecker(princess.dowry1.name)[0] + "-<br>" + regexChecker(princess.dowry1.name)[1] + "</html>", mainFont, null, null, null, middle, "cell 2 0 1 2,left", true);
-		String dowryLoc = "/Dowries/" + regexChecker(princess.dowry1.name)[0];
-		addJLabel("dowry1", "", null, null, "src/" + dowryLoc.substring(0,dowryLoc.length()-1)+".png", new Dimension(30,40), middle, "cell 1 0 1 2", true);
-		addJLabel("dowry2", "<html>" + regexChecker(princess.dowry2.name)[0] + "-<br>" + regexChecker(princess.dowry2.name)[1] + "</html>", mainFont, null, null, null, middle, "cell 2 2 1 2,left", true);
-		dowryLoc = "/Dowries/" + regexChecker(princess.dowry2.name)[0];
-		addJLabel("dowry2", "", null, null, "src/" + dowryLoc.substring(0,dowryLoc.length()-1)+".png", new Dimension(30,40), middle, "cell 1 2 1 2", true);
-		//Kinks
-		addJLabel(null, princess.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
-		addJLabel(null, princess.kinks[1].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 1", false);
-		addJLabel(null, princess.turnoff.name, mainFont, null, "src/Stat icons/Dislikes.png", new Dimension(20,20), bottom, "cell 0 2", false);
-		//Lust Item
-		addJLabel(null, "<html>" + regexChecker(princess.lustGift.name)[0] + "-<br>" + regexChecker(princess.lustGift.name)[1] + "</html>", mainFont, null, null, null, bottom, "cell 2 0 0 3", false);
-		String lustLoc = "/Lust items/" + regexChecker(princess.lustGift.name)[0];
-		addJLabel(null, "", null, null, "src/" + lustLoc.substring(0,lustLoc.length()-1)+".png", new Dimension(40,40), bottom, "cell 1 0 0 3", false);
-		
-		addJLabel(null, "<html><font size='4'>\"" + princess.description+  "\"</font></html>", mainFont, princess.col, null, null, contentPane, "cell 0 3, left", false);
 	}
 	
 	/**

@@ -5,8 +5,9 @@ import java.util.ArrayList;
 class Item {
 		public String name;
 		public String image;
+		public String description;
 		
-		Item(String n, String i){name = n; image = i;}
+		Item(String n, String i, String d){name = n; image = i; description = d;}
 	}
 
 class Preference {
@@ -26,16 +27,14 @@ class Character extends Item
 	{
 	  Character(String n, String i, Color c, String k, String d) 
 	  {
-		  super(n,i); 
+		  super(n,i,d); 
 		  col = c;
 		  kingdom = k;
-		  description = d;
 		  effects = new ArrayList<Effect>();
 	  }
 	  
 	  public Color col;
 	  public String kingdom;
-	  public String description;
 	  
 	  public int love;
 	  public int lust;
@@ -80,7 +79,7 @@ class Wagon
 
 		public void add(Item item)
 		{
-			for(int i = 0; i<= spaces.length; i++)
+			for(int i = 0; i<= spaces.length-1; i++)
 			{
 				if(spaces[i]==null)
 				{
@@ -107,11 +106,11 @@ class Wagon
 		
 		public void removeItem(String name)
 		{
-			for(Item item : spaces)
+			for(int i=0; i<spaces.length; i++)
 			{
-				if(item.name.equals(name))
+				if(spaces[i] != null && spaces[i].name.equals(name))
 				{
-					item=null;
+					spaces[i]=null;
 				}
 			}
 		}
