@@ -23,6 +23,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JWindow;
+import javax.swing.border.LineBorder;
 
 //¯\_(:))_/¯
 //
@@ -51,8 +52,8 @@ public class HoverTest extends JFrame {
 	JPanel infoPane;
 	JPanel wagonPane;
 	
-	static Wagon wagon;
-	static ArrayList<Princess1> princesses = new ArrayList<Princess1>();
+	//static Wagon wagon;
+	//static ArrayList<Princess1> princesses = new ArrayList<Princess1>();
 	
 
 	/**
@@ -64,14 +65,16 @@ public class HoverTest extends JFrame {
 			public void run() {
 
 				//Make Wagon
-				wagon = new Wagon(4, "Wally");
+				GameManager game = new GameManager();
+				game.princesses1 = new ArrayList<Princess1>();
+				game.wagon1 = new Wagon(4, "Wally");
 				
 				//Populate princess array
 				TextFileTesting test = new TextFileTesting();
 				String[] princessNames = new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon","Template"};
 				for(String s : princessNames) {
 					try {
-						princesses.add(test.readTextFile("src/Text Files/Princesses.txt",s));
+						game.princesses1.add(test.readTextFile("src/Text Files/Princesses.txt",s));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -79,7 +82,7 @@ public class HoverTest extends JFrame {
 				
 				//Put out frame
 				try {
-					HoverTest frame = new HoverTest();
+					HoverTest frame = new HoverTest(game);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -90,8 +93,9 @@ public class HoverTest extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param game
 	 */
-	HoverTest() {
+	HoverTest(GameManager game) {
 		//Set Frame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 930, 550);
@@ -103,7 +107,7 @@ public class HoverTest extends JFrame {
 		princessPane.setSize(new Dimension(320,490));
 		princessPane.setBorder(BorderFactory.createLineBorder(Color.RED));
 		princessPane.setLocation(10,10);
-		princessPane();
+		princessPane(game);
 		add(princessPane);
 		
 		infoPane = new JPanel();
@@ -111,57 +115,57 @@ public class HoverTest extends JFrame {
 		infoPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		infoPane.setLocation(340,10);
 		add(infoPane);
-		changeInfoPane(princesses.get(princesses.size()-1));
+		changeInfoPane(game.princesses1.get(game.princesses1.size()-1), infoPane, game);
 
 		wagonPane = new JPanel();
 		wagonPane.setSize(new Dimension(170,490));
 		wagonPane.setBorder(BorderFactory.createLineBorder(Color.BLUE));
 		wagonPane.setLocation(730,10);
-		wagonPane();
+		wagonPane(game);
 		add(wagonPane);
 	}
 	
-	void princessPane() {
-			//Slap girls onto the window according to princessOrder
-			for(int i=0; i<princesses.size(); i++) 
+	/**
+	 * Build the left third: princessPane
+	 * @param game
+	 */
+	void princessPane(GameManager game) {
+			for(int i=0; i<game.princesses1.size(); i++) 
 			{
-				if(!Arrays.asList(wagon.spaces).contains(princesses.get(i))) 
+				if(!Arrays.asList(game.wagon1.spaces).contains(game.princesses1.get(i))) 
 				{
 					JLabel temp = new JLabel();
-					
-					//Set the name of the JLabel, used for lookup later
-					temp.setName(princesses.get(i).name);
+					temp.setName(game.princesses1.get(i).name);
 					princessPane.add(temp);
-						
-					//Paint the image (half size)
-					paintImage(princesses.get(i),temp);
-						
-					//Add mouse hover listener
-					addPrincessClick(temp, princesses.get(i));
+					paintImage(game.princesses1.get(i),temp);
+					addClick(temp, game.princesses1.get(i), game);
 				}
 			}
 	}
-	
-	void wagonPane() {
-		for(int i = 0; i < wagon.spaces.length ; i++)
+
+	/**
+	 * Build the right third: wagonPane
+	 * @param game
+	 */
+	void wagonPane(GameManager game) {
+		for(int i = 0; i < game.wagon1.spaces.length ; i++)
 			{
 				JLabel temp = new JLabel();
-				
-				if(wagon.spaces[i] != null) {
-					temp.setName(wagon.spaces[i].name);
+				if(game.wagon1.spaces[i] != null) {
+					temp.setName(game.wagon1.spaces[i].name);
 					wagonPane.add(temp);
-					paintImage(wagon.spaces[i], temp);
-					addWagonClick(temp, wagon.spaces[i]);
+					paintImage(game.wagon1.spaces[i], temp);
+					addClick(temp, game.wagon1.spaces[i], game);
 				}	
 			}
 	}
 
 	/**
 	 * Grabs girl from component name and resizes it, then slaps it onto JLabel
+	 * @param item
+	 * @param comp
 	 */
 	void paintImage(Item item, Component comp) {
-		comp.setName(item.name);
-		
 		BufferedImage bImg = null;
 		try {
 			bImg = ImageIO.read(new File(item.image));
@@ -179,109 +183,132 @@ public class HoverTest extends JFrame {
 		((JLabel) comp).setIcon(icon);
 	}
 
-	void addPrincessClick(Component comp, Princess1 p) {
+	/**
+	 * Add click listener to a component (princess or item)
+	 * @param comp
+	 * @param i
+	 * @param game
+	 */
+	void addClick(Component comp, Item i, GameManager game) {
 		comp.addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mouseClicked(MouseEvent me) {
-				changeInfoPane(p, comp);
+				changeInfoPane(i, comp, game);
 				
 			}
 		});
 	}
 	
-	void addWagonClick(Component comp, Item i) {
-		comp.addMouseListener(new MouseAdapter() {
-
-			@Override
-			public void mouseClicked(MouseEvent me) {
-				changeInfoPane(i, comp);
-				
-			}
-		});
-	}
-	
-	void changeInfoPane(Item i, Component comp) {
+	/**
+	 * Change the middle third: infoPane
+	 * @param i
+	 * @param comp
+	 * @param game
+	 */
+	void changeInfoPane(Item i, Component comp, GameManager game) {
 		infoPane.removeAll();
+		
+		//check if wagon shit
 		princessCard = new PrincessTesting(i);
 		infoPane.add(princessCard.provideInput());
-		JButton button = new JButton();
-		if(comp.getParent() == princessPane) {
-			button.setText("Add");
-		} else {
-			button.setText("Remove");
-		}
-		addButtonClick(i, button);
-		if(!i.name.equals("Template")) infoPane.add(button);
 		
-		if(i instanceof Item && !(i instanceof Princess1)) {
+		//Add button
+		JButton button = new JButton(); {
+			if(comp.getParent() == princessPane) {
+				button.setText("Add");
+				if(i instanceof Princess1) {
+					Princess1 p = (Princess1) i;
+					if(game.wagon1.contains(p.dowry1.name)) princessCard.removeDowries(1);
+					if(game.wagon1.contains(p.dowry2.name)) princessCard.removeDowries(2);
+				}
+			} else if(comp.getParent() == wagonPane) {
+				button.setText("Remove");
+				if(i instanceof Princess1) {
+					Princess1 p = (Princess1) i;
+					if(!game.wagon1.contains(p.dowry1.name)) princessCard.removeDowries(1);
+					if(!game.wagon1.contains(p.dowry2.name)) princessCard.removeDowries(2); 
+					
+					if((!p.dowry1.removable) || !p.dowry2.removable) {
+						button.setEnabled(false);
+					}
+				}
+				if(!i.removable) button.setEnabled(false);
+			}
+			addButtonClick(i, button, game);
+		};
+		if(!(comp == princessPane)) infoPane.add(button);
+		
+		if(i.useable) {
 			JButton useButton = new JButton("Use");
-			addButtonClick(i, useButton);
-			infoPane.add(useButton);
+			addButtonClick(i, useButton, game);
+			if(!(comp.getParent()==infoPane)) infoPane.add(useButton);
 		}
-		
 		infoPane.validate();
 		infoPane.repaint();
+		button.setBorder(BorderFactory.createLineBorder(Color.RED));
 	}
 	
-	void changeInfoPane(Princess1 p) {
-		infoPane.removeAll();
-		princessCard = new PrincessTesting(p);
-		infoPane.add(princessCard.provideInput());
-		infoPane.validate();
-		infoPane.repaint();
-	}
-	
-	void addButtonClick(Item i, Component comp) {
+	/**
+	 * Add click listener to the add/remove button 
+	 * @param i
+	 * @param comp
+	 * @param game
+	 */
+	void addButtonClick(Item i, Component comp, GameManager game) {
 		comp.addMouseListener(new MouseAdapter() {
 
 			@Override
 			public void mouseClicked(MouseEvent me) {
 				if(((AbstractButton) comp).getText().equals("Add")) {
-					wagon.add(i);
+					boolean succeed = game.wagon1.add(i);
 					//Add items
-					if(i instanceof Princess1) {
+					if(i instanceof Princess1 && succeed) {
 						Princess1 p = (Princess1) i;
-						if(princessCard.getChosen()[0]) wagon.add(p.dowry1);
-						if(princessCard.getChosen()[1]) wagon.add(p.dowry2);
+						if(princessCard.getChosen()[0]) game.wagon1.add(p.dowry1);
+						if(princessCard.getChosen()[1]) game.wagon1.add(p.dowry2);
 					}
 					((AbstractButton) comp).setText("Remove");
-					//Repaint 
-					wagonPane.removeAll();
-					wagonPane();
-					wagonPane.repaint();
-					
-					changeInfoPane(princesses.get(princesses.size()-1));
-					
-					princessPane.removeAll();
-					princessPane();
-					princessPane.repaint();
-					
+					updateFrame(game, game.princesses1.get(game.princesses1.size()-1));
 				} else if(((AbstractButton) comp).getText().equals("Remove")) {
 					if(i instanceof Princess1) {
 						Princess1 p = (Princess1) i;
-						wagon.removeItem(p.name);
-						wagon.removeItem(p.dowry1.name);
-						wagon.removeItem(p.dowry2.name);
-					} else if(i instanceof Item) {
-						wagon.removeItem(i.name);
-						changeInfoPane(princesses.get(princesses.size()-1));
+						
+						if((p.dowry1.removable) && p.dowry2.removable) {
+							game.wagon1.removeItem(p.name);
+							game.wagon1.removeItem(p.dowry1.name);
+							game.wagon1.removeItem(p.dowry2.name);
+
+							((AbstractButton) comp).setText("Add");
+						}
+					} else {
+						game.wagon1.removeItem(i.name);
+
+						((AbstractButton) comp).setText("Add");
 					}
-					
-					((AbstractButton) comp).setText("Add");
-					//Repaint 
-					wagonPane.removeAll();
-					wagonPane();
-					wagonPane.repaint();
-					
-					princessPane.removeAll();
-					princessPane();
-					princessPane.repaint();
+					updateFrame(game, game.princesses1.get(game.princesses1.size()-1));
 				} else if(((AbstractButton) comp).getText().equals("Use")) {
-					System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+					updateFrame(game, i.use(game));
 				}
 			}
 		});
+	}
+
+	/**
+	 * Update the entire frame.
+	 * @param game
+	 * @param i
+	 */
+	public void updateFrame(GameManager game, Item i) {
+		wagonPane.removeAll();
+		wagonPane(game);
+		wagonPane.repaint();
+		
+		changeInfoPane(i, princessPane, game);
+		
+		princessPane.removeAll();
+		princessPane(game);
+		princessPane.repaint();
 	}
 
 }

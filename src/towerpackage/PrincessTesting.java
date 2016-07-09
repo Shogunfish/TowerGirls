@@ -31,6 +31,7 @@ import java.awt.Dimension;
 public class PrincessTesting extends JPanel {
 
 	private JPanel contentPane;
+	private JPanel middle;
 	boolean[] choices = new boolean[]{false,false};
 	
 	/**
@@ -38,20 +39,28 @@ public class PrincessTesting extends JPanel {
 	 */
 	public PrincessTesting(Item item) {
 		
+
+		//Grab fonts (should this be done every time? Ideally not)
+		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+		Font blockFont = grabFonts("src/Fonts/04B_19__.ttf");
+		ge.registerFont(blockFont);
+		Font mainFont = grabFonts("src/Fonts/BebasNeue Bold.ttf");
+		ge.registerFont(mainFont);
+		
+		contentPane = new JPanel();
+		
+		JPanel header = new JPanel();
+		header.setBackground(Color.WHITE);
+		contentPane.add(header, "cell 0 0");
+		
 		if(item instanceof Princess1) {
 			Princess1 princess = (Princess1) item;
 			
-			//Set up containers
-			contentPane = new JPanel();
 			contentPane.setBackground(Color.WHITE);
 			contentPane.setLayout(new MigLayout("", "[350]", "[][][][]"));
-	
-			JPanel header = new JPanel();
-			header.setBackground(Color.WHITE);
-			contentPane.add(header, "cell 0 0");
 			header.setLayout(new MigLayout("", "[][]", "[][]"));
 			
-			JPanel middle = new JPanel();
+			middle = new JPanel();
 			contentPane.add(middle, "cell 0 1, grow");
 			middle.setLayout(new MigLayout("", "[][][]", "[][][][]"));
 			
@@ -59,34 +68,42 @@ public class PrincessTesting extends JPanel {
 			contentPane.add(bottom, "cell 0 2, grow");
 			bottom.setLayout(new MigLayout("", "[120][][]", "[][][]"));
 			
-			//Grab fonts (should this be done every time? Ideally not)
-			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			Font blockFont = grabFonts("src/Fonts/04B_19__.ttf");
-			ge.registerFont(blockFont);
-			Font mainFont = grabFonts("src/Fonts/BebasNeue Bold.ttf");
-			ge.registerFont(mainFont);
-			
 			//Add elements to card
+			//Title and pros/cons
 			addJLabel(null, "<html><font style='font-family:Bebas Neue Bold;font-size:15;'>" +princess.kingdom+"'s<br><font style='font-family:04b_19;font-size:20px;'>"+princess.name.toUpperCase()+" PRINCESS"+"</font></html>", null, princess.col, null, null, header, "cell 1 0", false);
 			addJLabel(null, "", null, null, princess.image, null, header, "cell 0 0 0 2,alignx left,aligny top", false);
 			addJLabel(null, "<html>+ " + princess.good[0] +"<br>+ " + princess.good[1] + "<br>+ " + princess.good[2] + "<br>- " + princess.bad[0] + "<br>- " + princess.bad[1] + "</html>", mainFont, null, null, null, header, "cell 1 1", false);
-			//Stats
-			addJLabel(null, "" , null, null, "src/Stat icons/Love.png", new Dimension(20,20), middle, "cell 0 0", false);
-			addJLabel(null, "" , null, null, "src/Stat icons/Lust.png", new Dimension(20,20), middle, "cell 0 1", false);
-			addJLabel(null, "" , null, null, "src/Stat icons/Wealth.png", new Dimension(20,20), middle, "cell 0 2", false);
-			addJLabel(null, "" , null, null, "src/Stat icons/Power.png", new Dimension(20,20), middle, "cell 0 3", false);
-			//Add stat boxes
-			int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
+			//Stat icons	
+			String[] stats = new String[]{"Love","Lust","Wealth","Power"};
 			for(int i=0; i<4; i++) {
-				BoxTesting boxTest = new BoxTesting(stat[i],princess.col);
-				boxTest.setMinimumSize(new Dimension(90,20));
-				middle.add(boxTest, "cell 0 " + i + ",grow,flowy");
+				addJLabel(null, "" , null, null, "src/Stat icons/" + stats[i] + ".png", new Dimension(20,20), middle, "cell 0 " + i , false);
+			}
+			boolean template = false;
+			if(!princess.name.equals("Template")) {
+				//Add stat boxes
+				int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
+				for(int i=0; i<4; i++) {
+					BoxTesting boxTest = new BoxTesting(stat[i],princess.col);
+					boxTest.setMinimumSize(new Dimension(90,20));
+					middle.add(boxTest, "cell 0 " + i);
+				} 
+			} else {
+				//add Stat names
+				for(int i=0; i<4; i++) {
+					addJLabel("statNames", "   " + stats[i] + "   0 - 5", mainFont, null, null, null, middle, "cell 0 " + i + ",  w 170", false);
+				}
+				borderPaint("statNames", false, middle, Color.BLACK);
+				template = true;
 			}
 			//Dowries
-			addJLabel("dowry1", "<html>" + princess.dowry1.name + " -<br>" + princess.dowry1.description + "</html>", mainFont, null, null, null, middle, "cell 2 0 1 2,left", true);
-			addJLabel("dowry1", "", null, null, princess.dowry1.image, new Dimension(30,40), middle, "cell 1 0 1 2", true);
-			addJLabel("dowry2", "<html>" + princess.dowry2.name + " -<br>" + princess.dowry2.description + "</html>", mainFont, null, null, null, middle, "cell 2 2 1 2,left", true);
-			addJLabel("dowry2", "", null, null, princess.dowry2.image, new Dimension(30,40), middle, "cell 1 2 1 2", true);
+			if(princess.dowry1 != null) {
+				addJLabel("dowry1", "<html>" + princess.dowry1.name + " -<br>" + princess.dowry1.description + "</html>", mainFont, null, null, null, middle, "cell 2 0 1 2,left", !template);
+				addJLabel("dowry1", "", null, null, princess.dowry1.image, new Dimension(30,40), middle, "cell 1 0 1 2", !template);
+			}
+			if(princess.dowry2 != null) {
+				addJLabel("dowry2", "<html>" + princess.dowry2.name + " -<br>" + princess.dowry2.description + "</html>", mainFont, null, null, null, middle, "cell 2 2 1 2,left", !template);
+				addJLabel("dowry2", "", null, null, princess.dowry2.image, new Dimension(30,40), middle, "cell 1 2 1 2", !template);
+			}
 			//Kinks
 			addJLabel(null, princess.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
 			addJLabel(null, princess.kinks[1].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 1", false);
@@ -96,19 +113,10 @@ public class PrincessTesting extends JPanel {
 			addJLabel(null, "", null, null, princess.lustGift.image, new Dimension(40,40), bottom, "cell 1 0 0 3", false);
 			
 			addJLabel(null, "<html><font size='4'>\"" + princess.description+  "\"</font></html>", mainFont, princess.col, null, null, contentPane, "cell 0 3, left", false);
+		
 		} else if(item instanceof Item) {
-			contentPane = new JPanel();
 			contentPane.setLayout(new MigLayout("", "[]", "[]"));
-
-			//Grab fonts (should this be done every time? Ideally not)
-			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			Font blockFont = grabFonts("src/Fonts/04B_19__.ttf");
-			ge.registerFont(blockFont);
-			Font mainFont = grabFonts("src/Fonts/BebasNeue Bold.ttf");
-			ge.registerFont(mainFont);
 			
-			JPanel header = new JPanel();
-			header.setBackground(Color.WHITE);
 			header.setLayout(new MigLayout("", "[70][270]", "[30][]"));
 			
 			JPanel panel1 = new JPanel();
@@ -122,8 +130,6 @@ public class PrincessTesting extends JPanel {
 			addJLabel(null, "", null, null, item.image, null, header, "cell 0 0 0 2, center", false);
 			addJLabel(null, item.name.toUpperCase(), blockFont, null, null, null, panel1, "cell 0 0", false);
 			addJLabel(null, "<html>" + item.description + "</html>", mainFont, null, null, null, panel2, "cell 0 0", false);
-			
-			contentPane.add(header, "cell 0 0");
 		}
 	}
 	
@@ -152,26 +158,7 @@ public class PrincessTesting extends JPanel {
 		}
 		comp.add(temp, location);
 	}
-	
-	/**
-	 * Checks a string using regex.
-	 * @param str
-	 * @return String array of regex matched (2 items)--first "Words words -" then "description description"
-	 */
-	String[] regexChecker(String str) {
-		Pattern regex = Pattern.compile("^[^\\-]*");
-        Matcher regexMatcher = regex.matcher(str);
-        if (regexMatcher.find()) {
-        }
-        regex = Pattern.compile("-(.*)");
-        Matcher regexMatcher2 = regex.matcher(str);
-        if (regexMatcher2.find()) {
-        }
-        
-        String[] regexResult = new String[]{regexMatcher.group(0),regexMatcher2.group(1)};
-		return regexResult;
-	}
-	
+		
 	/**
 	 * Called to grab fonts from src file location.
 	 * @param src
@@ -189,14 +176,30 @@ public class PrincessTesting extends JPanel {
 	}
 	
 	/**
+	 * Removes dowry from card
+	 * @param whichDowry
+	 */
+	void removeDowries(int whichDowry) {
+		Component[] components = ((Container) middle).getComponents();
+		ArrayList<String> s = new ArrayList<String>();
+		s.add("dowry" + whichDowry);
+		for(int q=0; q<s.size(); q++) {
+			for(int i=0; i<components.length; i++) {
+				if(components[i].getName() != null && components[i].getName().equals(s.get(q))) {
+					components[i].getParent().remove(components[i]);
+				}
+			}
+		}
+	}
+	
+	/**
 	 * Get what items have been chosen
 	 * @return array of choices
 	 */
 	boolean[] getChosen() {
 		return choices;
 	}
-	
-	
+		
 	/**
 	 * Add mouselistener that calls borderPaint, checking whether the item has been chosen already
 	 * @param comp
@@ -208,16 +211,16 @@ public class PrincessTesting extends JPanel {
 				//check if chosen
 				if(comp.getName().equals("dowry1")) {
 					if(choices[0]) {
-						borderPaint("dowry1", true, comp.getParent());
+						borderPaint("dowry1", true, comp.getParent(), Color.RED);
 					} else {
-						borderPaint("dowry1", false, comp.getParent());
+						borderPaint("dowry1", false, comp.getParent(), Color.RED);
 					}
 					choices[0] = !choices[0];
 				} else if(comp.getName().equals("dowry2")) {
 					if(choices[1]) {
-						borderPaint("dowry2", true, comp.getParent());
+						borderPaint("dowry2", true, comp.getParent(), Color.RED);
 					} else {
-						borderPaint("dowry2", false, comp.getParent());
+						borderPaint("dowry2", false, comp.getParent(), Color.RED);
 					}
 					choices[1] = !choices[1];
 				}
@@ -230,12 +233,13 @@ public class PrincessTesting extends JPanel {
 	 * @param compName
 	 * @param hasBorder
 	 * @param parent
+	 * @param color
 	 */
-	void borderPaint(String compName, boolean hasBorder, Component parent) {
+	void borderPaint(String compName, boolean hasBorder, Component parent, Color color) {
 		Component[] components = ((Container) parent).getComponents();
 		for(int i=0; i<components.length; i++) {
 			if(components[i].getName() != null && components[i].getName().equals(compName)) {
-				if(!hasBorder) ((JComponent) components[i]).setBorder(BorderFactory.createLineBorder(Color.RED));
+				if(!hasBorder) ((JComponent) components[i]).setBorder(BorderFactory.createLineBorder(color));
 				else ((JComponent) components[i]).setBorder(BorderFactory.createEmptyBorder());
 			}
 		}
