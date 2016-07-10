@@ -33,9 +33,9 @@ public Princess1 readTextFile (String textLocation, String princessName) throws 
 		
 		Color princessColor = Color.decode("#" + princess.get(1));
 		Princess1 princessBuild = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
-		princessBuild.dowry1 = new Item(regexChecker(princess.get(15))[0].substring(0, regexChecker(princess.get(15))[0].length()-1), "src/Dowries/" + (regexChecker(princess.get(15))[0].substring(0, regexChecker(princess.get(15))[0].length()-1)) + ".png", regexChecker(princess.get(15))[1].substring(1, regexChecker(princess.get(15))[1].length()));
-		princessBuild.dowry2 = new Item(regexChecker(princess.get(16))[0].substring(0, regexChecker(princess.get(16))[0].length()-1), "src/Dowries/" + (regexChecker(princess.get(16))[0].substring(0, regexChecker(princess.get(16))[0].length()-1)) + ".png", regexChecker(princess.get(16))[1].substring(1, regexChecker(princess.get(16))[1].length()));
-		princessBuild.lustGift = new Item(regexChecker(princess.get(18))[0].substring(0, regexChecker(princess.get(18))[0].length()-1), "src/Lust items/" + (regexChecker(princess.get(18))[0].substring(0, regexChecker(princess.get(18))[0].length()-1)) + ".png", regexChecker(princess.get(18))[1].substring(1, regexChecker(princess.get(18))[1].length()));
+		princessBuild.dowry1 = new Item(regexChecker(princess.get(15))[0], "src/Dowries/" + regexChecker(princess.get(15))[0] + ".png", regexChecker(princess.get(15))[1]);
+		princessBuild.dowry2 = new Item(regexChecker(princess.get(16))[0], "src/Dowries/" + regexChecker(princess.get(16))[0] + ".png", regexChecker(princess.get(16))[1]);
+		princessBuild.lustGift = new Item(regexChecker(princess.get(18))[0], "src/Lust items/" + regexChecker(princess.get(18))[0] + ".png", regexChecker(princess.get(18))[1]);
 		
 		princessBuild.kinks = (new Preference[]{new Preference(princess.get(12),true), new Preference(princess.get(13),true)});
 		princessBuild.turnoff = new Preference(princess.get(14),false);
@@ -52,15 +52,14 @@ public Princess1 readTextFile (String textLocation, String princessName) throws 
 	}
 
 	String[] regexChecker(String str) {
-		Pattern regex = Pattern.compile("^[^\\-]*");
+		Pattern regex = Pattern.compile("^.*?(?= - )");
 	    Matcher regexMatcher = regex.matcher(str);
 	    if (regexMatcher.find()) {
 	    }
-	    regex = Pattern.compile("-(.*)");
+	    regex = Pattern.compile(" - (.*)");
 	    Matcher regexMatcher2 = regex.matcher(str);
 	    if (regexMatcher2.find()) {
 	    }
-	    
 	    String[] regexResult = new String[]{regexMatcher.group(0),regexMatcher2.group(1)};
 		return regexResult;
 	}
