@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-class Item {
+	class Item {
 		public String name;
 		public String image;
 		public String description;
@@ -13,108 +13,59 @@ class Item {
 		public boolean removable;
 		public static List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer");
 		
-		Item(String n, String i, String d)
-		{
+		Item(String n, String i, String d) {
 			name = n; 
 			image = i; 
 			description = d; 
 			removable=true;
-			if(useableItems.contains(n))
-			{
+			if(useableItems.contains(n)) {
 				useable=true;
 			}
-			else
-			{
+			else {
 				useable=false;
 			}
-			
 		}
 		
 		
 		/*
 		 * This method manages the activated abilities of certain items which must be useable during the picking stage
-		 * 
-		 * Currently it takes no inputs, but will eventually need to
 		 */
-		public Item use(GameManager game)
-		{
-			Scanner reader = new Scanner(System.in);
-			
-			Item itemChosen = null;
-			if(useable)
-			{
-				if(name.equals("Amethyst Gossamer"))
-				{
-					String target = reader.nextLine();
-					
-					for(Princess1 p : game.princesses1)
-					{
-						if(p.dowry1.name.equals(target))
-						{
+		public Item use(GameManager game, Item usedItem, Item chosenItem) {
+			if(usedItem.name.equals("Amethyst Gossamer")) {
+				for(Princess1 p : game.princesses1) {
+						if(p.dowry1.name.equals(chosenItem.name)) {
 							game.wagon1.removeItem("Amethyst Gossamer");
 							game.wagon1.add(p.dowry1);
-							itemChosen = p.dowry1;
+							return p.dowry1;
 						}
-						else if(p.dowry2.name.equals(target))
-						{
+						else if(p.dowry2.name.equals(chosenItem.name)) {
 							game.wagon1.removeItem("Amethyst Gossamer");
 							game.wagon1.add(p.dowry2);
-							itemChosen = p.dowry2;
+							return p.dowry2;
 						}
 					}
-					useable=false;
-				}
-				else if(name.equals("Encrusted Chest"))
-				{
-					String target = reader.nextLine();
-					int dowry = reader.nextInt();
-					Item replace = null;
-					for(Item i : game.wagon1.spaces)
-					{
-						
-						if(i != null && i.name.equals(target))
-						{
-							if(dowry==1) replace=((Princess1)i).dowry1;
-							else if(dowry==2) replace=((Princess1)i).dowry2;
-						}
-					}
-					if(replace != null && !game.wagon1.contains(replace.name))
-					{
-					game.wagon1.removeItem(target);
-					game.wagon1.add(replace);
-					itemChosen = replace;
-					}
-				}
-				else if(name.equals("Wizard Master"))
-				{
-					System.out.println(name);
-				}
-				else if(name.equals("Huntress Master"))
-				{
-					System.out.println(name);
-				}
-				else if(name.equals("Squire Courtier"))
-				{
-					System.out.println(name);
-				}
+			} else if(name.equals("Wizard Master")) {
+				System.out.println(name);
 			}
-			//Make sure it's setting whatever is getting chosen as unremovable?
-
-			removable = false;
-			return itemChosen;
+			else if(name.equals("Huntress Master")) {
+				System.out.println(name);
+			}
+			else if(name.equals("Squire Courtier")) {
+				System.out.println(name);
+			}
+			return null;
 		}
 	
 		/*
 		 * This blank method will eventually be used when effects are applied to characters at the end of the game, whenever an item 
 		 * has an effect that applies to only certain princesses this will choose targets and apply them
 		 */
-		public void apply()
-		{
+		public void apply() {
 			
 		}
-}
+	}
 
-class Preference {
+	class Preference {
 	  public String name;
 	  public Boolean good;
 	  
@@ -127,8 +78,7 @@ class Preference {
 	//  }
 	}
 
-class Character extends Item
-	{
+	class Character extends Item {
 	  Character(String n, String i, Color c, String k, String d) 
 	  {
 		  super(n,i,d); 
@@ -253,28 +203,17 @@ class Wagon
 				}
 			}
 		}
-		
-		public int getWealth()
+		public int[] getStats()
 		{
-			int out=0;
+			int[] out = new int[]{0,0,0,0};
 			for(Item i : spaces)
 			{
 				if(i!=null && i instanceof Character)
 				{
-					out+= ((Character)i).wealth;
-				}
-			}
-			return out;
-		}
-		
-		public int getPower()
-		{
-			int out=0;
-			for(Item i : spaces)
-			{
-				if(i!=null && i instanceof Character)
-				{
-					out+= ((Character)i).power;
+					out[0] += ((Character)i).love;
+					out[1] += ((Character)i).lust;
+					out[2] += ((Character)i).wealth;
+					out[3] += ((Character)i).power;
 				}
 			}
 			return out;
