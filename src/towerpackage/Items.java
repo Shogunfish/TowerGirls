@@ -26,35 +26,6 @@ import java.util.Scanner;
 			}
 		}
 		
-		
-		/*
-		 * This method manages the activated abilities of certain items which must be useable during the picking stage
-		 */
-		public Item use(GameManager game, Item usedItem, Item chosenItem) {
-			if(usedItem.name.equals("Amethyst Gossamer")) {
-				for(Princess1 p : game.princesses1) {
-						if(p.dowry1.name.equals(chosenItem.name)) {
-							game.wagon1.removeItem("Amethyst Gossamer");
-							game.wagon1.add(p.dowry1);
-							return p.dowry1;
-						}
-						else if(p.dowry2.name.equals(chosenItem.name)) {
-							game.wagon1.removeItem("Amethyst Gossamer");
-							game.wagon1.add(p.dowry2);
-							return p.dowry2;
-						}
-					}
-			} else if(name.equals("Wizard Master")) {
-				System.out.println(name);
-			}
-			else if(name.equals("Huntress Master")) {
-				System.out.println(name);
-			}
-			else if(name.equals("Squire Courtier")) {
-				System.out.println(name);
-			}
-			return null;
-		}
 	
 		/*
 		 * This blank method will eventually be used when effects are applied to characters at the end of the game, whenever an item 
@@ -155,16 +126,36 @@ class Wagon
 		public String name;
 		public Item[] spaces;
 		public ArrayList<Effect> effects;
+		public boolean huntress;
 		
 		public Wagon(int slots, String n)
 		{ 
 			spaces = new Item[slots+1];
 			name = n;
 			effects = new ArrayList<Effect>();
+			huntress = false;
 		}
 
 		public boolean add(Item item)
 		{
+			
+			//If you have added the Huntress and add another princess you may no longer remove Huntress
+			if(huntress)
+			{
+				for(int i = 0; i<spaces.length-1; i++)
+				{
+					if(spaces[i].name.equals("Huntress Master"))
+					{
+						spaces[i].removable=false;
+					}
+				}
+			}
+			
+			//If you are adding Huntress her effect activates
+			if (item.name.equals("Huntress Master"))
+			{
+				huntress=true;
+			}
 			boolean succeed = false;
 			for(int i = 0; i<= spaces.length-1; i++)
 			{
@@ -199,6 +190,12 @@ class Wagon
 			{
 				if(spaces[i] != null && spaces[i].removable && spaces[i].name.equals(name))
 				{
+					
+					//if you are removing Huntress her effect deactivates
+					if(name.equals("Huntress Master"))
+					{
+					huntress = false;
+					}
 					spaces[i]=null;
 				}
 			}
