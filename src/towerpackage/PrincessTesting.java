@@ -37,7 +37,7 @@ public class PrincessTesting extends JPanel {
 	/**
 	 * Create the panel and add things to it.
 	 */
-	public PrincessTesting(Item item) {
+	public PrincessTesting(Item item, GameManager game) {
 		
 
 		//Grab fonts (should this be done every time? Ideally not)
@@ -158,12 +158,15 @@ public class PrincessTesting extends JPanel {
 				template = true;
 			}
 			
-			addJLabel("Totem", "", null, null, princess.totem.image, new Dimension(40,80), middle, "cell 2 0 1 4", !template);
-			addJLabel(null, princess.totem.name, mainFont, princess.col, null, null, middle, "cell 3 0", false);
-			
-			if(princess.totem.whichEffect != 2) addJLabel("Worship", "<html><font color = 'black'>Worshipped - </font><font color = '516290' size = '4'>" + princess.totem.worship + "</font></html>", mainFont, null, null, null, middle, "cell 3 1", !template);
-			if(princess.totem.whichEffect != 1) addJLabel("Renounce", "<html><font color = 'black'>Renounced - </font><font color = '742f44' size = '4'>" + princess.totem.renounce + "</font></html>", mainFont, null, null, null, middle, "cell 3 2 0 2", !template);
-			
+			if(!game.getWagon().contains(princess.totem.name)) {
+				addJLabel("Totem", "", null, null, princess.totem.image, new Dimension(40,80), middle, "cell 2 0 1 4", !template);
+				addJLabel(null, princess.totem.name, mainFont, princess.col, null, null, middle, "cell 3 0", false);
+				
+				
+				if(princess.totem.whichEffect != 2) addJLabel("Worship", "<html><font color = 'black'>Worshipped - </font><font color = '516290' size = '4'>" + princess.totem.worship + "</font></html>", mainFont, null, null, null, middle, "cell 3 1", !template);
+				
+				if(princess.totem.whichEffect != 1) addJLabel("Renounce", "<html><font color = 'black'>Renounced - </font><font color = '742f44' size = '4'>" + princess.totem.renounce + "</font></html>", mainFont, null, null, null, middle, "cell 3 2 0 2", !template);
+			}
 			//Kinks
 			addJLabel(null, princess.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
 			addJLabel(null, princess.kinks[1].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 1", false);
@@ -173,6 +176,25 @@ public class PrincessTesting extends JPanel {
 			addJLabel(null, "", null, null, princess.lustGift.image, new Dimension(40,40), bottom, "cell 1 0 0 3", false);
 			
 			addJLabel(null, "<html><font size='4'>\"" + princess.description+  "\"</font></html>", mainFont, princess.col, null, null, contentPane, "cell 0 3, left", false);
+		
+		} else if(item instanceof Totem) {
+			Totem t = (Totem)item;
+			contentPane.setLayout(new MigLayout("", "[]", "[]"));
+			
+			header.setLayout(new MigLayout("", "[70][270]", "[30][]"));
+			
+			JPanel panel1 = new JPanel();
+			panel1.setLayout(new MigLayout("", "[]", "[]"));
+			header.add(panel1, "cell 1 0");
+			
+			JPanel panel2 = new JPanel();
+			panel2.setLayout(new MigLayout("", "[]", "[]"));
+			header.add(panel2, "cell 1 1");
+			
+			addJLabel(null, "", null, null, item.image, null, header, "cell 0 0 0 2, center", false);
+			addJLabel(null, item.name.toUpperCase(), blockFont, null, null, null, panel1, "cell 0 0", false);
+			if(t.whichEffect != 2) addJLabel("Totem", "<html><font color='black'>Worship: <font color='516290'>" + t.worship + "</font></html>", mainFont, null, null, null, panel2, "cell 0 0", false);
+			if(t.whichEffect != 1) addJLabel("Totem", "<html><font color='black'>Renounce: <font color='742f44'>" + t.renounce + "</font></html>", mainFont, null, null, null, panel2, "cell 0 0", false);
 			
 		} else if(item instanceof Item) {
 			contentPane.setLayout(new MigLayout("", "[]", "[]"));

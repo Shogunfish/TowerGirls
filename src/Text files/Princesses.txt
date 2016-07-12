@@ -840,10 +840,10 @@ Biting
 Subservience
 Kamasutra
 Goerica, Goddess of Plagues
-Citizens cannot die from diseases and accidental deaths
+Citizens cannot die from diseases or accidents
 Gain the desire to bite and be bitten by other people
 Frankenstein's Bolt - Gives a small sensual shock when pressed against skin
-Considered the least revolting of her zombie king, this princess wants to quell the fears that surround her kind. This has not been a simple task.
+Considered the least revolting of her kind, this princess wants to quell the fears that surround her people. A difficult task.
 
 #Plant
 8abd70
@@ -861,10 +861,10 @@ Tentacles
 Being watered
 Stray roots
 Chloelle, Goddess of Growth
-Kingdom will always have a bountiful season of crops
+Kingdom will always have bountiful harvests
 Cursed with a set of tentacles Grafted to your back
 Budding Rose - Hypnotizing scent
-Bloomed into existance and hasn't done much else. This princess prefers a life of staying at home and lazing about. She loves to eat and sleep.
+Bloomed into existence and hasn't done much else. This princess prefers a lazy life. She wasn't hard to kidnap.
 
 #Witch
 7d0c0e
@@ -885,7 +885,7 @@ Pridellius, God of Death & Magic
 Kingdoms gain a plethora of magic schools
 Every night, you are cursed to become a werecreature
 Black Broomstick - Vibrates at the owner's command
-Though she might appear human, the witch princess is anything but. Her mansion is home to a myriad of spooky creatures who worship her magic
+Though she might appear human, the witch princess is anything but. Her mansion is home to a myriad of spooky creatures.
 
 #Fairy
 f87690
@@ -902,7 +902,7 @@ Grinds on you constantly
 Public sex
 Cum inflation
 Cum on wings
-Panthius, God of Trickery
+Panthus, God of Trickery
 Kingdom's mirth is increased tenfold
 You begin to leak cum when you see someone you like
 Pixie's Stockings - Warer's orifices can be stretched beyond their limits without pain
@@ -966,10 +966,10 @@ Deep kissing
 Tonguejob
 Inflation
 Perogelch, God of the Rivers
-Kingdom is abundant with delicious and fragrant water
+Kingdom is abundant with delicious water
 Limbs become rubbery and stretchable
 Lily's Pad - A bed that absorbs moisture for intense lovemaking
-A princess with unusual tastes, she tends to say things matter-of-factly. It is unknown where here frog-like features end and the human ones begin.
+A rather odd princess who lives in a marshy kingdom. Maybe it would help if someone kissed her?
 
 #Angel
 baada4
@@ -1133,7 +1133,7 @@ Punishes you if you fail a riddle
 Erotic literature
 Penis Inspection
 Naughtiness
-Freyda, the Ancient Dragon of Ice
+Freyda, Ancient Dragon of Ice
 Steal a max lust gift or worship bonus from a princess
 All renounced effects are applied to your own party
 Vanilla Ice - Protects you from the biting cold of ice, ice baby
@@ -1154,7 +1154,7 @@ someone please marry her already
 Anything
 Seriously
 Netorare
-Santun, Goddess of the Heavy Drink
+Santun, Goddess of Inebriation
 Kingdom turns into a large seaworthy fleet
 For every princess you marry, pirate princess drinks heavily
 Lost Dubloon - If heads, partner tops, if tails, partner is bottom

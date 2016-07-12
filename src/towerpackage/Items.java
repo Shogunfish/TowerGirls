@@ -11,7 +11,7 @@ import java.util.Scanner;
 		public String description;
 		public boolean useable;
 		public boolean removable;
-		public static List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer");
+		public static List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer", "Freyda, Ancient Dragon of Ice");
 		
 		Item(String n, String i, String d) {
 			name = n; 
@@ -167,18 +167,18 @@ class Wagon
 			}
 			return succeed;
 		}
-		public void add(Effect effect)
+		public void addEffect(Effect effect)
 		{
 			effects.add(effect);
 		}
 		
 		public void removeEffect(String name)
 		{
-			for(Effect effect : effects)
+			for(int i = 0; i < effects.size(); i++)
 			{
-				if(effect.name.equals(name))
+				if(effects.get(i).name.equals(name))
 				{
-					effect=null;
+					effects.remove(i);
 				}
 			}
 		}
@@ -210,10 +210,21 @@ class Wagon
 					out[1] += ((Character)i).lust;
 					out[2] += ((Character)i).wealth;
 					out[3] += ((Character)i).power;
-					
-					
+				}
+				
+				
+			}
+			for(Effect e : effects)
+			{
+				if(e instanceof Totem)
+				{
+				for(int j = 0; j<4; j++)
+				{
+					out[j] += ((Totem)e).cost[j];
+				}
 				}
 			}
+			
 			return out;
 		}
 		
@@ -222,24 +233,39 @@ class Wagon
 			boolean b = false;
 			for(Item i : spaces)
 			{
-				if (i!=null && i.name.equals(s)) b = true;
+				boolean isLustItem = (i!=null) && ((i instanceof Princess1 && ((Princess1)i).lustGift.name.equals(s)) || (i instanceof Princess2 && ((Princess2)i).lustGift.name.equals(s)) || (i instanceof Princess3 && ((Princess3)i).lustGift.name.equals(s)));
+				if(i!=null && i.name.equals(s)) b = true;
+				if(isLustItem) b=true;
 			}
+			for(Effect e : effects) {
+				if (e!=null && e.name.equals(s)) b = true;
+			}
+			
+			
 			return b;
+		}
+
+		public boolean hasWorship() {
+			// TODO Auto-generated method stub
+			boolean out = false;
+			
+			for(Effect e : effects)
+			{
+				if(e!=null && e instanceof Totem && ((Totem)e).whichEffect == 1)
+				{
+					out = true;
+				}
+			}
+			return out;
 		}
 	}
 
 	//For things that don't take up space but have effects
-class Effect 
+class Effect extends Item
 	{
-		public String name;
-		public String image;
-		public int[] cost;
-		
-		public Effect(String n, String i)
-		{
-			name = n;
-			image = i;
-			cost = new int[]{0,0,0,0};
+		Effect(String n, String i) {
+			super(n, i, null);
+			// TODO Auto-generated constructor stub
 		}
 	}
 
@@ -248,12 +274,15 @@ class Totem extends Effect
 	public String worship;
 	public String renounce;
 	public int whichEffect;
+	public int[] cost;
 
 	public Totem(String n, String i, String w, String r) {
 		super(n, i);
+		cost = new int[] {0,0,0,0};
 		worship = w;
 		renounce = r;
 		whichEffect = 0;
+		description = null;
 	}
 	
 	public String getEffect()
