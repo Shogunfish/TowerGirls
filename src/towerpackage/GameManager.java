@@ -26,7 +26,7 @@ public class GameManager {
 		pageNumber=1;
 	}
 	
-	public ArrayList<Princess1> getPrincess1list()
+	public ArrayList<Princess1> getPrincess1List()
 	{
 		
 		if(pageNumber==2)
@@ -41,7 +41,7 @@ public class GameManager {
 	
 	public ArrayList<Princess2> getPrincess2List()
 	{
-		return null;
+		return princesses3;
 	}
 	
 	public Wagon getWagon()
@@ -51,7 +51,11 @@ public class GameManager {
 		{
 			return wagon2;
 		}
-		else
+		else if(pageNumber==3) 
+		{
+			return wagon3;
+		} 
+		else 
 		{
 			return wagon1;
 		}

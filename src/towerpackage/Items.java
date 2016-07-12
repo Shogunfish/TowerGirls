@@ -93,9 +93,7 @@ class Princess1 extends Character
 
 class Princess2 extends Character
 	{
-	
-	public Effect worship;
-	public Effect renounce;
+	public Totem totem;
 	public Item lustGift;
 
 	Princess2(String n, String i, Color c, String k, String d) 
@@ -232,5 +230,42 @@ class Effect
 	{
 		public String name;
 		public String image;
-		public String description;
+		
+		public Effect(String n, String i)
+		{
+			name = n;
+			image = i;
+		}
 	}
+
+class Totem extends Effect
+{
+	public String worship;
+	public String renounce;
+	public int whichEffect;
+
+	public Totem(String n, String i, String w, String r) {
+		super(n, i);
+		worship = w;
+		renounce = r;
+		whichEffect = 0;
+	}
+	
+	public String getEffect()
+	{
+		if(whichEffect== 0)
+		{
+			return (worship + " - " + renounce);
+		}
+		else if(whichEffect==1)
+		{
+			return worship;
+		}
+		else if(whichEffect==2)
+		{
+			return renounce;
+		}
+		else return "Something got fucked up";
+	}
+	
+}

@@ -114,6 +114,65 @@ public class PrincessTesting extends JPanel {
 			
 			addJLabel(null, "<html><font size='4'>\"" + princess.description+  "\"</font></html>", mainFont, princess.col, null, null, contentPane, "cell 0 3, left", false);
 		
+		} else if(item instanceof Princess2) {
+			
+			Princess2 princess = (Princess2) item;
+			
+			contentPane.setBackground(Color.WHITE);
+			contentPane.setLayout(new MigLayout("", "[350]", "[][][][]"));
+			header.setLayout(new MigLayout("", "[][]", "[][]"));
+			
+			middle = new JPanel();
+			contentPane.add(middle, "cell 0 1, grow");
+			middle.setLayout(new MigLayout("", "[][][]", "[][][][]"));
+			
+			JPanel bottom = new JPanel();
+			contentPane.add(bottom, "cell 0 2, grow");
+			bottom.setLayout(new MigLayout("", "[120][][]", "[][][]"));
+			
+			//Add elements to card
+			//Title and pros/cons
+			addJLabel(null, "<html><font style='font-family:Bebas Neue Bold;font-size:15;'>" +princess.kingdom+"'s<br><font style='font-family:04b_19;font-size:20px;'>"+princess.name.toUpperCase()+" PRINCESS"+"</font></html>", null, princess.col, null, null, header, "cell 1 0", false);
+			addJLabel(null, "", null, null, princess.image, null, header, "cell 0 0 0 2,alignx left,aligny top", false);
+			addJLabel(null, "<html>+ " + princess.good[0] +"<br>+ " + princess.good[1] + "<br>+ " + princess.good[2] + "<br>- " + princess.bad[0] + "<br>- " + princess.bad[1] + "</html>", mainFont, null, null, null, header, "cell 1 1", false);
+			//Stat icons	
+			String[] stats = new String[]{"Love","Lust","Wealth","Power"};
+			for(int i=0; i<4; i++) {
+				addJLabel(null, "" , null, null, "src/Stat icons/" + stats[i] + ".png", new Dimension(20,20), middle, "cell 0 " + i , false);
+			}
+			boolean template = false;
+			if(!princess.name.equals("Example")) {
+				//Add stat boxes
+				int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
+				for(int i=0; i<4; i++) {
+					BoxTesting boxTest = new BoxTesting(stat[i],princess.col);
+					boxTest.setMinimumSize(new Dimension(90,20));
+					middle.add(boxTest, "cell 0 " + i);
+				} 
+			} else {
+				//add Stat names
+				for(int i=0; i<4; i++) {
+					addJLabel("statNames", "   " + stats[i] + "   0 - 5", mainFont, null, null, null, middle, "cell 0 " + i + ",  w 170", false);
+				}
+				borderPaint("statNames", false, middle, Color.BLACK);
+				template = true;
+			}
+			
+			addJLabel("Totem", "", null, null, princess.totem.image, new Dimension(40,80), middle, "cell 2 0 1 4", !template);
+			addJLabel(null, princess.totem.name, mainFont, princess.col, null, null, middle, "cell 3 0", false);
+			if(princess.totem.whichEffect != 2) addJLabel("Worship", "<html><font color = 'black'>Worshipped - </font><font color = '516290' size = '4'>" + princess.totem.worship + "</font></html>", mainFont, null, null, null, middle, "cell 3 1", !template);
+			if(princess.totem.whichEffect != 1) addJLabel("Renounce", "<html><font color = 'black'>Renounced - </font><font color = '742f44' size = '4'>" + princess.totem.renounce + "</font></html>", mainFont, null, null, null, middle, "cell 3 2 0 2", !template);
+			
+			//Kinks
+			addJLabel(null, princess.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
+			addJLabel(null, princess.kinks[1].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 1", false);
+			addJLabel(null, princess.turnoff.name, mainFont, null, "src/Stat icons/Dislikes.png", new Dimension(20,20), bottom, "cell 0 2", false);
+			//Lust Item
+			addJLabel(null, "<html>" + princess.lustGift.name + " -<br>" + princess.lustGift.description + "</html>", mainFont, null, null, null, bottom, "cell 2 0 0 3", false);
+			addJLabel(null, "", null, null, princess.lustGift.image, new Dimension(40,40), bottom, "cell 1 0 0 3", false);
+			
+			addJLabel(null, "<html><font size='4'>\"" + princess.description+  "\"</font></html>", mainFont, princess.col, null, null, contentPane, "cell 0 3, left", false);
+			
 		} else if(item instanceof Item) {
 			contentPane.setLayout(new MigLayout("", "[]", "[]"));
 			
@@ -221,6 +280,28 @@ public class PrincessTesting extends JPanel {
 						borderPaint("dowry2", true, comp.getParent(), Color.RED);
 					} else {
 						borderPaint("dowry2", false, comp.getParent(), Color.RED);
+					}
+					choices[1] = !choices[1];
+				} else if(comp.getName().equals("Worship")) {
+					if(choices[0]) {
+						borderPaint("Worship", true, comp.getParent(), Color.RED);
+					} else {
+						if(choices[1]) {
+							borderPaint("Renounce", true, comp.getParent(), Color.RED);
+							choices[1] = !choices[1];
+						}
+						borderPaint("Worship", false, comp.getParent(), Color.RED);
+					}
+					choices[0] = !choices[0];
+				} else if(comp.getName().equals("Renounce")) {
+					if(choices[1]) {
+						borderPaint("Renounce", true, comp.getParent(), Color.RED);
+					} else {
+						if(choices[0]) {
+							borderPaint("Worship", true, comp.getParent(), Color.RED);
+							choices[0] = !choices[0];
+						}
+						borderPaint("Renounce", false, comp.getParent(), Color.RED);
 					}
 					choices[1] = !choices[1];
 				}

@@ -4,10 +4,12 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics2D;
 import java.awt.GraphicsEnvironment;
+import java.awt.LayoutManager;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,6 +30,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JWindow;
 import javax.swing.border.LineBorder;
 
@@ -55,6 +58,7 @@ import net.miginfocom.swing.MigLayout;
 
 public class HoverTest extends JFrame {
 	
+	JScrollPane scroll;
 	JPanel princessPane;
 	PrincessTesting princessCard;
 	JPanel infoPane;
@@ -76,6 +80,7 @@ public class HoverTest extends JFrame {
 				GameManager game = new GameManager();
 				game.princesses1 = new ArrayList<Princess1>();
 				game.princesses2 = new ArrayList<Princess1>();
+				game.princesses3 = new ArrayList<Princess2>();
 				game.wagon1 = new Wagon(4, "Wally");
 				game.wagon2 = new Wagon(4, "Michael");
 				game.wagon3 = new Wagon(4, "Ganondorf");
@@ -86,7 +91,7 @@ public class HoverTest extends JFrame {
 				String[] princessNames = new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon","Template"};
 				for(String s : princessNames) {
 					try {
-						game.princesses1.add(test.readTextFile("src/Text Files/Princesses.txt",s));
+						game.princesses1.add(test.readPrincess1("src/Text Files/Princesses.txt",s));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -94,7 +99,15 @@ public class HoverTest extends JFrame {
 				princessNames = new String[]{"Merrow","Demon","Gnome","Serpent","Kaiju","Rust","Lampad","Orphan","Squid","Shark","Book","Shadow","Gargoyle","Candy","Wyvern","Template"};
 				for(String s : princessNames) {
 					try {
-						game.princesses2.add(test.readTextFile("src/Text Files/Princesses.txt",s));
+						game.princesses2.add(test.readPrincess1("src/Text Files/Princesses.txt",s));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				princessNames = new String[]{"Dawn Elf", "Assassin", "Nomad", "Ninja", "Ogre", "Zombie", "Plant", "Witch", "Fairy", "Centaur", "Gorgon", "Frog", "Angel", "Monkey", "Cat", "Arcane", "Armor", "Crest", "Merchant", "Ice Dragon", "Pirate", "Example"};
+				for(String s : princessNames) {
+					try {
+						game.princesses3.add(test.readPrincess2("src/Text Files/Princesses.txt",s));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -125,15 +138,20 @@ public class HoverTest extends JFrame {
 		JPanel framePane = new JPanel();
 		framePane.setLayout(null);
 		setContentPane(framePane);
-
+		
 		princessPane = new JPanel();
-		princessPane.setSize(new Dimension(320,490));
-		princessPane.setBorder(BorderFactory.createLineBorder(Color.RED));
-		princessPane.setLocation(10,10);
+		princessPane.setLayout(new WrapLayout());
 		
 		princessPane(game);//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
 		
-		add(princessPane);
+		JScrollPane scroll = new JScrollPane(princessPane);
+		scroll.setSize(new Dimension(320,490));
+		scroll.setBorder(BorderFactory.createLineBorder(Color.RED));
+		scroll.setLocation(10,10);
+		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scroll.getVerticalScrollBar().setUnitIncrement(16);
+		add(scroll);
 		
 		infoPane = new JPanel();
 		infoPane.setSize(new Dimension(380,490));
@@ -141,7 +159,7 @@ public class HoverTest extends JFrame {
 		infoPane.setLocation(340,10);
 		add(infoPane);
 		
-		changeInfoPane(game.getPrincess1list().get(game.getPrincess1list().size()-1), null, infoPane, game);//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
+		changeInfoPane(game.getPrincess1List().get(game.getPrincess1List().size()-1), null, infoPane, game);//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH
 		
 		itemChoosePane = new JPanel();
 		itemChoosePane.setSize(new Dimension(380,280));
@@ -173,17 +191,32 @@ public class HoverTest extends JFrame {
 	 * @param game
 	 */
 	void princessPane(GameManager game) {
-			for(int i=0; i<game.getPrincess1list().size(); i++) 
+		
+		if(game.pageNumber < 3) {
+			for(int i=0; i<game.getPrincess1List().size(); i++) 
 			{
-				if(!Arrays.asList(game.getWagon().spaces).contains(game.getPrincess1list().get(i))) 
+				if(!Arrays.asList(game.getWagon().spaces).contains(game.getPrincess1List().get(i))) 
 				{
 					JLabel temp = new JLabel();
-					temp.setName(game.getPrincess1list().get(i).name);
+					temp.setName(game.getPrincess1List().get(i).name); 
+					paintImage(game.getPrincess1List().get(i),temp);
+					addItemClick(temp, game.getPrincess1List().get(i), null, game);
 					princessPane.add(temp);
-					paintImage(game.getPrincess1list().get(i),temp);
-					addItemClick(temp, game.getPrincess1list().get(i), null, game);
 				}
 			}
+		} else if(game.pageNumber==3) {
+			for(int i=0; i<game.getPrincess2List().size(); i++) 
+			{
+				if(!Arrays.asList(game.getWagon().spaces).contains(game.getPrincess2List().get(i))) 
+				{
+					JLabel temp = new JLabel();
+					temp.setName(game.getPrincess2List().get(i).name);
+					paintImage(game.getPrincess2List().get(i),temp);
+					addItemClick(temp, game.getPrincess2List().get(i), null, game);
+					princessPane.add(temp);
+				}
+			}
+		}
 	}
 
 	/**
@@ -214,6 +247,12 @@ public class HoverTest extends JFrame {
 					if(game.getWagon().contains(p.dowry2.name)) princessCard.removeDowries(2);
 				}
 				
+				if(clicked instanceof Princess2) {
+					Princess2 p = (Princess2) clicked;
+					p.totem.whichEffect = 0;
+					game.getWagon().removeEffect(p.totem.name);
+				}
+				
 				int count = 0;
 				for(int q=1; q<game.getWagon().spaces.length; q++) {
 				    if(game.getWagon().spaces[q] != null) {
@@ -232,11 +271,16 @@ public class HoverTest extends JFrame {
 					
 					if((!p.dowry1.removable) || !p.dowry2.removable) button.setEnabled(false);
 				}
+				if(clicked instanceof Princess2) {
+					Princess2 p = (Princess2) clicked;
+					
+				}
+				
 				if(!clicked.removable) button.setEnabled(false);
 			}
 		};
 
-		if(!(comp == princessPane) && !(clicked.name.equals("Template"))) infoPane.add(button);
+		if(!(comp == princessPane) && !(clicked.name.equals("Template")) && !(clicked.name.equals("Example"))) infoPane.add(button);
 		
 		if(clicked.useable) {
 			JButton useButton = new JButton("Use");
@@ -314,7 +358,7 @@ public class HoverTest extends JFrame {
 				}
 				else if(game.pageNumber==3)
 				{
-					
+					updateFrame(game, game.princesses3.get(game.princesses3.size()-1));
 				}
 				else if(game.pageNumber==4)
 				{
@@ -355,7 +399,19 @@ public class HoverTest extends JFrame {
 						if(princessCard.getChosen()[0]) game.getWagon().add(p.dowry1);
 						if(princessCard.getChosen()[1]) game.getWagon().add(p.dowry2);
 					}
-					updateFrame(game, game.getPrincess1list().get(game.getPrincess1list().size()-1));
+					
+					if(i instanceof Princess2 && succeed) {
+						Princess2 p = (Princess2) i;
+						if(princessCard.getChosen()[0]) {
+							p.totem.whichEffect = 1;
+							game.getWagon().add(p.totem);
+						}
+						if(princessCard.getChosen()[1]) {
+							p.totem.whichEffect = 2;
+							game.getWagon().add(p.totem);
+						}
+					}
+					updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 					infoPane.revalidate();
 					infoPane.repaint();
 				}
@@ -378,7 +434,7 @@ public class HoverTest extends JFrame {
 					} else {
 						game.getWagon().removeItem(i.name);
 					}
-					updateFrame(game, game.getPrincess1list().get(game.getPrincess1list().size()-1));
+					updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 			}
 		});
 	}
@@ -398,17 +454,17 @@ public class HoverTest extends JFrame {
 				
 				if(i.name.equals("Amethyst Gossamer")) {
 					//slap dowries onto pane
-					for(int q=0; q<game.getPrincess1list().size()-1; q++) {
-						if(!game.getWagon().contains(game.getPrincess1list().get(q).dowry1.name)) {
+					for(int q=0; q<game.getPrincess1List().size()-1; q++) {
+						if(!game.getWagon().contains(game.getPrincess1List().get(q).dowry1.name)) {
 							JLabel temp = new JLabel();
-							paintImage(game.getPrincess1list().get(q).dowry1, temp);
-							addItemClick(temp, game.getPrincess1list().get(q).dowry1, i, game);
+							paintImage(game.getPrincess1List().get(q).dowry1, temp);
+							addItemClick(temp, game.getPrincess1List().get(q).dowry1, i, game);
 							itemChoosePane.add(temp);
 						}
-						if(!game.getWagon().contains(game.getPrincess1list().get(q).dowry2.name)) {
+						if(!game.getWagon().contains(game.getPrincess1List().get(q).dowry2.name)) {
 							JLabel temp = new JLabel();
-							paintImage(game.getPrincess1list().get(q).dowry2, temp);
-							addItemClick(temp, game.getPrincess1list().get(q).dowry2, i, game);
+							paintImage(game.getPrincess1List().get(q).dowry2, temp);
+							addItemClick(temp, game.getPrincess1List().get(q).dowry2, i, game);
 							itemChoosePane.add(temp);
 						}
 					}
@@ -462,7 +518,7 @@ public class HoverTest extends JFrame {
 				infoPane.setSize(new Dimension(380,490));
 				remove(itemChoosePane);
 				
-				updateFrame(game, game.getPrincess1list().get(game.getPrincess1list().size()-1));
+				updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 			}
 		});
 	}
