@@ -65,7 +65,7 @@ public class GameManager {
 	{
 		int[] out = new int[4];
 		
-		for(int i = 0; i<3; i++)
+		for(int i = 0; i<=3; i++)
 		{
 			out[i] = wagon1.getStats()[i] + wagon2.getStats()[i] + wagon3.getStats()[i] + wagon4.getStats()[i];
 		}

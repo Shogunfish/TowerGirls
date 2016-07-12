@@ -232,8 +232,23 @@ public class HoverTest extends JFrame {
 		infoPane.add(princessCard.provideInput());
 		
 		//Add button
-		JButton button = new JButton(); {
-			if(comp.getParent() == itemChoosePane) {
+		JButton button = new JButton();
+			if(itemUsed!=null && itemUsed.name.equals("Ice Dragon"))
+			{
+				button.setText("steal");
+				button.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						
+						game.getWagon().add(clicked);
+						infoPane.setSize(new Dimension(380,490));
+						remove(itemChoosePane);
+						updateFrame(game, game.getPrincess2List().get(game.getPrincess2List().size()-1));
+						
+					}});
+			}
+			else if(comp.getParent() == itemChoosePane) {
 				button.setText("Replace");
 				addItemReplaceClick(itemUsed, clicked, button, game);
 			}
@@ -246,13 +261,11 @@ public class HoverTest extends JFrame {
 					if(game.getWagon().contains(p.dowry1.name)) princessCard.removeDowries(1);
 					if(game.getWagon().contains(p.dowry2.name)) princessCard.removeDowries(2);
 				}
-				
 				if(clicked instanceof Princess2) {
 					Princess2 p = (Princess2) clicked;
-					p.totem.whichEffect = 0;
+					p.totem.whichEffect=0;
 					game.getWagon().removeEffect(p.totem.name);
 				}
-				
 				int count = 0;
 				for(int q=1; q<game.getWagon().spaces.length; q++) {
 				    if(game.getWagon().spaces[q] != null) {
@@ -261,7 +274,8 @@ public class HoverTest extends JFrame {
 				}
 				if(count==4) button.setEnabled(false);
 			
-			} else if(comp.getParent() == wagonPane) {
+			} else if(comp.getParent() == wagonPane) 
+			{
 				button.setText("Remove");
 				addRemoveClick(clicked, button, game);
 				if(clicked instanceof Princess1) {
@@ -271,14 +285,9 @@ public class HoverTest extends JFrame {
 					
 					if((!p.dowry1.removable) || !p.dowry2.removable) button.setEnabled(false);
 				}
-				if(clicked instanceof Princess2) {
-					Princess2 p = (Princess2) clicked;
-					
-				}
 				
 				if(!clicked.removable) button.setEnabled(false);
 			}
-		};
 
 		if(!(comp == princessPane) && !(clicked.name.equals("Template")) && !(clicked.name.equals("Example"))) infoPane.add(button);
 		
@@ -327,11 +336,14 @@ public class HoverTest extends JFrame {
 			paintImage("src/Stat icons/" + icons[i] + ".png", temp);
 		}
 		
-		for(int i=0; i<icons.length; i++) {
 			JLabel tempNum = new JLabel();
-			tempNum.setText(Integer.toString(game.getStats()[i]));
-			statPane.add(tempNum, "cell 1 " + (2 + i));
-		}
+			tempNum.setText(Integer.toString(game.getStats()[2]));
+			statPane.add(tempNum, "cell 1 " + (2));
+			
+			tempNum = new JLabel();
+			tempNum.setText(Integer.toString(game.getStats()[3]));
+			statPane.add(tempNum, "cell 1 " + (3));
+		
 		
 		int count = 0;
 		for(int i=1; i<game.getWagon().spaces.length; i++) {
@@ -411,7 +423,51 @@ public class HoverTest extends JFrame {
 							game.getWagon().add(p.totem);
 						}
 					}
+					
+					if(i.name.equals("Ice Dragon") && princessCard.getChosen()[0])
+					{
+						infoPane.setSize(new Dimension(380,200));
+						
+						add(itemChoosePane);
+						for(int q=0; q<game.getPrincess2List().size()-1; q++) 
+						{
+							if(!game.getWagon().contains(game.getPrincess2List().get(q).name)) 
+							{
+								JLabel temp = new JLabel();
+								paintImage(game.getPrincess2List().get(q).lustGift, temp);
+								
+								Item kludge = new Item("Ice Dragon", "Ice Dragon", "Ice Dragon");
+								addItemClick(temp, game.getPrincess2List().get(q).lustGift, kludge, game);
+								
+								itemChoosePane.add(temp);
+								
+							}
+						}
+						for(int q=0; q<game.getPrincess2List().size()-1; q++)
+						{
+							JLabel temp = new JLabel();
+							
+							Item kludge = new Item("Ice Dragon", null, null);
+							//paintImage(game.getPrincess2List().get(q).totem, temp);
+							//addItemClick(temp, game.getPrincess2List().get(q).totem, kludge, game);
+							
+							
+							itemChoosePane.add(temp);
+							
+						}
+						
+						i.removable=false;
+					}
+					else if(game.pageNumber<3)
+					{
 					updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
+					}
+					else if(game.pageNumber==3)
+					{
+						updateFrame(game, game.getPrincess2List().get(game.getPrincess2List().size()-1));
+						
+					}
+					
 					infoPane.revalidate();
 					infoPane.repaint();
 				}
@@ -423,7 +479,8 @@ public class HoverTest extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-					if(i instanceof Princess1) {
+					
+				if(i instanceof Princess1) {
 						Princess1 p = (Princess1) i;
 						
 						if((p.dowry1.removable) && p.dowry2.removable) {
@@ -431,10 +488,21 @@ public class HoverTest extends JFrame {
 							game.getWagon().removeItem(p.dowry1.name);
 							game.getWagon().removeItem(p.dowry2.name);
 						}
-					} else {
+					} 
+					else if(i instanceof Princess2){
+						((Princess2) i).totem.whichEffect=0;
 						game.getWagon().removeItem(i.name);
+					} 
+					else 
+					{
+					game.getWagon().removeItem(i.name);
 					}
+				if(game.pageNumber<3){
 					updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
+				}
+				else if(game.pageNumber==3){
+					updateFrame(game, game.getPrincess2List().get(game.getPrincess2List().size()-1));
+				}
 			}
 		});
 	}
@@ -472,7 +540,9 @@ public class HoverTest extends JFrame {
 					i.useable=false;
 					infoPane.revalidate();
 					infoPane.repaint();
-				} else if(i.name.equals("Encrusted Chest")) {
+				} 
+				else if(i.name.equals("Encrusted Chest")) 
+				{
 					//slap wagon'd princesses onto pane
 					for(Item item : game.getWagon().spaces) {
 						if(item != null && item instanceof Princess1) {
@@ -507,7 +577,7 @@ public class HoverTest extends JFrame {
 			}
 		});
 	}
-
+	
 	void addItemReplaceClick (Item usedItem, Item clickedItem, JButton comp, GameManager game) {
 		comp.addMouseListener(new MouseAdapter() {
 

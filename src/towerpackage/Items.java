@@ -157,7 +157,8 @@ class Wagon
 			boolean succeed = false;
 			for(int i = 0; i<= spaces.length-1; i++)
 			{
-				if(spaces[i]==null && (!(item instanceof Princess1) || i!=0))
+				boolean isPrincess = (item instanceof Princess1) || (item instanceof Princess2) || (item instanceof Princess3);
+				if(spaces[i]==null && (!isPrincess || i!=0))
 				{
 					spaces[i]=item;
 					succeed=true;
@@ -209,6 +210,8 @@ class Wagon
 					out[1] += ((Character)i).lust;
 					out[2] += ((Character)i).wealth;
 					out[3] += ((Character)i).power;
+					
+					
 				}
 			}
 			return out;
@@ -230,11 +233,13 @@ class Effect
 	{
 		public String name;
 		public String image;
+		public int[] cost;
 		
 		public Effect(String n, String i)
 		{
 			name = n;
 			image = i;
+			cost = new int[]{0,0,0,0};
 		}
 	}
 

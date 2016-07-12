@@ -160,6 +160,7 @@ public class PrincessTesting extends JPanel {
 			
 			addJLabel("Totem", "", null, null, princess.totem.image, new Dimension(40,80), middle, "cell 2 0 1 4", !template);
 			addJLabel(null, princess.totem.name, mainFont, princess.col, null, null, middle, "cell 3 0", false);
+			
 			if(princess.totem.whichEffect != 2) addJLabel("Worship", "<html><font color = 'black'>Worshipped - </font><font color = '516290' size = '4'>" + princess.totem.worship + "</font></html>", mainFont, null, null, null, middle, "cell 3 1", !template);
 			if(princess.totem.whichEffect != 1) addJLabel("Renounce", "<html><font color = 'black'>Renounced - </font><font color = '742f44' size = '4'>" + princess.totem.renounce + "</font></html>", mainFont, null, null, null, middle, "cell 3 2 0 2", !template);
 			
