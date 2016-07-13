@@ -350,7 +350,7 @@ public class SimpleFrameTest extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent me) {
 
-					//This is not an item "use" result
+					
 					if(clickedItem instanceof Princess1) {
 						Princess1 p = (Princess1)clickedItem;
 						//Princess1
@@ -475,6 +475,60 @@ public class SimpleFrameTest extends JFrame {
 							infoPaneAdd(temp);
 						}
 						//Draw princess
+					} else if (clickedItem instanceof Princess3){
+							Princess3 p = (Princess3)clickedItem;
+							
+							if(game.getWagon().contains(clickedItem.name))
+							{
+								JButton temp = new JButton("Remove");
+								if(!p.removable) temp.setEnabled(false);
+								temp.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent ae) {
+											game.getWagon().removeItem(p.name);
+											game.getWagon().removeItem(p.companion.name);
+											game.getWagon().removeEffect(p.wealthGift.name);
+											game.getWagon().removeEffect(p.powerGift.name);
+											changeInfoPane(p, comp, game);
+											updateFrame(game, game.princesses2.get(game.princesses2.size()-1));
+									}
+								});
+								changeInfoPane(clickedItem, comp, game);
+								infoPaneAdd(temp);
+							} 
+							else
+							{
+								JButton temp = new JButton("Add");
+								temp.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent ae) {
+										game.getWagon().addItem(p);
+										boolean succeed = game.getWagon().addItem(p.companion);
+										if(!succeed) game.getWagon().removeItem(p.name);
+										else if(game.wealthGreaterThanPower()) game.getWagon().addEffect(p.wealthGift);
+									    else if (game.powerGreaterThanWealth()) game.getWagon().addEffect(p.powerGift);
+									    else 
+									    {
+									    	if(princessCard.getChosen()[0]) game.getWagon().addEffect(p.wealthGift);
+									    	else game.getWagon().addEffect(p.powerGift);
+									    }
+										
+										changeInfoPane(p, comp, game);
+										updateFrame(game, game.princesses1.get(game.princesses1.size()-1));
+									}
+								});
+								changeInfoPane(clickedItem, comp, game);
+								if(!p.name.equals("Default")) infoPane.add(temp);
+								//Add add button
+								
+							}
+							
+							
+							
+							
+							
+					} else if (clickedItem instanceof Character){
+						
 					} else if(clickedItem instanceof Effect) {
 						if(clickedItem instanceof Totem) {
 							Totem t = (Totem)clickedItem;

@@ -45,6 +45,11 @@ public class GameManager {
 		return princesses3;
 	}
 	
+	public ArrayList<Princess3> getPrincess3List() {
+		// TODO Auto-generated method stub
+		return princesses4;
+	}
+	
 	public Wagon getWagon()
 	{
 		
@@ -73,9 +78,15 @@ public class GameManager {
 		return out;
 	}
 
-	public ArrayList<Princess3> getPrincess3List() {
-		// TODO Auto-generated method stub
-		return princesses4;
+	public boolean wealthGreaterThanPower()
+	{
+		int[] stats = getStats();
+		return (stats[2]>stats[3]);
 	}
 	
+	public boolean powerGreaterThanWealth()
+	{
+		int[] stats = getStats();
+		return (stats[2]<stats[3]);
+	}
 }
