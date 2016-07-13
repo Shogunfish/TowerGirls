@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TextFileTesting {
+public class TextFileReader {
 	
-public TextFileTesting(){
+public TextFileReader(){
 	}
 	
 public Princess1 readPrincess1 (String textLocation, String princessName) throws IOException {	

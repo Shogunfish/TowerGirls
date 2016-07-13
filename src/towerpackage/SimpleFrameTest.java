@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import javax.imageio.ImageIO;
-import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -54,7 +53,7 @@ public class SimpleFrameTest extends JFrame {
 	
 	JScrollPane scroll;
 	JPanel princessPane;
-	PrincessTesting princessCard;
+	PrincessCard princessCard;
 	JPanel infoPane;
 	JPanel wagonPane;
 	JPanel statPane;
@@ -84,7 +83,7 @@ public class SimpleFrameTest extends JFrame {
 				game.wagon4 = new Wagon(8, "Toby");
 				
 				//Populate princess arrays
-				TextFileTesting test = new TextFileTesting();
+				TextFileReader test = new TextFileReader();
 				String[] princessNames = new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon","Template"};
 				for(String s : princessNames) {
 					try {
@@ -139,7 +138,7 @@ public class SimpleFrameTest extends JFrame {
 		
 		//Set Frame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 930, 550);
+		setBounds(100, 100, 950, 550);
 		JPanel framePane = new JPanel();
 		framePane.setLayout(null);
 		setContentPane(framePane);
@@ -153,28 +152,32 @@ public class SimpleFrameTest extends JFrame {
 		scroll.setSize(new Dimension(320,490));
 		scroll.setBorder(BorderFactory.createLineBorder(Color.RED));
 		scroll.setLocation(10,10);
-		scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scroll.getVerticalScrollBar().setUnitIncrement(16);
 		add(scroll);
 		
 		infoPane = new JPanel();
-		infoPane.setSize(new Dimension(380,490));
-		infoPane.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		infoPane.setLocation(340,10);
-		add(infoPane);
+		infoPane.setLayout(new WrapLayout());
+		
+		JScrollPane scroll2 = new JScrollPane(infoPane);
+		scroll2.setSize(new Dimension(400,490));
+		scroll2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		scroll2.setLocation(340,10);
+		scroll2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		scroll2.getVerticalScrollBar().setUnitIncrement(16);
+		add(scroll2);
 		
 		changeInfoPane(game.getPrincess1List().get(game.getPrincess1List().size()-1), infoPane, game);
 		
 		itemChoosePane = new JPanel();
 		itemChoosePane.setSize(new Dimension(380,280));
 		itemChoosePane.setBorder(BorderFactory.createLineBorder(Color.MAGENTA));
-		itemChoosePane.setLocation(340,220);
+		itemChoosePane.setLocation(360,220);
 
 		wagonPane = new JPanel();
 		wagonPane.setSize(new Dimension(170,360));
 		wagonPane.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		wagonPane.setLocation(730,10);
+		wagonPane.setLocation(750,10);
 		
 		wagonPane(game);
 		
@@ -183,7 +186,7 @@ public class SimpleFrameTest extends JFrame {
 		statPane = new JPanel();
 		statPane.setSize(new Dimension(170,120));
 		statPane.setBorder(BorderFactory.createLineBorder(Color.GREEN));
-		statPane.setLocation(730,380);
+		statPane.setLocation(750,380);
 		statPane.setLayout(new MigLayout("", "[][]", "[][][][]"));
 		
 		statPane(game);
@@ -246,7 +249,7 @@ public class SimpleFrameTest extends JFrame {
 	void changeInfoPane(Item clicked, Component comp, GameManager game) {
 		
 		infoPane.removeAll();
-		princessCard = new PrincessTesting(clicked, game);
+		princessCard = new PrincessCard(clicked, game);
 		infoPane.add(princessCard.provideInput());
 		infoPane.validate();
 		infoPane.repaint();
@@ -346,9 +349,6 @@ public class SimpleFrameTest extends JFrame {
 			
 			@Override
 			public void mouseClicked(MouseEvent me) {
-				Item infoItem = null;
-				if(game.pageNumber <3) infoItem = game.getPrincess1List().get(game.getPrincess1List().size()-1);
-				if(game.pageNumber==3) infoItem = game.getPrincess2List().get(game.getPrincess1List().size()-1);
 
 					//This is not an item "use" result
 					if(clickedItem instanceof Princess1) {

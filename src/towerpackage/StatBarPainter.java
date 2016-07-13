@@ -11,11 +11,11 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class BoxTesting extends JLabel {
+public class StatBarPainter extends JLabel {
 	
 	int boxes;
 	Color color;
-	BoxTesting(int powerLevel, Color princessColor) {
+	StatBarPainter(int powerLevel, Color princessColor) {
 		boxes = powerLevel;
 		color = princessColor;
 	}

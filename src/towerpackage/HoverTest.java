@@ -60,7 +60,7 @@ public class HoverTest extends JFrame {
 	
 	JScrollPane scroll;
 	JPanel princessPane;
-	PrincessTesting princessCard;
+	PrincessCard princessCard;
 	JPanel infoPane;
 	JPanel wagonPane;
 	JPanel statPane;
@@ -87,7 +87,7 @@ public class HoverTest extends JFrame {
 				game.wagon4 = new Wagon(8, "Toby");
 				
 				//Populate princess arrays
-				TextFileTesting test = new TextFileTesting();
+				TextFileReader test = new TextFileReader();
 				String[] princessNames = new String[]{"Kobold","Human","Insect","Skeleton","Slime","Mermaid","Knight","Harpy","Boy","Orc","Dwarf","Amazon","Ghost","Golem","Succubus","Goblin","Drider","Mimic","Dragon","Template"};
 				for(String s : princessNames) {
 					try {
@@ -228,7 +228,7 @@ public class HoverTest extends JFrame {
 	void changeInfoPane(Item clicked, Item itemUsed, Component comp, GameManager game) {
 		
 		infoPane.removeAll();
-		princessCard = new PrincessTesting(clicked,game);
+		princessCard = new PrincessCard(clicked,game);
 		infoPane.add(princessCard.provideInput());
 		
 		//Add button

@@ -28,7 +28,7 @@ import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 
-public class PrincessTesting extends JPanel {
+public class PrincessCard extends JPanel {
 
 	private JPanel contentPane;
 	private JPanel middle;
@@ -37,7 +37,7 @@ public class PrincessTesting extends JPanel {
 	/**
 	 * Create the panel and add things to it.
 	 */
-	public PrincessTesting(Item item, GameManager game) {
+	public PrincessCard(Item item, GameManager game) {
 		
 
 		//Grab fonts (should this be done every time? Ideally not)
@@ -83,7 +83,7 @@ public class PrincessTesting extends JPanel {
 				//Add stat boxes
 				int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
 				for(int i=0; i<4; i++) {
-					BoxTesting boxTest = new BoxTesting(stat[i],princess.col);
+					StatBarPainter boxTest = new StatBarPainter(stat[i],princess.col);
 					boxTest.setMinimumSize(new Dimension(90,20));
 					middle.add(boxTest, "cell 0 " + i);
 				} 
@@ -145,7 +145,7 @@ public class PrincessTesting extends JPanel {
 				//Add stat boxes
 				int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
 				for(int i=0; i<4; i++) {
-					BoxTesting boxTest = new BoxTesting(stat[i],princess.col);
+					StatBarPainter boxTest = new StatBarPainter(stat[i],princess.col);
 					boxTest.setMinimumSize(new Dimension(90,20));
 					middle.add(boxTest, "cell 0 " + i);
 				} 
@@ -187,7 +187,7 @@ public class PrincessTesting extends JPanel {
 			
 			middle = new JPanel();
 			contentPane.add(middle, "cell 0 1, grow");
-			middle.setLayout(new MigLayout("", "[][][]", "[][][][]"));
+			middle.setLayout(new MigLayout("", "[][][]", "[][][][][][]"));
 			
 			JPanel bottom = new JPanel();
 			contentPane.add(bottom, "cell 0 2, grow");
@@ -203,13 +203,11 @@ public class PrincessTesting extends JPanel {
 			for(int i=0; i<4; i++) {
 				addJLabel(null, "" , null, null, "src/Stat icons/" + stats[i] + ".png", new Dimension(20,20), middle, "cell 0 " + i , false);
 			}
-			
-			boolean template = false;
 			if(!princess.name.equals("Default")) {
 				//Add stat boxes
 				int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
 				for(int i=0; i<4; i++) {
-					BoxTesting boxTest = new BoxTesting(stat[i],princess.col);
+					StatBarPainter boxTest = new StatBarPainter(stat[i],princess.col);
 					boxTest.setMinimumSize(new Dimension(90,20));
 					middle.add(boxTest, "cell 0 " + i);
 				} 
@@ -219,17 +217,16 @@ public class PrincessTesting extends JPanel {
 					addJLabel("statNames", "   " + stats[i] + "   0 - 5", mainFont, null, null, null, middle, "cell 0 " + i + ",  w 170", false);
 				}
 				borderPaint("statNames", false, middle, Color.BLACK);
-				template = true;
 			}
+			String rgb = Integer.toHexString(princess.col.getRGB());
+			rgb = rgb.substring(2, rgb.length());
 			
 			//Display the Princess' companion and stuff
-			addJLabel("Companion", "", null, null, princess.companion.image, null, middle, "cell 4 0 1 3", true);
-			addJLabel(null, princess.companion.name , mainFont, princess.col, null, null, middle, "cell 3 0 1 1", false);
+			addJLabel("Companion", "", null, null, princess.companion.image, null, middle, "cell 2 0 1 6", true);
+			addJLabel(null, "<html><font color=" + rgb + ">" + princess.companion.name + System.lineSeparator() + "<font color=black>" + princess.companion.description + "</font></html>", mainFont, null, null, null, middle, "cell 1 0 1 4", false);
 			
-			addJLabel("Wealth", "<html><font color = 'black'>Wealth - </font><font color = 'F4C43E' size = '4'>" + princess.wealthGift.description + "</font></html>", mainFont, null, null, null, middle, "cell 3 1", !template);
-			addJLabel("Power", "<html><font color = 'black'>Power - </font><font color = '86394D' size = '4'>" + princess.powerGift.description + "</font></html>", mainFont, null, null, null, middle, "cell 3 2 0 2", !template);
-		
-			
+			addJLabel("Wealth", "<html><font color = 'black'>Wealth - </font><font color = 'F4C43E' size = '4'>" + princess.wealthGift.description + "</font></html>", mainFont, null, null, null, middle, "cell 0 4 2 0", false);
+			addJLabel("Power", "<html><font color = 'black'>Power - </font><font color = '86394D' size = '4'>" + princess.powerGift.description + "</font></html>", mainFont, null, null, null, middle, "cell 0 5 2 0", false);
 			
 			//Kinks
 			addJLabel(null, princess.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
