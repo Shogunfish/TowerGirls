@@ -11,7 +11,7 @@ import java.util.Scanner;
 		public String description;
 		public boolean useable;
 		public boolean removable;
-		public static final List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer", "Freyda, Ancient Dragon of Ice", "Huntress Master","Wizard Master","Squire Courtier","Rabbit Princess","Imp Princess","Physicker Master","Funk Master");
+		public static final List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer", "Freyda, Dragon Priestess of Ice", "Huntress Master","Wizard Master","Squire Courtier","Rabbit Princess","Imp Princess","Physicker Master","Funk Master");
 		
 		Item(String n, String i, String d) {
 			name = n; 
@@ -110,6 +110,18 @@ class Princess3 extends Character
 	
 	}
 
+class Factionless extends Character
+{
+	public Effect effect1;
+	public Effect effect2;
+	public Effect kingdom;
+
+	Factionless(String n, String i, Color c, String k, String d) {
+		super(n, i, c, k, d);
+	}
+	
+}
+
 	//This class is the wagon, it has an array of objects, an arraylist of effects, and a name
 class Wagon 
 	{
@@ -126,13 +138,24 @@ class Wagon
 			huntress = false;
 		}
 
+		public boolean squireAdd(Character c)
+		{
+			boolean succeed = false;
+			if(spaces[0]==null)
+			{
+				spaces[0]=c;
+				succeed = true;
+			}
+			
+			return succeed;
+		}
+		
 		public boolean addItem(Item item)
 		{
 			boolean succeed = false;
 			for(int i = 0; i<= spaces.length-1; i++)
 			{
-				boolean isPrincess = (item instanceof Princess1) || (item instanceof Princess2) || (item instanceof Princess3);
-				if(spaces[i]==null && (!isPrincess || i!=0))
+				if(spaces[i]==null && (!(item instanceof Character) || i!=0))
 				{
 					spaces[i]=item;
 					succeed=true;

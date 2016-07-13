@@ -238,6 +238,104 @@ public class PrincessCard extends JPanel {
 			
 			addJLabel(null, "<html><font size='4'>\"" + princess.description+  "\"</font></html>", mainFont, princess.col, null, null, contentPane, "cell 0 3, left", false);
 		
+		}else if(item instanceof Factionless){
+			
+			Factionless f = (Factionless) item;
+			
+			contentPane.setBackground(Color.WHITE);
+			contentPane.setLayout(new MigLayout("", "[350]", "[][][][]"));
+			header.setLayout(new MigLayout("", "[][]", "[][]"));
+			
+			middle = new JPanel();
+			contentPane.add(middle, "cell 0 1, grow");
+			middle.setLayout(new MigLayout("", "[][][]", "[][][][][][]"));
+			
+			JPanel bottom = new JPanel();
+			contentPane.add(bottom, "cell 0 2, grow");
+			bottom.setLayout(new MigLayout("", "[120][][]", "[][][]"));
+			
+			//Add elements to card
+			//Title and pros/cons
+			addJLabel(null, "<html><font style='font-family:Bebas Neue Bold;font-size:15;'>" +f.kingdom+"'s<br><font style='font-family:04b_19;font-size:20px;'>"+f.name.toUpperCase()+" PRINCESS"+"</font></html>", null, f.col, null, null, header, "cell 1 0", false);
+			addJLabel(null, "", null, null, f.image, null, header, "cell 0 0 0 2,alignx left,aligny top", false);
+			addJLabel(null, "<html>+ " + f.good[0] +"<br>+ " + f.good[1] + "<br>+ " + f.good[2] + "<br>- " + f.bad[0] + "<br>- " + f.bad[1] + "</html>", mainFont, null, null, null, header, "cell 1 1", false);
+			//Stat icons	
+			String[] stats = new String[]{"Love","Lust","Wealth","Power"};
+			for(int i=0; i<4; i++) {
+				addJLabel(null, "" , null, null, "src/Stat icons/" + stats[i] + ".png", new Dimension(20,20), middle, "cell 0 " + i , false);
+			}
+			if(!f.name.equals("Default")) {
+				//Add stat boxes
+				int[] stat = new int[]{f.love,f.lust,f.wealth,f.power};
+				for(int i=0; i<4; i++) {
+					StatBarPainter boxTest = new StatBarPainter(stat[i],f.col);
+					boxTest.setMinimumSize(new Dimension(90,20));
+					middle.add(boxTest, "cell 0 " + i);
+				} 
+			} else {
+				//add Stat names
+				for(int i=0; i<4; i++) {
+					addJLabel("statNames", "   " + stats[i] + "   0 - 5", mainFont, null, null, null, middle, "cell 0 " + i + ",  w 170", false);
+				}
+				borderPaint("statNames", false, middle, Color.BLACK);
+			}
+			String rgb = Integer.toHexString(f.col.getRGB());
+			rgb = rgb.substring(2, rgb.length());
+			
+			//Display the companion's effects
+			addJLabel("Wealth", "<html><font color = 'black'>Wealth - </font><font color = 'F4C43E' size = '4'>" + f.effect1.description + "</font></html>", mainFont, null, null, null, middle, "cell 0 4 2 0", false);
+			addJLabel("Power", "<html><font color = 'black'>Power - </font><font color = '86394D' size = '4'>" + f.effect2.description + "</font></html>", mainFont, null, null, null, middle, "cell 0 5 2 0", false);
+			
+			//Kinks
+			addJLabel(null, f.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
+			addJLabel(null, f.kinks[1].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 1", false);
+			addJLabel(null, f.turnoff.name, mainFont, null, "src/Stat icons/Dislikes.png", new Dimension(20,20), bottom, "cell 0 2", false);
+			//Kingdom modifiers
+			addJLabel(null, "<html>" + f.kingdom.name + " -<br>" + f.kingdom.description + "</html>", mainFont, null, null, null, bottom, "cell 2 0 0 3", false);
+			//addJLabel(null, "", null, null, f.kingdom.image, new Dimension(40,40), bottom, "cell 1 0 0 3", false);
+			
+			addJLabel(null, "<html><font size='4'>\"" + f.description+  "\"</font></html>", mainFont, f.col, null, null, contentPane, "cell 0 3, left", false);
+		
+			
+		}else if(item instanceof Character){
+			Character c = (Character) item;
+			
+			contentPane.setBackground(Color.WHITE);
+			contentPane.setLayout(new MigLayout("", "[350]", "[][][][]"));
+			header.setLayout(new MigLayout("", "[][]", "[][]"));
+			
+			
+			//Because there is no information to put in these panels I am currently leaving them out. If we add kinks and turn-offs we can add them back
+//			middle = new JPanel();
+//			contentPane.add(middle, "cell 0 1, grow");
+//			middle.setLayout(new MigLayout("", "[][][]", "[][][][][][]"));
+//			
+//			JPanel bottom = new JPanel();
+//			contentPane.add(bottom, "cell 0 2, grow");
+//			bottom.setLayout(new MigLayout("", "[120][][]", "[][][]"));
+			
+			
+			//Add elements to card
+			//Title and pros/cons
+			addJLabel(null, "<html><font style='font-family:Bebas Neue Bold;font-size:15;'>" + c.kingdom+"'s<br><font style='font-family:04b_19;font-size:20px;'>" + c.name.toUpperCase()+"</font></html>", null, c.col, null, null, header, "cell 1 0", false);
+			addJLabel(null, "", null, null, c.image, null, header, "cell 0 0 0 2,alignx left,aligny top", false);
+			
+			//Currently we don't define kinks and turn-offs for Princess' companions, We could consider doing that in a later version
+			//Since we kind of want them to be stand alone characters
+			//
+			//addJLabel(null, "<html>+ " + c.good[0] +"<br>+ " + c.good[1] + "<br>+ " + c.good[2] + "<br>- " + c.bad[0] + "<br>- " + c.bad[1] + "</html>", mainFont, null, null, null, header, "cell 1 1", false);
+			
+			//Currently we don't define kinks and turn-offs for Princess' companions, We could consider doing that in a later version
+			//Since we kind of want them to be stand alone characters
+			//
+			//Kinks
+			//addJLabel(null, c.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
+			//addJLabel(null, c.kinks[1].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 1", false);
+			//addJLabel(null, c.turnoff.name, mainFont, null, "src/Stat icons/Dislikes.png", new Dimension(20,20), bottom, "cell 0 2", false);
+			
+			//Description
+			addJLabel(null, "<html>" + c.description+  "</html>", mainFont, null, null, null, contentPane, "cell 0 3, left", false);
+		
 		}else if(item instanceof Totem) {
 			Totem t = (Totem)item;
 			contentPane.setLayout(new MigLayout("", "[]", "[]"));
@@ -257,7 +355,24 @@ public class PrincessCard extends JPanel {
 			if(t.whichEffect != 2) addJLabel("Totem", "<html><font color='black'>Worship: <font color='516290'>" + t.worship + "</font></html>", mainFont, null, null, null, panel2, "cell 0 0", false);
 			if(t.whichEffect != 1) addJLabel("Totem", "<html><font color='black'>Renounce: <font color='742f44'>" + t.renounce + "</font></html>", mainFont, null, null, null, panel2, "cell 0 0", false);
 			
-		} else if(item instanceof Item) {
+		} else if(item instanceof Effect) {
+			Effect e = (Effect)item;
+			contentPane.setLayout(new MigLayout("", "[]", "[]"));
+			
+			header.setLayout(new MigLayout("", "[70][270]", "[30][]"));
+			
+			JPanel panel1 = new JPanel();
+			panel1.setLayout(new MigLayout("", "[]", "[]"));
+			header.add(panel1, "cell 1 0");
+			
+			JPanel panel2 = new JPanel();
+			panel2.setLayout(new MigLayout("", "[]", "[]"));
+			header.add(panel2, "cell 1 1");
+			
+			addJLabel(null, "", null, null, item.image, null, header, "cell 0 0 0 2, center", false);
+			addJLabel(null, item.name.toUpperCase(), blockFont, null, null, null, panel1, "cell 0 0", false);
+			addJLabel(null, "<html>" + item.description + "</html>", mainFont, null, null, null, panel2, "cell 0 0", false);
+		} else {
 			contentPane.setLayout(new MigLayout("", "[]", "[]"));
 			
 			header.setLayout(new MigLayout("", "[70][270]", "[30][]"));

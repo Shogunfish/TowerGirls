@@ -52,6 +52,7 @@ import net.miginfocom.swing.MigLayout;
 public class SimpleFrameTest extends JFrame {
 	
 	JScrollPane scroll;
+	JScrollPane scroll2;
 	JPanel princessPane;
 	PrincessCard princessCard;
 	JPanel infoPane;
@@ -111,7 +112,6 @@ public class SimpleFrameTest extends JFrame {
 				princessNames = new String[]{"Holstaur", "Mouse", "Rabbit", "Dusk Elf", "Vampire", "Dog", "Djinn", "Triclops", "Raider", "Eldritch", "Lamia", "Imp", "Moth", "Sphinx", "Yeti", "Sword", "Jester", "Faun", "Crystal", "Toxic Dragon", "Paladin", "Default"};
 				for(String s : princessNames) {
 					try {
-						System.out.println(s);
 						game.princesses4.add(test.readPrincess3("src/Text Files/Princesses.txt",s));
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -160,7 +160,7 @@ public class SimpleFrameTest extends JFrame {
 		infoPane = new JPanel();
 		infoPane.setLayout(new WrapLayout());
 		
-		JScrollPane scroll2 = new JScrollPane(infoPane);
+		scroll2 = new JScrollPane(infoPane);
 		scroll2.setSize(new Dimension(400,490));
 		scroll2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		scroll2.setLocation(340,10);
@@ -171,9 +171,9 @@ public class SimpleFrameTest extends JFrame {
 		changeInfoPane(game.getPrincess1List().get(game.getPrincess1List().size()-1), infoPane, game);
 		
 		itemChoosePane = new JPanel();
-		itemChoosePane.setSize(new Dimension(380,280));
+		itemChoosePane.setSize(new Dimension(400,280));
 		itemChoosePane.setBorder(BorderFactory.createLineBorder(Color.MAGENTA));
-		itemChoosePane.setLocation(360,220);
+		itemChoosePane.setLocation(340,220);
 
 		wagonPane = new JPanel();
 		wagonPane.setSize(new Dimension(170,360));
@@ -351,7 +351,6 @@ public class SimpleFrameTest extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent me) {
 
-					
 					if(clickedItem instanceof Princess1) {
 						Princess1 p = (Princess1)clickedItem;
 						//Princess1
@@ -529,6 +528,8 @@ public class SimpleFrameTest extends JFrame {
 							
 							
 					} else if (clickedItem instanceof Character){
+						Character c = (Character)clickedItem;
+						changeInfoPane(clickedItem, comp, game);
 						
 					} else if(clickedItem instanceof Effect) {
 						if(clickedItem instanceof Totem) {
@@ -541,14 +542,16 @@ public class SimpleFrameTest extends JFrame {
 								temp.addActionListener(new ActionListener() {
 									@Override
 									public void actionPerformed(ActionEvent ae) {
+										
 										//mess with panes
-										infoPane.setSize(new Dimension(380,200));
+										scroll2.setSize(new Dimension(400,200));
 										
 										for(int i=infoPane.getComponents().length-1; i>0; i--) {
 											infoPane.remove(i);
 										}
 										
-										add(itemChoosePane);
+									 add(itemChoosePane);
+									 itemChoosePane.revalidate();
 										
 											//slap totems onto pane
 											for(int q=0; q<game.getPrincess2List().size()-1; q++) {
@@ -573,7 +576,7 @@ public class SimpleFrameTest extends JFrame {
 																//add new
 																game.getWagon().addEffect(totem);
 																
-																infoPane.setSize(new Dimension(380,490));
+																scroll2.setSize(new Dimension(380,490));
 																remove(itemChoosePane);
 																updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 															}
@@ -603,7 +606,7 @@ public class SimpleFrameTest extends JFrame {
 																//add new
 																game.getWagon().addItem(lustGift);
 																
-																infoPane.setSize(new Dimension(380,490));
+																scroll2.setSize(new Dimension(380,490));
 																remove(itemChoosePane);
 																updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 															}
@@ -616,8 +619,10 @@ public class SimpleFrameTest extends JFrame {
 												}
 		
 											clickedItem.useable=false;
+											
 											infoPane.revalidate();
 											infoPane.repaint();
+											
 										}
 									}
 								});
@@ -682,6 +687,13 @@ public class SimpleFrameTest extends JFrame {
 								infoPaneAdd(temp);
 							}
 						}
+						else
+						{
+							Effect e = (Effect)clickedItem;
+							updateFrame(game, e);
+							
+							
+						}
 					} else {
 						changeInfoPane(clickedItem, comp, game);
 						JButton temp = new JButton("Remove");
@@ -706,12 +718,13 @@ public class SimpleFrameTest extends JFrame {
 									//This is a "use" result
 									if(clickedItem.name.equals("Amethyst Gossamer")) {
 										//mess with panes
-										infoPane.setSize(new Dimension(380,200));
+										scroll2.setSize(new Dimension(400,200));
 										
 										infoPane.remove(1);
 										infoPane.remove(1);
 										
 										add(itemChoosePane);
+										itemChoosePane.revalidate();
 										
 											//slap dowries onto pane
 											for(int q=0; q<game.getPrincess1List().size()-1; q++) {
@@ -736,7 +749,7 @@ public class SimpleFrameTest extends JFrame {
 																//add new
 																game.getWagon().addItem(dowry);
 																
-																infoPane.setSize(new Dimension(380,490));
+																scroll2.setSize(new Dimension(380,490));
 																remove(itemChoosePane);
 																updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 															}
@@ -768,7 +781,7 @@ public class SimpleFrameTest extends JFrame {
 																//add new
 																game.getWagon().addItem(dowry);
 																
-																infoPane.setSize(new Dimension(380,490));
+																scroll2.setSize(new Dimension(380,490));
 																remove(itemChoosePane);
 																updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 															}
@@ -786,12 +799,13 @@ public class SimpleFrameTest extends JFrame {
 										}
 									} else if(clickedItem.name.equals("Encrusted Chest")) {
 										//mess with panes
-										infoPane.setSize(new Dimension(380,200));
+										scroll2.setSize(new Dimension(400,200));
 										
 										infoPane.remove(1);
 										infoPane.remove(1);
 										
 										add(itemChoosePane);
+										itemChoosePane.revalidate();
 										
 										for(int i=0; i<game.getWagon().spaces.length; i++) {
 											if(game.getWagon().spaces[i] instanceof Princess1) {
@@ -821,7 +835,7 @@ public class SimpleFrameTest extends JFrame {
 																		//add new
 																		game.getWagon().addItem(p.dowry1);
 																		
-																		infoPane.setSize(new Dimension(380,490));
+																		scroll2.setSize(new Dimension(380,490));
 																		remove(itemChoosePane);
 																		updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 																	}
@@ -854,7 +868,7 @@ public class SimpleFrameTest extends JFrame {
 																		//add new
 																		game.getWagon().addItem(p.dowry2);
 																		
-																		infoPane.setSize(new Dimension(380,490));
+																		scroll2.setSize(new Dimension(380,490));
 																		remove(itemChoosePane);
 																		updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 																	}
@@ -869,11 +883,10 @@ public class SimpleFrameTest extends JFrame {
 													}
 												});
 												
-												infoPaneAdd(temp);
+												itemChoosePane.add(temp);
 											}
 										}
 		
-									} else if(clickedItem.name.equals("Freyda, Dragon Priestess of Ice")) {
 									}
 								}
 							});

@@ -53,7 +53,11 @@ public class GameManager {
 	public Wagon getWagon()
 	{
 		
-		if(pageNumber==2)
+		if(pageNumber==1)
+		{
+			return wagon1;
+		}
+		else if(pageNumber==2)
 		{
 			return wagon2;
 		}
@@ -63,7 +67,7 @@ public class GameManager {
 		} 
 		else 
 		{
-			return wagon1;
+			return wagon4;
 		}
 	}
 	
