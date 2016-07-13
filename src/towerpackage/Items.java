@@ -11,7 +11,7 @@ import java.util.Scanner;
 		public String description;
 		public boolean useable;
 		public boolean removable;
-		public static List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer", "Freyda, Ancient Dragon of Ice");
+		public static final List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer", "Freyda, Ancient Dragon of Ice", "Huntress Master","Wizard Master","Squire Courtier","Rabbit Princess","Imp Princess","Physicker Master","Funk Master");
 		
 		Item(String n, String i, String d) {
 			name = n; 
@@ -26,14 +26,6 @@ import java.util.Scanner;
 			}
 		}
 		
-	
-		/*
-		 * This blank method will eventually be used when effects are applied to characters at the end of the game, whenever an item 
-		 * has an effect that applies to only certain princesses this will choose targets and apply them
-		 */
-		public void apply() {
-			
-		}
 	}
 
 	class Preference {
@@ -42,11 +34,11 @@ import java.util.Scanner;
 	  
 	  Preference(String n, Boolean k) {name = n; good = k;}
 	  
-	//  public void corrupt() {good = !good;}
+	  public void corrupt() {good = !good;}
 	  
-	//  public Boolean likesIt() {
-//		  return good;
-	//  }
+	  public Boolean likesIt() {
+		  return good;
+	  }
 	}
 
 	class Character extends Item {
@@ -74,7 +66,7 @@ import java.util.Scanner;
 
 	  public ArrayList<Effect> effects;
 	  
-	//  public void corrupt() {turnoff.corrupt();}
+	  public void corrupt() {turnoff.corrupt();}
 	}
 
 class Princess1 extends Character 
@@ -134,26 +126,8 @@ class Wagon
 			huntress = false;
 		}
 
-		public boolean add(Item item)
+		public boolean addItem(Item item)
 		{
-			
-			//If you have added the Huntress and add another princess you may no longer remove Huntress
-			if(huntress)
-			{
-				for(int i = 0; i<spaces.length-1; i++)
-				{
-					if(spaces[i].name.equals("Huntress Master"))
-					{
-						spaces[i].removable=false;
-					}
-				}
-			}
-			
-			//If you are adding Huntress her effect activates
-			if (item.name.equals("Huntress Master"))
-			{
-				huntress=true;
-			}
 			boolean succeed = false;
 			for(int i = 0; i<= spaces.length-1; i++)
 			{
@@ -189,12 +163,6 @@ class Wagon
 			{
 				if(spaces[i] != null && spaces[i].removable && spaces[i].name.equals(name))
 				{
-					
-					//if you are removing Huntress her effect deactivates
-					if(name.equals("Huntress Master"))
-					{
-					huntress = false;
-					}
 					spaces[i]=null;
 				}
 			}

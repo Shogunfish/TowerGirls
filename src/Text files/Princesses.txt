@@ -1122,7 +1122,7 @@ The merchants of the Human Kingdom worship their own princess, the heiress of th
 84a5b8
 Grand Tower Kingdom
 Is delighted to teach people
-Flirts with those who riddle with her
+Gets flirty when telling riddles
 Loves to experiment with new toys
 You and your crew are new toys
 Punishes you if you fail a riddle
@@ -1133,9 +1133,9 @@ Punishes you if you fail a riddle
 Erotic literature
 Penis Inspection
 Naughtiness
-Freyda, Ancient Dragon of Ice
-Steal a max lust gift or worship bonus from a princess
-All renounced effects are applied to your own party
+Freyda, Dragon Priestess of Ice
+Steal a max lust gift or worship bonus
+Renounced effects are applied to your whole party
 Vanilla Ice - Protects you from the biting cold of ice, ice baby
 A hoarder of Knowledge, this great dragon seeks to combine the effects of deities to turn the Dragon Kingdom into a formidable superpower.
 
@@ -1159,3 +1159,464 @@ Kingdom turns into a large seaworthy fleet
 For every princess you marry, pirate princess drinks heavily
 Lost Dubloon - If heads, partner tops, if tails, partner is bottom
 Despite her age, this powerful princess is yet to be wed. She often tells friends that she is focusing on her career.
+
+#Holstaur
+db9097
+Glistening Farmland Kingdom
+Body grows fuller when storing milk
+You'll always be well fed
+Likes to share her pleasures
+Insatiable appetite from milking
+must milk regularly to keep lust down
+4
+3
+2
+0
+Milking
+Breastplay
+Cold hands
+The Milk Maidens - A group of Holstauri tasked with milking the princess
+The Maidens massage female princesses to increase milk production, in turn increasing their breast size
+The maidens may massage you, slowly turning you into a beefy, cowlike beastman
+Maiden's Milk - One gulp turns you into a futanari, another turns you back
+The princess of a rolling green pasture that prides itself in the quality of its milk. A subserviant race of milkmaids help with daily chores.
+
+#Mouse
+4D526F
+Clock Tower Kingdom
+A brainy engineer and inventor
+Gets her best ideas when orgasming
+Scatterbrained strategist
+Insists on working during sex
+Bit of a kleptomaniac
+5
+1
+2
+1
+Footjobs
+Lineup fucking
+Surprise sex
+The Hourly Sisters - The eleven sisters of Mouse Princess, they share everything
+The hourly sisters have built a mechanical stockade in the middle of your kingdom to keep twelve people inside
+Harness power for your kingdom by locking volunteers and criminals into sex machines that generate energy from pleasure
+Clockwork Dildos - One for each sister, they vibrate when its time to fuck
+A gargantuan clock tower sits amidst a vast mechanical sprawl. Its inhabitants are the mice, their princess a plucky tinkerer.
+
+#Rabbit
+362134
+Cotton Vineyard Kingdom
+Fucks like a rabbit, breeds like one too
+Super protective of her children
+Looking to shack up before she gets too old
+Her kids are more important than you
+Drinks when she's feeling self-concious
+3
+4
+2
+0
+Incest
+Ageplay
+Abuse
+The Bunny Colony - The princess' many kids, they all rely on their mother
+Arranging marriages with other families is simple, take an extra dowry from a gen 1 princess you have saved
+Family takes care of itself - you will always have an extra pair of hands/ears/eyes/etc to help with any task or challenge
+Rabbit Idol - You can be reborn as one of the princess' children, aging naturally as her favorite
+The lonely princess of the Cotton Vineyards. Her mother often tells her to get married but for some reason, suiters are scarce.
+
+#Dusk Elf
+413F4D
+Rustling Star Kingdom
+Timid, easily embarassed at lewd acts
+Blushing causes involuntary wetness
+Clumsily gets caught in sexual situations
+Can get caught up in insisting elves are pure
+Her orc bodyguards are wary around you
+3
+4
+1
+1
+Cum cuisine
+Being a good girl
+Sluts
+Bodyguard Orc Trio - A trio of gay orcs who try hard to keep the princess safe
+The orc trio, being expert fashionistas, create a line of accidentally seductive and skimpy outfits for everyone
+The orcs teach you a type of martial arts that grants a manly chest capable of deflecting attacks - but your behind becomes a dangerous weak point
+Soggy Biscuit - The Orc Trio convert semen into food in an attempt to censor it
+The princess of an elven kingdom who wants to undo the prejudice that her people are irredeemable sluts. It has not gone well so far.
+
+#Vampire
+A5391D
+Bloodlit Wood Kingdom
+Has an incredibly pleasurable bite
+Really good at sucking
+Claims to know ancient secrets of the world
+Vast knowledge is outdated and misleading
+Refuses to awaken or travel in daylight
+3
+1
+1
+4
+Hickeys
+Wax candles
+Morning sex
+The Bat Brides - These familiars are drained to quench the princess' thirst
+The brides are exceptional hostesses, attracting and beguiling guests to act according to your will
+Allowing a target to feed the princess with their blood extends their lifespan at the cost of inevitably becoming an aged vampire themselves
+Bathory's Bathwater - Vampire Princess' own blood can grant the gift of youth to a female target (lolify)
+The daughter of a powerful vampire king. Entheusiastic to play the part of a gloomy undead sage, this princess is less than a century old.
+
+#Dog
+795B27
+Alabaster Shrub Kingdom
+Man's best friend with benefits
+Touch fluffy tail
+Will always be nearby if you need her
+Will always be nearby
+Always
+6
+2
+0
+1
+Your scent
+Nakadashi
+Netorare
+Dog Princess - HUH? Is dog princess not good enough for you?
+Love can't be bought; Dog Princess can provide anything you need, just don't ask how she gets it
+She will act as a decoy for you in battle - In fact, she will do anything you ask as long as you are willing to do the same in the end
+Dog Dungeon - All other princesses are locked away, you don't need them anyway
+A princess who longed to be united with her prince. After latching onto a passing dragon, she departed to a tower and waited for them to arrive.
+
+#Djinn
+F1C145
+Burning Lantern Kingdom
+Handy compact home
+Expert belly dancer with large bulgue
+Will grant you a free wish
+Wish must be to suck his cock
+Sass queen
+3
+3
+0
+3
+Lamp-rubbing
+Frotting
+Tight spaces
+Ifrit Catamite - A fiery djinn with a burning sexual urge to power bottom
+Rubbing your cock with djinn semen as lube grants a cock-shaped gold statue with every jerk
+You are granted a magical fever that increases strength and speed, but will cause great fatigue unless blown by a male character
+Djinn's 'Lamp' - Rubbing it can tighten and loosen a target's clothing
+The Burning Lantern Kingdom is a cold, empty desert lit up by millions of lamps, each one housing a soul. Their princess is but one of many.
+
+#Triclops
+C7511F
+Fragrant Smoke Kingdom
+Has the warmest hugs
+Sharp third eye that can also tame beasts
+As wild as her herd in the sack
+About as well-mannered as them too
+Odd obsession with beastfolk
+5
+1
+0
+3
+Animalistic sex
+Ball massage
+Sheepishness
+The Princess' Herd - A collection of giant creatures who tower over other species
+Gain an enourmous set of herds that supply meats, hides, furs, and milk to your kingdom
+Your kingdom's cavalry is replaced with dinosaur-mounted soldiery and minor beasts that become your eyes and ears
+Eye of Control - Her third eye can turn any beast or beastfolk into a subservient pet
+The princess from a kingdom of giants. She herds animals many humans would deem to be ferocious beasts.
+
+#Raider
+D88D3C
+The Everharsh Glacier
+Can call lightning from the sky
+Horny in more ways than one
+Believes casual sex strengthens bonds
+Believes love is forged via 1-on-1 combat
+Not one to think before acting violently
+0
+2
+3
+4
+Electrostimulation
+Branding
+Quickies
+The Draught Wolf - A trusty canine who provides warriors with frostbeer
+The raiders have large fountains filled with alchoholic beverages adorning your streets
+You are granted the power to absorb electricity and temporarily grow harder, better, faster, and stronger - you charge this power by yelling
+Lightning Runes - Imprint tattoos on yourself and your party
+The High Forest's north is a cold, deadly mistress, guared by the crew of the Everharsh Glacier and their princess, a barbaric warrior.
+
+#Eldritch
+6C879A
+Potent psychic with a hypnotic voice
+Affectionate and limber tenticles
+Enjoys granting nice dreams
+Claims to be grumpy when woken up
+Is a narcoleptic
+3
+2
+0
+4
+Dreamplay
+Somnophilia
+Heresy
+The Pleasant Cultists - A group of cheerful worshippers who idolize their princess
+The princess' eldritch religion spreads to other kingdoms, influencing fans to pay your church a tithe
+The Eldritch Princess' presence grants you a single premonition every day, the contents of which are confusing but ultimately correct if uninterrupted
+Eldritch Link - Connect your lucid dreams to those of your princess'
+A minor anomaly worshipped by the cultists of the Winking Dark kingdom. Her presence is eerily comforting.
+
+#Lamia
+322E25
+Ashen Plateau Kingdom
+A tight, constricting hug
+Sunbathes in the nude
+Venom is an aphrodesiac
+It's still venom, build that resistance
+Get a safeword for those powerful coils
+4
+2
+4
+1
+Constriction
+Forced orgasms
+Bottoming
+The Kind Shrouds - Immortal maids who wait on the princess hand and foot
+The shrouds weave a fine set of clothes from sparkling snakeskin that grant a resistance against poison
+Once you've built a resistance to the Lamia Princess' venom, you are able to counteract the magic of other reptilian races, such as gorgons
+Serpentine Choker - The princess' personal necklace can grant you with two cocks
+A haughty princess from a recently unearthed kingdom of snakepeople. She dislikes gorgons and wants everything her way.
+
+#Imp
+F19942
+Hearthstone Cavalcade Kingdom
+A playful illusionist and prankster
+A heart of gold, unsuitable for a demon
+Unintentionally gives good advice
+Stubborn and petty at times
+Always Trying to rule the world, is bad at it
+5
+4
+2
+1
+Hairjobs
+Tailjobs
+Subbing
+The Devilish Do'gooders - Despite attempts to be evil, these folks are natural altruists
+You will be cursed with a renounced effect of your choice, though you can always trick them into removing one
+The hijinks of the cavalcade will accidentally reveal the weak points of various powerful monsters and foes for you to take advantage of
+Imp's Mischief - Turn dislikes into kinks
+A small travelling encampment led by an impish princess. She uses her hellish powers to form minor contracts with others.
+
+#Moth
+F19942
+Illusory Apiary Kingdom
+Spreads sparkling dust whens she feels joy
+Loves bright things
+You're her brightest thing
+Kind of ditsy
+No, really, she dumb as hell
+4
+1
+3
+3
+Cuddling
+Wingjobs
+Butt stuff
+The Twin Wisps - Young lights raised to guide the princess away from harm
+The wisps guide silkworms to weave unmatched quantities of strong and durable silk
+The wisps can guide you not only through the darkness, but any dangerous situation that you might be stuck in
+Wisply Intervention - The wisps can possess your dick to help you determine your child's inherited traits
+The nosy princess of an insect empire. Her fuzzy wings can spread a fine psychedelic dust that more often than not gets her into trouble.
+
+#Sphinx
+B99557
+Glittering Dune Kingdom
+Loves all games, especially traditional
+Peppers her vocab with sexy euphemisms
+Self-proclaimed pun master
+Way too many cat puns
+Takes games a little too seriously
+4
+2
+4
+5
+Orgasm denial
+Post-orgasm sex
+Incest
+Jackal Tactician - An expert of strategy that indulges the princess' cravings
+Erect enormous statues of yourself that confront people who enter with challenges of your choosing
+Thanks to the Jackal tactician, wars involving your kingdom are decided through traditional games
+Magic D20 - Determines how many hours you last in bed
+The Glittering Dunes are ruled by a family of great feline warriors. The only daughter of this family takes advantage of this prestigious position.
+
+#Yeti
+B6BDDA
+Whiteout Peak Kingdom
+Warm-hearted, actually gives off heat
+Makes food and shelter from ice and snow
+Lust rises and falls with the moon
+Superstitious, strange rituals
+Can die of heartbreak
+5
+2
+2
+2
+Grooming
+Kissing
+Shaving
+The Stray Ro Lang - The other inhabitants of the peak bother the princess for food
+You make a killing in the ice business with your ability to create an unlimited amount of frozen treats
+You and your armies spread ice and snow wherever you go, the severity of which depends on how faithful you are to Yeti Princess
+Shimmering Popsicle - Your dick is always solid, and you can control the flavor of your cum
+A lone wanderer in a frozen tundra, this yeti is a master of survival. A fire burns in her heart, keeping it warm with thoughts of love.
+
+#Sword
+B84041
+The Crystalline Battalion
+Unbreakable, cuts through magic
+Sexually frustrated and finds battle hot
+It's not impossible to fuck a sword
+It is quite difficult to fuck a sword
+Don't cut yourself on all that edge
+1
+5
+0
+5
+Bathing together
+Polishing with cum
+Public nudity
+The Shield Maiden - A young nurse trapped within a trusty shield
+The more treasure you find, the better material Sword Princess will become, from bronze, to diamond and beyond
+The sword princess shines brilliantly when drawn, revealing things hidden within a small radius, including emotions, liars, and traps
+Spoils of War - Victory in battle allows Sword Princess' spirit to be tangible for a day
+An ancient princess of the High Forest Kingdom trapped within a sword. She rules an army of spirits who possess inanimate objects.
+
+#Jester
+523E61
+Rhinestone Carnival
+Magic makes her the life of the party
+Full of energy, insanely flexible
+Knows good jokes
+Her  magic is a little bit evil
+Legitimately insane
+3
+3
+2
+4
+Contortionism
+Omnisexuality
+Humiliation
+The Puppet Princesses - Dolls surrounded by an odd aura, almost as if they were living
+Your kingdom becomes the capital of lucrative casinos, betting games, and assorted festivities
+The puppets can gain control of a menagerie of playful beasts both mundane and fantastic, eager to entertain you
+Deck of Many Kinks - Draw a card and gain a fetish for a whole day
+An entertainer born from the High Forest's secret sect of dark magicians, hidden under the guise of merry festival-throwers.
+
+#Faun
+A8C197
+Melodic Valley Kingdom
+Erotic voice entices both men and women
+Connections with the best chefs and wineries
+Strives to make sure you're having a good time
+Always tipsy if not drunk, never fully sober
+If it's not fun or sexy, it won't happen
+1
+5
+4
+0
+Aromas
+Harem orgies
+Cum in her booze
+Lyrical Nymph Band - A group of musical spirits who provide background music
+The Nymphs follow your every movement to ensure that your actions are accompanied by music
+Whenever the band begins to play a party begins to form, turning foes into friends for the duration
+Bottle of Plenty - The larger your personal orgie, the larger your volume of cum spray
+The soulful soprano of the Melodic Valley. Her desire to drink and eat is as powerful as the ballads she sings to the forest below.
+
+#Crystal
+8BBECF
+Raining Jewel Kingdom
+Changes color according to her mood
+Tears can be sold for thousands
+Loves holding your hand
+So much that it makes her cry
+You must jerk off to recharge her energy
+3
+3
+5
+1
+Circlejerking
+Voyeurism
+Piquerism
+Supportive Geode Dad - Finds great relief in you getting her out of the house for once
+Being probably the only king you've ever seen, you and Geode Dad bond over family fishing trips, selling gemfish for coin
+The exterior of your kingdom is fortified with crystal armaments, powered by the souls of enemies you have trapped within these armed diamond prisons
+Kusanagi no Bukkake - Jasper will fucking kill me when he sees this name... All the cum you've ever spilt returns to you as a great sword
+Due to a misunderstanding with her servants, this prim princess grew an interest in male on male romace, much to the disappointment of her parents.
+
+#Toxic Dragon
+8CB289
+Grand Tower Kingdom
+Flawless weaponized body
+Bonds with you when in battle
+Willing to do anything for approval
+Lack of social skills from loneliness
+Breath is death
+5
+0
+5
+5
+Smothering
+Nippleplay
+Neglect
+False Knight Companion - A figment of her imagination, and Toxic Dragon Princess' only friend
+The bag of chocolate dick holding grants you an unlimited supply of assorted tasty chocolate dicks
+You slowly transform into a powerful acolyte of the war dragons, granting two extra arms and the ability to release a toxic breath storm at will
+Tantilizing Toothbrush - Filters poison and grants excellent oral skills to those who lack them
+A mighty warrior who passively releases noxious fumes from her body. Because of this, she has a hard time getting close to people.
+
+#Paladin
+586F98
+The Holy Eye Kingdom
+Perfect housewife
+Wants kids
+Morally righteous
+Expects you to be, too
+Chaste
+4
+0
+2
+3
+Handholding
+Kissing
+Lewdness
+Cleric Princess - Paladin Princess' sister, she will heal both your body and your soul
+The sisters establish a theocratic branch of your kingdom and collect a tithe in your name
+Paladin Princess summons her friends and allies, forming a knighthood dedicated to your kingdom
+The Book of Lewd Heresy - Whosoever reads this book will forever love kinky sex
+The holy Eye Kingdom is built on unrelenting faith and the will to carry out the word of their god. Few are as dedicated as their princess
+
+#Default
+000000
+Default Kingdom
+Pro 1
+Pro 2
+Pro 3
+Con 1
+Con 2
+0
+0
+0
+0
+Fetish
+Fetish
+Turnoff
+Companion - Companion's description
+Bonus for having more wealth than power
+Bonus for having more power than wealth
+Lust Item - Raising a princess's lust value to maximum will grant you her lust item.
+Yet another fake princess, you really gotta watch out for these sir knight...

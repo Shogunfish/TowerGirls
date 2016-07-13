@@ -1,5 +1,6 @@
 package towerpackage;
 
+import java.awt.Component;
 import java.util.ArrayList;
 
 public class GameManager {
@@ -70,6 +71,11 @@ public class GameManager {
 			out[i] = wagon1.getStats()[i] + wagon2.getStats()[i] + wagon3.getStats()[i] + wagon4.getStats()[i];
 		}
 		return out;
+	}
+
+	public ArrayList<Princess3> getPrincess3List() {
+		// TODO Auto-generated method stub
+		return princesses4;
 	}
 	
 }

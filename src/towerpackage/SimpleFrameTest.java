@@ -77,6 +77,7 @@ public class SimpleFrameTest extends JFrame {
 				game.princesses1 = new ArrayList<Princess1>();
 				game.princesses2 = new ArrayList<Princess1>();
 				game.princesses3 = new ArrayList<Princess2>();
+				game.princesses4 = new ArrayList<Princess3>();
 				game.wagon1 = new Wagon(4, "Wally");
 				game.wagon2 = new Wagon(4, "Michael");
 				game.wagon3 = new Wagon(4, "Ganondorf");
@@ -104,6 +105,14 @@ public class SimpleFrameTest extends JFrame {
 				for(String s : princessNames) {
 					try {
 						game.princesses3.add(test.readPrincess2("src/Text Files/Princesses.txt",s));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				princessNames = new String[]{"Paladin"};
+				for(String s : princessNames) {
+					try {
+						game.princesses4.add(test.readPrincess3("src/Text Files/Princesses.txt",s));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -212,6 +221,19 @@ public class SimpleFrameTest extends JFrame {
 					princessPane.add(temp);
 				}
 			}
+		} else if(game.pageNumber==4)
+		{
+			for(int i=0; i<game.getPrincess3List().size(); i++) 
+			{
+				if(!Arrays.asList(game.getWagon().spaces).contains(game.getPrincess3List().get(i))) 
+				{
+					JLabel temp = new JLabel();
+					temp.setName(game.getPrincess3List().get(i).name);
+					paintImage(game.getPrincess3List().get(i),temp);
+					addObjectClick(game.getPrincess3List().get(i), temp, game);
+					princessPane.add(temp);
+				}
+			}
 		}
 	}
 
@@ -306,11 +328,11 @@ public class SimpleFrameTest extends JFrame {
 				}
 				else if(game.pageNumber==3)
 				{
-					next.setEnabled(false);
 					updateFrame(game, game.princesses3.get(game.princesses3.size()-1));
 				}
 				else if(game.pageNumber==4)
 				{
+					updateFrame(game, game.princesses4.get(game.princesses4.size()-1));
 				}
 			}
 		});
@@ -358,9 +380,9 @@ public class SimpleFrameTest extends JFrame {
 							temp.addActionListener(new ActionListener() {
 								@Override
 								public void actionPerformed(ActionEvent ae) {
-									game.getWagon().add(p);
-									if(princessCard.getChosen()[0]) game.getWagon().add(p.dowry1);
-									if(princessCard.getChosen()[1]) game.getWagon().add(p.dowry2);
+									game.getWagon().addItem(p);
+									if(princessCard.getChosen()[0]) game.getWagon().addItem(p.dowry1);
+									if(princessCard.getChosen()[1]) game.getWagon().addItem(p.dowry2);
 									changeInfoPane(p, comp, game);
 									updateFrame(game, game.princesses1.get(game.princesses1.size()-1));
 								}
@@ -399,7 +421,7 @@ public class SimpleFrameTest extends JFrame {
 							temp.addActionListener(new ActionListener() {
 								@Override
 								public void actionPerformed(ActionEvent ae) {
-									game.getWagon().add(p);
+									game.getWagon().addItem(p);
 									if(princessCard.getChosen()[0] && !game.getWagon().hasWorship()) p.totem.whichEffect = 1;
 									else p.totem.whichEffect = 2;
 									if(!game.getWagon().contains(p.totem.name)) game.getWagon().addEffect(p.totem);
@@ -459,7 +481,7 @@ public class SimpleFrameTest extends JFrame {
 							//Show Totem
 							updateFrame(game, clickedItem);
 							//if totem has a nonzero cost, it's been bought already
-							if(t.name.equals("Freyda, Ancient Dragon of Ice")) {
+							if(t.name.equals("Freyda, Dragon Priestess of Ice")) {
 								JButton temp = new JButton("Use");
 								temp.addActionListener(new ActionListener() {
 									@Override
@@ -524,7 +546,7 @@ public class SimpleFrameTest extends JFrame {
 																//Set non-removable (now Ice Dragon can't leave)
 																clickedItem.removable = false;
 																//add new
-																game.getWagon().add(lustGift);
+																game.getWagon().addItem(lustGift);
 																
 																infoPane.setSize(new Dimension(380,490));
 																remove(itemChoosePane);
@@ -657,7 +679,7 @@ public class SimpleFrameTest extends JFrame {
 																//Set non-removable (now Drider can't leave)
 																clickedItem.removable = false;
 																//add new
-																game.getWagon().add(dowry);
+																game.getWagon().addItem(dowry);
 																
 																infoPane.setSize(new Dimension(380,490));
 																remove(itemChoosePane);
@@ -689,7 +711,7 @@ public class SimpleFrameTest extends JFrame {
 																//Set non-removable (now Drider can't leave)
 																clickedItem.removable = false;
 																//add new
-																game.getWagon().add(dowry);
+																game.getWagon().addItem(dowry);
 																
 																infoPane.setSize(new Dimension(380,490));
 																remove(itemChoosePane);
@@ -742,7 +764,7 @@ public class SimpleFrameTest extends JFrame {
 																		//Set non-removable (now Dragon can't leave)
 																		clickedItem.removable = false;
 																		//add new
-																		game.getWagon().add(p.dowry1);
+																		game.getWagon().addItem(p.dowry1);
 																		
 																		infoPane.setSize(new Dimension(380,490));
 																		remove(itemChoosePane);
@@ -775,7 +797,7 @@ public class SimpleFrameTest extends JFrame {
 																		//Set non-removable (now Dragon can't leave)
 																		clickedItem.removable = false;
 																		//add new
-																		game.getWagon().add(p.dowry2);
+																		game.getWagon().addItem(p.dowry2);
 																		
 																		infoPane.setSize(new Dimension(380,490));
 																		remove(itemChoosePane);
@@ -796,7 +818,7 @@ public class SimpleFrameTest extends JFrame {
 											}
 										}
 		
-									} else if(clickedItem.name.equals("Freyda, Ancient Dragon of Ice")) {
+									} else if(clickedItem.name.equals("Freyda, Dragon Priestess of Ice")) {
 									}
 								}
 							});
