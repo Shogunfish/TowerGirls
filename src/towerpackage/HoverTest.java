@@ -228,7 +228,7 @@ public class HoverTest extends JFrame {
 	void changeInfoPane(Item clicked, Item itemUsed, Component comp, GameManager game) {
 		
 		infoPane.removeAll();
-		princessCard = new PrincessTesting(clicked);
+		princessCard = new PrincessTesting(clicked,game);
 		infoPane.add(princessCard.provideInput());
 		
 		//Add button
