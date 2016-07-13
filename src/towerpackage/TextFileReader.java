@@ -108,7 +108,7 @@ public Princess3 readPrincess3 (String textLocation, String princessName) throws
 		
 		Color princessColor = Color.decode("#" + princess.get(1));
 		Princess3 princessBuild = new Princess3(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
-		
+
 		princessBuild.companion = new Character(hyphenRegex(princess.get(15))[0], "src/Companions/" + hyphenRegex(princess.get(15))[0] + ".png", princessColor, princess.get(2), hyphenRegex(princess.get(15))[1]);
 		
 		princessBuild.wealthGift = new Effect(princess.get(0) + " wealth", "src/Girls/" + princess.get(0) +  ".png");

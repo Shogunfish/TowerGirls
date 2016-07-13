@@ -108,9 +108,10 @@ public class SimpleFrameTest extends JFrame {
 						e.printStackTrace();
 					}
 				}
-				princessNames = new String[]{"Paladin"};
+				princessNames = new String[]{"Holstaur", "Mouse", "Rabbit", "Dusk Elf", "Vampire", "Dog", "Djinn", "Triclops", "Raider", "Eldritch", "Lamia", "Imp", "Moth", "Sphinx", "Yeti", "Sword", "Jester", "Faun", "Crystal", "Toxic Dragon", "Paladin", "Default"};
 				for(String s : princessNames) {
 					try {
+						System.out.println(s);
 						game.princesses4.add(test.readPrincess3("src/Text Files/Princesses.txt",s));
 					} catch (IOException e) {
 						e.printStackTrace();

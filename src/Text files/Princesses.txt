@@ -1325,7 +1325,7 @@ Sheepishness
 The Princess' Herd - A collection of giant creatures who tower over other species
 Gain an enourmous set of herds that supply meats, hides, furs, and milk to your kingdom
 Your kingdom's cavalry is replaced with dinosaur-mounted soldiery and minor beasts that become your eyes and ears
-Eye of Control - Her third eye can turn any beast or beastfolk into a subservient pet
+Eye of the Beast-Holder - Her third eye can turn any beast or beastfolk into a subservient pet
 The princess from a kingdom of giants. She herds animals many humans would deem to be ferocious beasts.
 
 #Raider
@@ -1346,11 +1346,12 @@ Quickies
 The Draught Wolf - A trusty canine who provides warriors with frostbeer
 The raiders have large fountains filled with alchoholic beverages adorning your streets
 You are granted the power to absorb electricity and temporarily grow harder, better, faster, and stronger - you charge this power by yelling
-Lightning Runes - Imprint tattoos on yourself and your party
+Trample Stamps - Use lightning runes to imprint tattoos on you and your party
 The High Forest's north is a cold, deadly mistress, guared by the crew of the Everharsh Glacier and their princess, a barbaric warrior.
 
 #Eldritch
 6C879A
+Winking Dark Kingdom
 Potent psychic with a hypnotic voice
 Affectionate and limber tenticles
 Enjoys granting nice dreams
@@ -1366,7 +1367,7 @@ Heresy
 The Pleasant Cultists - A group of cheerful worshippers who idolize their princess
 The princess' eldritch religion spreads to other kingdoms, influencing fans to pay your church a tithe
 The Eldritch Princess' presence grants you a single premonition every day, the contents of which are confusing but ultimately correct if uninterrupted
-Eldritch Link - Connect your lucid dreams to those of your princess'
+Unwokeus Pocus - Connect your lucid dreams to those of your princess'
 A minor anomaly worshipped by the cultists of the Winking Dark kingdom. Her presence is eerily comforting.
 
 #Lamia
@@ -1405,7 +1406,7 @@ Always Trying to rule the world, is bad at it
 Hairjobs
 Tailjobs
 Subbing
-The Devilish Do'gooders - Despite attempts to be evil, these folks are natural altruists
+The Devilish Do-Gooders - Despite attempts to be evil, these folks are natural altruists
 You will be cursed with a renounced effect of your choice, though you can always trick them into removing one
 The hijinks of the cavalcade will accidentally reveal the weak points of various powerful monsters and foes for you to take advantage of
 Imp's Mischief - Turn dislikes into kinks
@@ -1450,7 +1451,7 @@ Incest
 Jackal Tactician - An expert of strategy that indulges the princess' cravings
 Erect enormous statues of yourself that confront people who enter with challenges of your choosing
 Thanks to the Jackal tactician, wars involving your kingdom are decided through traditional games
-Magic D20 - Determines how many hours you last in bed
+Dodickehedron - Determines how many hours you last in bed
 The Glittering Dunes are ruled by a family of great feline warriors. The only daughter of this family takes advantage of this prestigious position.
 
 #Yeti
@@ -1468,7 +1469,7 @@ Can die of heartbreak
 Grooming
 Kissing
 Shaving
-The Stray Ro Lang - The other inhabitants of the peak bother the princess for food
+The Stray Ro-Lang - The other inhabitants of the peak bother the princess for food
 You make a killing in the ice business with your ability to create an unlimited amount of frozen treats
 You and your armies spread ice and snow wherever you go, the severity of which depends on how faithful you are to Yeti Princess
 Shimmering Popsicle - Your dick is always solid, and you can control the flavor of your cum
@@ -1501,7 +1502,7 @@ Rhinestone Carnival
 Magic makes her the life of the party
 Full of energy, insanely flexible
 Knows good jokes
-Her  magic is a little bit evil
+Her magic is a little bit evil
 Legitimately insane
 3
 3
@@ -1534,7 +1535,7 @@ Cum in her booze
 Lyrical Nymph Band - A group of musical spirits who provide background music
 The Nymphs follow your every movement to ensure that your actions are accompanied by music
 Whenever the band begins to play a party begins to form, turning foes into friends for the duration
-Bottle of Plenty - The larger your personal orgie, the larger your volume of cum spray
+Free Refills - The larger your personal orgie, the larger your volume of cum spray
 The soulful soprano of the Melodic Valley. Her desire to drink and eat is as powerful as the ballads she sings to the forest below.
 
 #Crystal
@@ -1555,7 +1556,7 @@ Piquerism
 Supportive Geode Dad - Finds great relief in you getting her out of the house for once
 Being probably the only king you've ever seen, you and Geode Dad bond over family fishing trips, selling gemfish for coin
 The exterior of your kingdom is fortified with crystal armaments, powered by the souls of enemies you have trapped within these armed diamond prisons
-Kusanagi no Bukkake - Jasper will fucking kill me when he sees this name... All the cum you've ever spilt returns to you as a great sword
+The (Ball) Buster Sword - All the cum you've ever spilt returns to you as a great sword
 Due to a misunderstanding with her servants, this prim princess grew an interest in male on male romace, much to the disappointment of her parents.
 
 #Toxic Dragon
@@ -1576,7 +1577,7 @@ Neglect
 False Knight Companion - A figment of her imagination, and Toxic Dragon Princess' only friend
 The bag of chocolate dick holding grants you an unlimited supply of assorted tasty chocolate dicks
 You slowly transform into a powerful acolyte of the war dragons, granting two extra arms and the ability to release a toxic breath storm at will
-Tantilizing Toothbrush - Filters poison and grants excellent oral skills to those who lack them
+Tantalizing Toothbrush - Filters poison and grants excellent oral skills to those who lack them
 A mighty warrior who passively releases noxious fumes from her body. Because of this, she has a hard time getting close to people.
 
 #Paladin
@@ -1597,7 +1598,7 @@ Lewdness
 Cleric Princess - The Paladin's sister: she'll heal your body and soul
 The sisters establish a theocratic branch of your kingdom and collect a tithe in your name
 Paladin Princess summons her friends and allies, forming a knighthood dedicated to your kingdom
-The Book of Lewd Heresy - Whosoever reads this book will forever love kinky sex
+Book of Lewd Heresy - Whosoever reads this book will forever love kinky sex
 The holy Eye Kingdom is built on unrelenting faith and the will to carry out the word of their god. Few are as dedicated as their princess
 
 #Default
