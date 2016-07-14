@@ -11,19 +11,13 @@ import java.util.Scanner;
 		public String description;
 		public boolean useable;
 		public boolean removable;
-		public static final List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer", "Freyda, Dragon Priestess of Ice", "Huntress Master","Wizard Master","Squire Courtier","Rabbit Wealth","Imp Wealth","Physicker Master","Funk Master");
 		
 		Item(String n, String i, String d) {
 			name = n; 
 			image = i; 
 			description = d; 
 			removable=true;
-			if(useableItems.contains(n)) {
-				useable=true;
-			}
-			else {
-				useable=false;
-			}
+			useable=true;
 		}	
 	}
 
@@ -113,7 +107,8 @@ class Factionless extends Character
 {
 	public Effect effect1;
 	public Effect effect2;
-	public Effect kingdom;
+	public Effect kingdomMod;
+	public String type;
 
 	Factionless(String n, String i, Color c, String k, String d) {
 		super(n, i, c, k, d);

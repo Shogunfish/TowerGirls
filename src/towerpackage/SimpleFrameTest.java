@@ -78,6 +78,7 @@ public class SimpleFrameTest extends JFrame {
 				game.princesses2 = new ArrayList<Princess1>();
 				game.princesses3 = new ArrayList<Princess2>();
 				game.princesses4 = new ArrayList<Princess3>();
+				game.companionList = new ArrayList<Factionless>();
 				game.wagon1 = new Wagon(4, "Wally");
 				game.wagon2 = new Wagon(4, "Michael");
 				game.wagon3 = new Wagon(4, "Ganondorf");
@@ -113,6 +114,14 @@ public class SimpleFrameTest extends JFrame {
 				for(String s : princessNames) {
 					try {
 						game.princesses4.add(test.readPrincess3("src/Text Files/Princesses.txt",s));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				String[] companionNames = new String[]{"Jackal Tactician"};
+				for(String s : companionNames) {
+					try {
+						game.companionList.add(test.readFactionless("src/Text Files/Factionless.txt",s));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
@@ -235,6 +244,17 @@ public class SimpleFrameTest extends JFrame {
 					temp.setName(game.getPrincess3List().get(i).name);
 					paintImage(game.getPrincess3List().get(i),temp);
 					addObjectClick(game.getPrincess3List().get(i), temp, game);
+					princessPane.add(temp);
+				}
+			}
+			for(int i=0; i<game.companionList.size(); i++) 
+			{
+				if(!Arrays.asList(game.getWagon().spaces).contains(game.companionList.get(i))) 
+				{
+					JLabel temp = new JLabel();
+					temp.setName(game.companionList.get(i).name);
+					paintImage(game.companionList.get(i),temp);
+					addObjectClick(game.companionList.get(i), temp, game);
 					princessPane.add(temp);
 				}
 			}
@@ -534,9 +554,59 @@ public class SimpleFrameTest extends JFrame {
 							
 							
 							
-					} else if (clickedItem instanceof Character){
-						Character c = (Character)clickedItem;
+					} else if (clickedItem instanceof Factionless){
+						Factionless f = (Factionless)clickedItem;
 						changeInfoPane(clickedItem, comp, game);
+						
+
+					
+						//Princess1
+						//If this princess is in the wagon
+						if(game.getWagon().contains(clickedItem.name)) {
+							//Add remove button
+							JButton temp = new JButton("Remove");
+							if(!f.removable || !f.effect1.removable || !f.effect2.removable) temp.setEnabled(false);
+							temp.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent ae) {
+										game.getWagon().removeItem(f.name);
+										game.getWagon().removeEffect(f.effect1.name);
+										game.getWagon().removeEffect(f.effect2.name);
+										game.getWagon().removeEffect(f.kingdomMod.name);
+										changeInfoPane(f, comp, game);
+										updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
+									
+								}
+							});
+							changeInfoPane(clickedItem, comp, game);
+							infoPaneAdd(temp);
+						} else {
+							//If this princess is not in the wagon
+							JButton temp = new JButton("Add");
+							temp.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent ae) {
+									boolean succeed = game.getWagon().addItem(f);
+									if(succeed){
+										game.getWagon().addEffect(f.effect1);
+										game.getWagon().addEffect(f.effect2);
+										game.getWagon().addEffect(f.kingdomMod);
+									}
+									changeInfoPane(f, comp, game);
+									updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
+								}
+							});
+							changeInfoPane(clickedItem, comp, game);
+							infoPaneAdd(temp);
+							//Add add button
+						}
+						
+						
+						
+					} else if(clickedItem instanceof Character){	
+					
+					Character c = (Character)clickedItem;
+					updateFrame(game, c);
 						
 					} else if(clickedItem instanceof Effect) {
 						

@@ -2,6 +2,7 @@ package towerpackage;
 
 import java.awt.Color;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -135,6 +136,55 @@ public Princess3 readPrincess3 (String textLocation, String princessName) throws
 		
 		return princessBuild;
 	}
+
+public Factionless readFactionless(String textLocation, String companionName) throws IOException
+{
+	ArrayList<String> companion = new ArrayList<String>();
+	@SuppressWarnings("resource")
+	BufferedReader reader = new BufferedReader(new FileReader(textLocation));
+	String line = "";
+	while ((line = reader.readLine()) != null) {
+		if (line.equals("#" + companionName)) {
+			companion.add(companionName);
+			line = reader.readLine();
+			while(line != null && !line.isEmpty() ) {
+				companion.add(line);
+				line = reader.readLine();
+			}
+			break;
+		}
+	}
+	Color companionColor = Color.decode("#" + companion.get(1));
+	
+	Factionless companionBuild = new Factionless(companion.get(0), "src/Companions/" + companion.get(0) +  ".png", companionColor, companion.get(2), companion.get(companion.size()-1));
+	
+	companionBuild.type = companion.get(0).split(" ")[1];
+	
+	companionBuild.kinks = (new Preference[]{new Preference(companion.get(12),true), new Preference(companion.get(13),true)});
+	companionBuild.turnoff = new Preference(companion.get(14),false);
+	
+	companionBuild.good = new String[]{companion.get(3),companion.get(4),companion.get(5)};
+	companionBuild.bad = new String[]{companion.get(6),companion.get(7)};
+	
+	companionBuild.love = Integer.parseInt(companion.get(8));
+	companionBuild.lust = Integer.parseInt(companion.get(9));
+	companionBuild.wealth = Integer.parseInt(companion.get(10));
+	companionBuild.power = Integer.parseInt(companion.get(11));
+	
+	
+	companionBuild.effect1 = new Effect(hyphenRegex(companion.get(15))[0], "src/Companions/" + companion.get(0) +  ".png");
+	companionBuild.effect1.description=hyphenRegex(companion.get(15))[1];
+	
+	if(!companion.get(16).equals("Nothing")){
+	companionBuild.effect2 = new Effect(hyphenRegex(companion.get(16))[0], "src/Companions/" + companion.get(0) +  ".png");
+	companionBuild.effect2.description=hyphenRegex(companion.get(16))[1];
+	}
+	companionBuild.kingdomMod = new Effect(hyphenRegex(companion.get(17))[0], "src/Companions/" + companion.get(0) +  ".png");
+	companionBuild.kingdomMod.description=hyphenRegex(companion.get(17))[1];
+	
+	return companionBuild;
+	
+}
 
 	String[] hyphenRegex(String str) {
 //		Pattern regex = Pattern.compile("^.*?(?= - )");

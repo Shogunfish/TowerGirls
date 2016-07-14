@@ -18,7 +18,8 @@ public class GameManager {
 	
 	public Wagon wagon4;
 	public ArrayList<Princess3> princesses4;
-	public ArrayList<Character> companionList;
+	public ArrayList<Factionless> companionList;
+	
 		
 	
 	
