@@ -203,6 +203,8 @@ public class PrincessCard extends JPanel {
 			for(int i=0; i<4; i++) {
 				addJLabel(null, "" , null, null, "src/Stat icons/" + stats[i] + ".png", new Dimension(20,20), middle, "cell 0 " + i , false);
 			}
+			
+			boolean def = false;
 			if(!princess.name.equals("Default")) {
 				//Add stat boxes
 				int[] stat = new int[]{princess.love,princess.lust,princess.wealth,princess.power};
@@ -217,6 +219,7 @@ public class PrincessCard extends JPanel {
 					addJLabel("statNames", "   " + stats[i] + "   0 - 5", mainFont, null, null, null, middle, "cell 0 " + i + ",  w 170", false);
 				}
 				borderPaint("statNames", false, middle, Color.BLACK);
+				def=true;
 			}
 			String rgb = Integer.toHexString(princess.col.getRGB());
 			rgb = rgb.substring(2, rgb.length());
@@ -225,8 +228,8 @@ public class PrincessCard extends JPanel {
 			addJLabel("Companion", "", null, null, princess.companion.image, null, middle, "cell 2 0 1 6", true);
 			addJLabel(null, "<html><font color=" + rgb + ">" + princess.companion.name + System.lineSeparator() + "<font color=black>" + princess.companion.description + "</font></html>", mainFont, null, null, null, middle, "cell 1 0 1 4", false);
 			
-			addJLabel("Wealth", "<html><font color = 'black'>Wealth - </font><font color = 'F4C43E' size = '4'>" + princess.wealthGift.description + "</font></html>", mainFont, null, null, null, middle, "cell 0 4 2 0", false);
-			addJLabel("Power", "<html><font color = 'black'>Power - </font><font color = '86394D' size = '4'>" + princess.powerGift.description + "</font></html>", mainFont, null, null, null, middle, "cell 0 5 2 0", false);
+			addJLabel("Worship", "<html><font color = 'black'>Wealth - </font><font color = 'F4C43E' size = '4'>" + princess.wealthGift.description + "</font></html>", mainFont, null, null, null, middle, "cell 0 4 2 0", true);
+			addJLabel("Renounce", "<html><font color = 'black'>Power - </font><font color = '86394D' size = '4'>" + princess.powerGift.description + "</font></html>", mainFont, null, null, null, middle, "cell 0 5 2 0", true);
 			
 			//Kinks
 			addJLabel(null, princess.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
@@ -310,9 +313,9 @@ public class PrincessCard extends JPanel {
 //			contentPane.add(middle, "cell 0 1, grow");
 //			middle.setLayout(new MigLayout("", "[][][]", "[][][][][][]"));
 //			
-//			JPanel bottom = new JPanel();
-//			contentPane.add(bottom, "cell 0 2, grow");
-//			bottom.setLayout(new MigLayout("", "[120][][]", "[][][]"));
+			JPanel bottom = new JPanel();
+			contentPane.add(bottom, "cell 0 2, grow");
+			bottom.setLayout(new MigLayout("", "[120][][]", "[][][]"));
 			
 			
 			//Add elements to card
@@ -323,15 +326,17 @@ public class PrincessCard extends JPanel {
 			//Currently we don't define kinks and turn-offs for Princess' companions, We could consider doing that in a later version
 			//Since we kind of want them to be stand alone characters
 			//
+			
+			
 			//addJLabel(null, "<html>+ " + c.good[0] +"<br>+ " + c.good[1] + "<br>+ " + c.good[2] + "<br>- " + c.bad[0] + "<br>- " + c.bad[1] + "</html>", mainFont, null, null, null, header, "cell 1 1", false);
 			
 			//Currently we don't define kinks and turn-offs for Princess' companions, We could consider doing that in a later version
 			//Since we kind of want them to be stand alone characters
 			//
 			//Kinks
-			//addJLabel(null, c.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
-			//addJLabel(null, c.kinks[1].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 1", false);
-			//addJLabel(null, c.turnoff.name, mainFont, null, "src/Stat icons/Dislikes.png", new Dimension(20,20), bottom, "cell 0 2", false);
+			addJLabel(null, c.kinks[0].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 0", false);
+			addJLabel(null, c.kinks[1].name, mainFont, null, "src/Stat icons/Likes.png", new Dimension(20,20), bottom, "cell 0 1", false);
+			addJLabel(null, c.turnoff.name, mainFont, null, "src/Stat icons/Dislikes.png", new Dimension(20,20), bottom, "cell 0 2", false);
 			
 			//Description
 			addJLabel(null, "<html>" + c.description+  "</html>", mainFont, null, null, null, contentPane, "cell 0 3, left", false);

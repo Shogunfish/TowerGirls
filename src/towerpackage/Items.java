@@ -11,7 +11,7 @@ import java.util.Scanner;
 		public String description;
 		public boolean useable;
 		public boolean removable;
-		public static final List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer", "Freyda, Dragon Priestess of Ice", "Huntress Master","Wizard Master","Squire Courtier","Rabbit Princess","Imp Princess","Physicker Master","Funk Master");
+		public static final List<String> useableItems = Arrays.asList("Encrusted Chest", "Amethyst Gossamer", "Freyda, Dragon Priestess of Ice", "Huntress Master","Wizard Master","Squire Courtier","Rabbit Wealth","Imp Wealth","Physicker Master","Funk Master");
 		
 		Item(String n, String i, String d) {
 			name = n; 
@@ -24,8 +24,7 @@ import java.util.Scanner;
 			else {
 				useable=false;
 			}
-		}
-		
+		}	
 	}
 
 	class Preference {
@@ -132,7 +131,7 @@ class Wagon
 		
 		public Wagon(int slots, String n)
 		{ 
-			spaces = new Item[slots+1];
+			spaces = new Item[slots+2];
 			name = n;
 			effects = new ArrayList<Effect>();
 			huntress = false;
@@ -141,9 +140,9 @@ class Wagon
 		public boolean squireAdd(Character c)
 		{
 			boolean succeed = false;
-			if(spaces[0]==null)
+			if(spaces[spaces.length-1]==null)
 			{
-				spaces[0]=c;
+				spaces[spaces.length-1]=c;
 				succeed = true;
 			}
 			
@@ -153,7 +152,7 @@ class Wagon
 		public boolean addItem(Item item)
 		{
 			boolean succeed = false;
-			for(int i = 0; i<= spaces.length-1; i++)
+			for(int i = 0; i<= spaces.length-2; i++)
 			{
 				if(spaces[i]==null && (!(item instanceof Character) || i!=0))
 				{

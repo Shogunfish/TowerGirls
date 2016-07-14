@@ -316,7 +316,7 @@ public class SimpleFrameTest extends JFrame {
 		JLabel title = new JLabel("<html>Wagon's space: </html>");
 		title.setFont(mainFont.deriveFont(16f));
 		statPane.add(title, "cell 0 0 3 2");
-		JLabel spaces = new JLabel(count + "/" + (game.getWagon().spaces.length-1));
+		JLabel spaces = new JLabel(count + "/" + (game.getWagon().spaces.length-2));
 		spaces.setFont(blockFont.deriveFont(16f));
 		statPane.add(spaces, "cell 3 0 0 2");
 		
@@ -490,7 +490,7 @@ public class SimpleFrameTest extends JFrame {
 											game.getWagon().removeEffect(p.wealthGift.name);
 											game.getWagon().removeEffect(p.powerGift.name);
 											changeInfoPane(p, comp, game);
-											updateFrame(game, game.princesses2.get(game.princesses2.size()-1));
+											updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
 									}
 								});
 								changeInfoPane(clickedItem, comp, game);
@@ -502,19 +502,26 @@ public class SimpleFrameTest extends JFrame {
 								temp.addActionListener(new ActionListener() {
 									@Override
 									public void actionPerformed(ActionEvent ae) {
-										game.getWagon().addItem(p);
-										boolean succeed = game.getWagon().addItem(p.companion);
-										if(!succeed) game.getWagon().removeItem(p.name);
-										else if(game.wealthGreaterThanPower()) game.getWagon().addEffect(p.wealthGift);
+										
+										if(game.wealthGreaterThanPower()) game.getWagon().addEffect(p.wealthGift);
 									    else if (game.powerGreaterThanWealth()) game.getWagon().addEffect(p.powerGift);
 									    else 
 									    {
 									    	if(princessCard.getChosen()[0]) game.getWagon().addEffect(p.wealthGift);
 									    	else game.getWagon().addEffect(p.powerGift);
 									    }
+										game.getWagon().addItem(p);
+										boolean succeed = game.getWagon().addItem(p.companion);
+										if(!succeed) {
+											game.getWagon().removeItem(p.name);
+											game.getWagon().removeItem(p.wealthGift.name);
+											game.getWagon().removeEffect(p.powerGift.name);
+										}
 										
 										changeInfoPane(p, comp, game);
-										updateFrame(game, game.princesses1.get(game.princesses1.size()-1));
+										updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
+									
+									
 									}
 								});
 								changeInfoPane(clickedItem, comp, game);
@@ -532,6 +539,7 @@ public class SimpleFrameTest extends JFrame {
 						changeInfoPane(clickedItem, comp, game);
 						
 					} else if(clickedItem instanceof Effect) {
+						
 						if(clickedItem instanceof Totem) {
 							Totem t = (Totem)clickedItem;
 							//Show Totem
@@ -670,6 +678,8 @@ public class SimpleFrameTest extends JFrame {
 									}
 								});
 								infoPane.add(temp);
+								if(game.pageNumber!=3) temp.setEnabled(false);
+								
 								if(game.getWagon().getStats()[2] < 1) temp.setEnabled(false);
 								
 								temp = new JButton("Buy out: Power");
@@ -685,12 +695,268 @@ public class SimpleFrameTest extends JFrame {
 								if(game.getWagon().getStats()[3] < 1) temp.setEnabled(false);
 								
 								infoPaneAdd(temp);
+								if(game.pageNumber!=3) temp.setEnabled(false);
 							}
 						}
 						else
 						{
 							Effect e = (Effect)clickedItem;
+							
 							updateFrame(game, e);
+							if(e.name.equals("Rabbit Wealth"))
+							{
+								JButton temp = new JButton("Use");
+								temp.addActionListener(new ActionListener()
+								{
+
+									@Override
+									public void actionPerformed(ActionEvent arg0) 
+									{
+										scroll2.setSize(new Dimension(400,200));
+										
+										for(int i=infoPane.getComponents().length-1; i>0; i--) {
+											infoPane.remove(i);
+										}
+										
+										add(itemChoosePane);
+										itemChoosePane.revalidate();
+										
+										for(int i = 0; i < game.wagon1.spaces.length; i++)
+										{
+											if(game.wagon1.spaces[i] != null && game.wagon1.spaces[i] instanceof Princess1)
+											{
+												JLabel temp = new JLabel();
+												paintImage(game.wagon1.spaces[i], temp);
+												Princess1 p = (Princess1)game.wagon1.spaces[i];
+												temp.addMouseListener(new MouseAdapter(){
+													public void mouseClicked(MouseEvent me)
+													{
+														JLabel dow = new JLabel();
+		
+														if(!game.wagon1.contains(p.dowry1.name) && !game.wagon2.contains(p.dowry1.name)) {
+														paintImage(p.dowry1, dow);
+														dow.addMouseListener(new MouseAdapter() {
+															@Override
+															public void mouseClicked(MouseEvent me) {
+																//add replace button
+																JButton replace = new JButton("Add");
+																replace.addMouseListener(new MouseAdapter() {
+																	@Override
+																	public void mouseClicked(MouseEvent me) {
+																		
+																		clickedItem.useable = false;
+																		//Set non-removable (now Rabbit can't leave)
+																		clickedItem.removable = false;
+																		//add
+																		game.getWagon().addItem(p.dowry1);
+																		
+																		scroll2.setSize(new Dimension(380,490));
+																		remove(itemChoosePane);
+																		updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
+																	}
+																});	
+																
+																
+																changeInfoPane(p.dowry1, replace, game);
+																infoPaneAdd(replace);
+															}
+														});
+														}
+														infoPane.removeAll();
+														infoPane.add(dow);
+														
+														dow = new JLabel();
+														if(!game.wagon1.contains(p.dowry2.name) && !game.wagon2.contains(p.dowry2.name)) {
+														paintImage(p.dowry2, dow);
+														dow.addMouseListener(new MouseAdapter() {
+															@Override
+															public void mouseClicked(MouseEvent me) {
+																//add replace button
+																JButton replace = new JButton("Add");
+																replace.addMouseListener(new MouseAdapter() {
+																	@Override
+																	public void mouseClicked(MouseEvent me) {
+																		
+																		clickedItem.useable = false;
+																		//Set non-removable (now Rabbit can't leave)
+																		
+																		clickedItem.removable = false;
+																		//add new
+																		game.getWagon().addItem(p.dowry2);
+																		
+																		scroll2.setSize(new Dimension(380,490));
+																		remove(itemChoosePane);
+																		updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
+																	}
+																});	
+															
+																changeInfoPane(p.dowry2, replace, game);
+																infoPaneAdd(replace);
+															}
+														});
+														}
+														infoPaneAdd(dow);
+													}
+												});
+												
+												itemChoosePane.add(temp);
+											}
+										}
+										for(int i = 0; i < game.wagon2.spaces.length; i++)
+										{
+											if(game.wagon2.spaces[i] != null && game.wagon2.spaces[i] instanceof Princess1)
+											{
+												JLabel temp = new JLabel();
+												paintImage(game.wagon2.spaces[i], temp);
+												Princess1 p = (Princess1)game.wagon2.spaces[i];
+												temp.addMouseListener(new MouseAdapter(){
+													public void mouseClicked(MouseEvent me)
+													{
+														JLabel dow = new JLabel();
+		
+														if(!game.wagon1.contains(p.dowry1.name) && !game.wagon2.contains(p.dowry1.name)) {
+														paintImage(p.dowry1, dow);
+														dow.addMouseListener(new MouseAdapter() {
+															@Override
+															public void mouseClicked(MouseEvent me) {
+																//add replace button
+																JButton replace = new JButton("Add");
+																replace.addMouseListener(new MouseAdapter() {
+																	@Override
+																	public void mouseClicked(MouseEvent me) {
+																		
+																		clickedItem.useable = false;
+																		//Set non-removable (now Rabbit can't leave)
+																		clickedItem.removable = false;
+																		//add
+																		game.getWagon().addItem(p.dowry1);
+																		
+																		scroll2.setSize(new Dimension(380,490));
+																		remove(itemChoosePane);
+																		updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
+																	}
+																});	
+																
+																
+																changeInfoPane(p.dowry1, replace, game);
+																infoPaneAdd(replace);
+															}
+														});
+														}
+														infoPane.removeAll();
+														infoPane.add(dow);
+														
+														dow = new JLabel();
+														if(!game.wagon1.contains(p.dowry2.name) && !game.wagon2.contains(p.dowry2.name)) {
+														paintImage(p.dowry2, dow);
+														dow.addMouseListener(new MouseAdapter() {
+															@Override
+															public void mouseClicked(MouseEvent me) {
+																//add replace button
+																JButton replace = new JButton("Add");
+																replace.addMouseListener(new MouseAdapter() {
+																	@Override
+																	public void mouseClicked(MouseEvent me) {
+																		
+																		clickedItem.useable = false;
+																		//Set non-removable (now Rabbit can't leave)
+																		
+																		clickedItem.removable = false;
+																		//add new
+																		game.getWagon().addItem(p.dowry2);
+																		
+																		scroll2.setSize(new Dimension(380,490));
+																		remove(itemChoosePane);
+																		updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
+																	}
+																});	
+															
+																changeInfoPane(p.dowry2, replace, game);
+																infoPaneAdd(replace);
+															}
+														});
+														}
+														infoPaneAdd(dow);
+													}
+												});
+												
+												itemChoosePane.add(temp);
+											}
+										}
+										
+										
+									}
+								});
+							
+								infoPaneAdd(temp);
+								if(!clickedItem.useable)temp.setEnabled(false);
+								
+							}
+							else if(e.name.equals("Imp Wealth"))
+							{
+								JButton temp = new JButton("Use");
+								temp.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent ae) {
+										
+										//mess with panes
+										scroll2.setSize(new Dimension(400,200));
+										
+										for(int i=infoPane.getComponents().length-1; i>0; i--) {
+											infoPane.remove(i);
+										}
+										
+									 add(itemChoosePane);
+									 itemChoosePane.revalidate();
+										
+											//slap totems onto pane
+											for(int q=0; q<game.getPrincess2List().size()-1; q++) {
+												if(!game.wagon3.contains(game.getPrincess2List().get(q).totem.name)) {
+													JLabel temp = new JLabel();
+													paintImage(game.getPrincess2List().get(q).totem, temp);
+													Totem totem = game.getPrincess2List().get(q).totem;
+													temp.addMouseListener(new MouseAdapter() {
+														@Override
+														public void mouseClicked(MouseEvent me) {
+														//add replace button
+														JButton replace = new JButton("Renounce");
+														replace.addMouseListener(new MouseAdapter() {
+															@Override
+															public void mouseClicked(MouseEvent me) {
+																//Set unusable
+																clickedItem.useable = false;
+																//Set non-removable (now Ice Dragon can't leave)
+																clickedItem.removable = false;
+																//Set totem to worship
+																totem.whichEffect = 2;
+																//add new
+																game.getWagon().addEffect(totem);
+																
+																scroll2.setSize(new Dimension(380,490));
+																remove(itemChoosePane);
+																updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
+															}
+														});
+														changeInfoPane(totem,temp,game);
+														infoPaneAdd(replace);
+														}
+														});
+													itemChoosePane.add(temp);
+												}
+		
+											clickedItem.useable=false;
+											
+											infoPane.revalidate();
+											infoPane.repaint();
+											
+										}
+									}
+								});
+								
+								
+								infoPaneAdd(temp);
+								if(!clickedItem.useable)temp.setEnabled(false);
+							}
 							
 							
 						}

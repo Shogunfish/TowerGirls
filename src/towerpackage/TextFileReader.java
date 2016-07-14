@@ -110,11 +110,13 @@ public Princess3 readPrincess3 (String textLocation, String princessName) throws
 		Princess3 princessBuild = new Princess3(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
 
 		princessBuild.companion = new Character(hyphenRegex(princess.get(15))[0], "src/Companions/" + hyphenRegex(princess.get(15))[0] + ".png", princessColor, princess.get(2), hyphenRegex(princess.get(15))[1]);
+		princessBuild.companion.kinks = new Preference[]{new Preference(hyphenRegex(princess.get(15))[2],true),new Preference(hyphenRegex(princess.get(15))[3],true)};
+		princessBuild.companion.turnoff = new Preference(hyphenRegex(princess.get(15))[4],false);
 		
-		princessBuild.wealthGift = new Effect(princess.get(0) + " wealth", "src/Effect icons/" + princess.get(0) +  ".png");
+		princessBuild.wealthGift = new Effect(princess.get(0) + " Wealth", "src/Effect icons/" + princess.get(0) +  ".png");
 		princessBuild.wealthGift.description=princess.get(16);
 				
-		princessBuild.powerGift = new Effect(princess.get(0) + " power", "src/Effect icons/" + princess.get(0) +  ".png");
+		princessBuild.powerGift = new Effect(princess.get(0) + " Power", "src/Effect icons/" + princess.get(0) +  ".png");
 		princessBuild.powerGift.description=princess.get(17);
 		
 		
@@ -135,16 +137,20 @@ public Princess3 readPrincess3 (String textLocation, String princessName) throws
 	}
 
 	String[] hyphenRegex(String str) {
-		Pattern regex = Pattern.compile("^.*?(?= - )");
-	    Matcher regexMatcher = regex.matcher(str);
-	    if (regexMatcher.find()) {
-	    }
-	    regex = Pattern.compile(" - (.*)");
-	    Matcher regexMatcher2 = regex.matcher(str);
-	    if (regexMatcher2.find()) {
-	    }
-	    String[] regexResult = new String[]{regexMatcher.group(0),regexMatcher2.group(1)};
-		return regexResult;
+//		Pattern regex = Pattern.compile("^.*?(?= - )");
+//	    Matcher regexMatcher = regex.matcher(str);
+//	    if (regexMatcher.find()) {
+//	    }
+//	    regex = Pattern.compile(" - (.*)");
+//	    Matcher regexMatcher2 = regex.matcher(str);
+//	    if (regexMatcher2.find()) {
+//	    }
+//	    String[] regexResult = new String[]{regexMatcher.group(0),regexMatcher2.group(1)};
+		
+		return str.split(" - ");
+		
+		
+		//return regexResult;
 	}
 	
 	String[] commaRegex(String str) {
