@@ -154,6 +154,7 @@ public Factionless readFactionless(String textLocation, String companionName) th
 			break;
 		}
 	}
+	
 	Color companionColor = Color.decode("#" + companion.get(1));
 	
 	Factionless companionBuild = new Factionless(companion.get(0), "src/Companions/" + companion.get(0) +  ".png", companionColor, companion.get(2), companion.get(companion.size()-1));
@@ -170,16 +171,16 @@ public Factionless readFactionless(String textLocation, String companionName) th
 	companionBuild.lust = Integer.parseInt(companion.get(9));
 	companionBuild.wealth = Integer.parseInt(companion.get(10));
 	companionBuild.power = Integer.parseInt(companion.get(11));
-	
-	
-	companionBuild.effect1 = new Effect(hyphenRegex(companion.get(15))[0], "src/Companions/" + companion.get(0) +  ".png");
+
+	if(!companion.get(15).equals("Nothing")){
+	companionBuild.effect1 = new Effect(hyphenRegex(companion.get(15))[0], "src/Effect Icons/" + companion.get(0) +  ".png");
 	companionBuild.effect1.description=hyphenRegex(companion.get(15))[1];
-	
+	}
 	if(!companion.get(16).equals("Nothing")){
-	companionBuild.effect2 = new Effect(hyphenRegex(companion.get(16))[0], "src/Companions/" + companion.get(0) +  ".png");
+	companionBuild.effect2 = new Effect(hyphenRegex(companion.get(16))[0], "src/Effect Icons/" + companion.get(0) +  ".png");
 	companionBuild.effect2.description=hyphenRegex(companion.get(16))[1];
 	}
-	companionBuild.kingdomMod = new Effect(hyphenRegex(companion.get(17))[0], "src/Companions/" + companion.get(0) +  ".png");
+	companionBuild.kingdomMod = new Effect(hyphenRegex(companion.get(17))[0], "src/Effect Icons/" + companion.get(0) +  ".png");
 	companionBuild.kingdomMod.description=hyphenRegex(companion.get(17))[1];
 	
 	return companionBuild;

@@ -110,10 +110,14 @@ Must be trained from birth to tame
 0
 5
 2
-Tectonic Trumpet - The jadeite beast releases a blast of sound that can shake boulders to gravel. Its primary use is for deforestation.
+Ear scratches
+Painting
+mice
+Nothing
 Nothing
 Pack Animal - Your kingdom is rich in Jade and beasts of burden to help with all sorts of monumental tasks.
-This beast is capable of lifting up great weights. It is said that the most ancient of them hold up the very world itself.
+This beast is capable of lifting up great weights. It is said that the most ancient of them hold up the very world itself. The jadeite beast can release a blast of sound that can shake boulders to gravel. Its primary use is for deforestation.
+
 
 #Lazulite Beast
 828796
@@ -130,10 +134,11 @@ Must always remain moist
 Small whales
 Beaches
 Cast nets
-Swift Surge - By inflating its throat, the lazulite beast can force a jet of water in any direction capable of sculpting rock. It's primary uses is fishing in great quantities.
+Nothing
 Nothing
 Terror of the Deep - Your kingdom's seas are rich in all sorts of exotic fish, whales, and coral.
-This leviathan is disturblingly fast on land, and terrifying beneath the sea. Holes along its side force steam from its body to catch prey.
+This leviathan is disturblingly fast on land, and terrifying beneath the sea. Holes along its side force steam from its body to catch prey. By inflating its throat, the lazulite beast can force a jet of water in any direction capable of sculpting rock. It's primary use is fishing in great quantities.
+
 
 #Sinhalite Beast
 544C38
@@ -150,10 +155,11 @@ Attracts minor bugs to its location
 Fruit trees
 Still water
 Smoke
-Blister Beat - The rapid wingbeats of the sinhalite beast can generate enough force to alter wind patterns, affecting weather. It's primary use is for speedier flight.
+Nothing
 Nothing
 Big Bugs - Your kingdom's insects are larger, but also significantly more useful. Your plants thrive and you are rich in silks and produce.
-A titanic insect with the strength and abilities of a dragon. It is said that every flap of its wings causes a hurricane somewhere in the world.
+A titanic insect with the strength and abilities of a dragon. It is said that every flap of its wings causes a hurricane somewhere in the world. The rapid wingbeats of the sinhalite beast can generate enough force to alter wind patterns, affecting weather. It's primary use is for speedier flight.
+
 
 #Citrine Beast
 F4AB4C
@@ -170,10 +176,11 @@ Very lazy if the owner disrespects it
 Metals
 Basking
 Cold temperatures
-Magma Miasma - Erupting from the citrine beast's maw, this superheated breath can melt through nearly anything. It's primary use is for burrowing deep underground.
+Nothing
 Nothing
 Subterranian Splendor - Your kingdom is filled with prehistoric reptiles. Also, the ease of burrowing makes your kingdom rich with ore and gemstones.
-The empty husk of a lesser drake inhabited by a Lava-like slug. Every decade the husk deteriorates, forcing the beast to find a new host.
+The empty husk of a lesser drake inhabited by a Lava-like slug. Every decade the husk deteriorates, forcing the beast to find a new host. The citrine beast's superheated breath can melt through nearly anything. It's primary use is for burrowing deep underground.
+
 
 #Physicker Master
 3D4B46
@@ -207,12 +214,15 @@ Out of touch with the times
 4
 0
 4
+Jelly Beans
+Smoking
+Dullards
 Sorcerer's Session - Learn how to alter hairstyles and grow beards with magic.
 Seer's Seminar - Swap a dowry or lust gift with another you don't own
 Magic and Wonder - Your citizenry is kept entertained with all manner of magic. Your buildings can be constructed with magic to enable otherwise impossible architecture.
 A travelling wizard from an ancient race of magic progenitors. They put their vast knowledge  to use by teaching the lesson of enjoying life.
 
-Huntress Master
+#Huntress Master
 8AB38A
 High Forest Kingdom
 Built to survive in harsh environments
@@ -222,8 +232,8 @@ Hope you like whatever 'rock juice' is
 The smell of the wilds ain't always great
 3
 3
-0
-2
+1
+1
 Starry skies
 New food
 Diseases
@@ -288,6 +298,7 @@ Head patting
 Blowjobs
 Yelling
 Lemminghearted Liberation - Wanting to do as you do, the squire will rescue a single princess from the tower of the third dragon. Wait, this is a companion you idiot! You huge idiot! You've saved a companion instead!
+Nothing
 Youthful Disciples - Your kingdom's armed forces are bolstered with girlish units and your kingdom's culture becomes a little more intimate.
 A young squire with an infatuation towards heroes. They hope to one day follow in the footsteps of a knight that once patted them on the head.
 
@@ -331,7 +342,7 @@ Nothing
 Expert Grappler - Your military are trained in unarmed grappling, making them formidable even without weapons.
 A warrior of few words who strictly follows the code of a master they wish to avenge. This code involves grappling all of their enemies.
 
-#Bard courtier
+#Bard Courtier
 F9802F
 Wandering Band
 Spreads tales of your exploits

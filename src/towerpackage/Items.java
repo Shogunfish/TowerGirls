@@ -62,24 +62,36 @@ import java.util.Scanner;
 	  public void corrupt() {turnoff.corrupt();}
 	}
 
-class Princess1 extends Character 
+	interface LustGift{
+		public Item getLustGift();
+	}
+	
+class Princess extends Character
+{
+	public Item lustGift;
+	Princess(String n, String i, Color c, String k, String d) {
+		super(n, i, c, k, d);
+	}
+	
+}
+	
+class Princess1 extends Princess
 	{
 
 	  
 	public Item dowry1;
 	public Item dowry2;
-	public Item lustGift;
 	  
 		Princess1(String n, String i, Color princessColor, String k, String d) 
 		{
 		super(n, i, princessColor, k, d);
 		}
+
 	}
 
-class Princess2 extends Character
+class Princess2 extends Princess
 	{
 	public Totem totem;
-	public Item lustGift;
 
 	Princess2(String n, String i, Color c, String k, String d) 
 	{
@@ -88,13 +100,12 @@ class Princess2 extends Character
 	
 	}
 
-class Princess3 extends Character
+class Princess3 extends Princess
 	{
 	
 	public Character companion;
 	public Effect wealthGift;
 	public Effect powerGift;
-	public Item lustGift;
 
 	Princess3(String n, String i, Color c, String k, String d) 
 	{
@@ -122,14 +133,13 @@ class Wagon
 		public String name;
 		public Item[] spaces;
 		public ArrayList<Effect> effects;
-		public boolean huntress;
 		
 		public Wagon(int slots, String n)
 		{ 
 			spaces = new Item[slots+2];
 			name = n;
 			effects = new ArrayList<Effect>();
-			huntress = false;
+		
 		}
 
 		public boolean squireAdd(Character c)
