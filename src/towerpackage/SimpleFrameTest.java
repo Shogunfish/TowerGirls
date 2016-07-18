@@ -56,7 +56,10 @@ public class SimpleFrameTest extends JFrame {
 	JPanel princessPane;
 	PrincessCard princessCard;
 	JPanel infoPane;
-	JPanel wagonPane;
+	JPanel wagonPane1;
+	JPanel wagonPane2;
+	JPanel wagonPane3;
+	JPanel wagonPane4;
 	JPanel statPane;
 	JPanel itemChoosePane;
 
@@ -94,7 +97,7 @@ public class SimpleFrameTest extends JFrame {
 						e.printStackTrace();
 					}
 				}
-				princessNames = new String[]{"Merrow","Demon","Gnome","Serpent","Kaiju","Rust","Lampad","Orphan","Squid","Shark","Book","Shadow","Gargoyle","Candy","Wyvern","Template"};
+				princessNames = new String[]{"Merrow","Demon","Gnome","Serpent","Kaiju","Lampad","Orphan","Squid","Shark","Book","Shadow","Gargoyle","Candy","Lion","Frankenstein","Alien","Elephant","P'orc","Smuggler","Wild","Wyvern","Template"};
 				for(String s : princessNames) {
 					try {
 						game.princesses2.add(test.readPrincess1("src/Text Files/Princesses.txt",s));
@@ -135,7 +138,6 @@ public class SimpleFrameTest extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
 			}
 		});
 	}
@@ -148,7 +150,7 @@ public class SimpleFrameTest extends JFrame {
 		
 		//Set Frame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 950, 550);
+		setBounds(100, 100, (950+360+180), 550);
 		JPanel framePane = new JPanel();
 		framePane.setLayout(null);
 		setContentPane(framePane);
@@ -184,14 +186,27 @@ public class SimpleFrameTest extends JFrame {
 		itemChoosePane.setBorder(BorderFactory.createLineBorder(Color.MAGENTA));
 		itemChoosePane.setLocation(340,220);
 
-		wagonPane = new JPanel();
-		wagonPane.setSize(new Dimension(170,360));
-		wagonPane.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		wagonPane.setLocation(750,10);
+		wagonPane1 = new JPanel();
+		wagonPane1.setSize(new Dimension(170,360));
+		wagonPane1.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		wagonPane1.setLocation(750,10);
+		
+		wagonPane2 = new JPanel();
+		wagonPane2.setSize(new Dimension(170,360));
+		wagonPane2.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		wagonPane2.setLocation(930,10);
+		
+		wagonPane3 = new JPanel();
+		wagonPane3.setSize(new Dimension(170,360));
+		wagonPane3.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		wagonPane3.setLocation(930+180,10);
+		
+		wagonPane4 = new JPanel();
+		wagonPane4.setSize(new Dimension(170,360));
+		wagonPane4.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+		wagonPane4.setLocation(930+180+180,10);
 		
 		wagonPane(game);
-		
-		add(wagonPane);
 		
 		statPane = new JPanel();
 		statPane.setSize(new Dimension(170,120));
@@ -281,22 +296,79 @@ public class SimpleFrameTest extends JFrame {
 	 * @param game
 	 */
 	void wagonPane(GameManager game) {
-		for(int i=0; i<game.getWagon().spaces.length; i++) {
+		for(int i=0; i<game.wagon1.spaces.length; i++) {
 			JLabel temp = new JLabel();
-			if(game.getWagon().spaces[i] != null) {
-				temp.setName(game.getWagon().spaces[i].name);
-				wagonPane.add(temp);
-				paintImage(game.getWagon().spaces[i], temp);
-				addObjectClick(game.getWagon().spaces[i], temp, game);
+			if(game.wagon1.spaces[i] != null) {
+				temp.setName(game.wagon1.spaces[i].name);
+				wagonPane1.add(temp);
+				paintImage(game.wagon1.spaces[i], temp);
+				addObjectClick(game.wagon1.spaces[i], temp, game);
 			}
 		}
-		for(Effect e : game.getWagon().effects) {
+		for(Effect e : game.wagon1.effects) {
 			JLabel temp = new JLabel();
 			temp.setName(e.name);
-			wagonPane.add(temp);
+			wagonPane1.add(temp);
 			paintImage(e, temp);
 			addObjectClick(e, temp, game);
 		}
+		add(wagonPane1);
+		
+		for(int i=0; i<game.wagon2.spaces.length; i++) {
+			JLabel temp = new JLabel();
+			if(game.wagon2.spaces[i] != null) {
+				temp.setName(game.wagon2.spaces[i].name);
+				wagonPane2.add(temp);
+				paintImage(game.wagon2.spaces[i], temp);
+				addObjectClick(game.wagon2.spaces[i], temp, game);
+			}
+		}
+		for(Effect e : game.wagon2.effects) {
+			JLabel temp = new JLabel();
+			temp.setName(e.name);
+			wagonPane2.add(temp);
+			paintImage(e, temp);
+			addObjectClick(e, temp, game);
+		}
+		add(wagonPane2);
+		
+		for(int i=0; i<game.wagon3.spaces.length; i++) {
+			JLabel temp = new JLabel();
+			if(game.wagon3.spaces[i] != null) {
+				temp.setName(game.wagon3.spaces[i].name);
+				wagonPane3.add(temp);
+				paintImage(game.wagon3.spaces[i], temp);
+				addObjectClick(game.wagon3.spaces[i], temp, game);
+			}
+		}
+		for(Effect e : game.wagon3.effects) {
+			JLabel temp = new JLabel();
+			temp.setName(e.name);
+			wagonPane3.add(temp);
+			paintImage(e, temp);
+			addObjectClick(e, temp, game);
+		}
+		add(wagonPane3);
+		
+		for(int i=0; i<game.wagon4.spaces.length; i++) {
+			JLabel temp = new JLabel();
+			if(game.wagon4.spaces[i] != null) {
+				temp.setName(game.wagon4.spaces[i].name);
+				wagonPane4.add(temp);
+				paintImage(game.wagon4.spaces[i], temp);
+				addObjectClick(game.wagon4.spaces[i], temp, game);
+			}
+		}
+		for(Effect e : game.wagon4.effects) {
+			JLabel temp = new JLabel();
+			temp.setName(e.name);
+			wagonPane4.add(temp);
+			paintImage(e, temp);
+			addObjectClick(e, temp, game);
+		}
+		add(wagonPane4);
+		
+		
 	}
 	
 	/**
@@ -333,7 +405,7 @@ public class SimpleFrameTest extends JFrame {
 		        count++;
 		    }
 		}
-		JLabel title = new JLabel("<html>Wagon's space: </html>");
+		JLabel title = new JLabel("<html>Current space: </html>");
 		title.setFont(mainFont.deriveFont(16f));
 		statPane.add(title, "cell 0 0 3 2");
 		JLabel spaces = new JLabel(count + "/" + (game.getWagon().spaces.length-2));
@@ -358,11 +430,146 @@ public class SimpleFrameTest extends JFrame {
 				{
 					updateFrame(game, game.princesses4.get(game.princesses4.size()-1));
 				}
+				else if(game.pageNumber==5)
+				{
+					ArrayList<Character> rescued = new ArrayList<Character>();
+					rescued.add(game.player);
+					rescued.addAll(game.getChosenCharacters());
+					ArrayList<Effect> effects = game.getAllEffects();
+					ArrayList<Effect> temp = new ArrayList<Effect>();
+					for(Item i : game.getChosenDowries()) effects.add(i.makeEffect());
+					for(Item i : game.getChosenLustGifts()) effects.add(i.makeEffect());
+					
+					finalPage(rescued, effects, 0, game);
+				}
 			}
 		});
 		statPane.add(next, "cell 1 4 0 2");
 	}
 
+	void finalPage(ArrayList<Character> rescued, ArrayList<Effect> effects, int index, GameManager game)
+	{
+		Effect applying = effects.get(index);
+		if(applying.getType()==Effect.EFFECT_DO_NOTHING)
+		{
+			if(index<effects.size()-1)
+				{
+				finalPage(rescued,effects,index+1,game);
+				}
+			else 
+				{
+				System.out.println("YOU FUCKIN DID IT BABYCAKES");
+				}
+		}
+		else if(applying.getType()==Effect.EFFECT_PLAYER)
+		{
+			game.player.effects.add(applying);
+			if(index<effects.size()-1)
+			{
+			finalPage(rescued,effects,index+1,game);
+			}
+		else 
+			{
+			System.out.println("YOU FUCKIN DID IT BABYCAKES");
+			}
+		}
+		else if(applying.getType()==Effect.EFFECT_KINGDOM)
+		{
+			game.kingdom.add(applying);
+			if(index<effects.size()-1)
+			{
+			finalPage(rescued,effects,index+1,game);
+			}
+		else 
+			{
+			System.out.println("YOU FUCKIN DID IT BABYCAKES");
+			}
+		}
+		else if(applying.getType()==Effect.EFFECT_STASH)
+		{
+			game.stash.add(applying);
+			if(index<effects.size()-1)
+			{
+			finalPage(rescued,effects,index+1,game);
+			}
+		else 
+			{
+			System.out.println("YOU FUCKIN DID IT BABYCAKES");
+			}
+		}
+		else
+		{
+		princessPane.removeAll();
+		changeInfoPane(applying, null, game);
+		JButton butt = new JButton("Apply");
+		butt.addActionListener(new ActionListener(){
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if(index<effects.size()-1)
+				{
+					boolean canApply = true;
+				for(int i = 0; i < rescued.size(); i++)
+				{
+					Character temp = rescued.get(i);
+					if(temp.selected && canApply)temp.effects.add(effects.get(index));
+					if(applying.type==Effect.EFFECT_SINGLE_CHARACTER || applying.type==Effect.EFFECT_SINGLE_NON_PLAYER_CHARACTER)canApply=false;
+					temp.selected=false;
+				}
+				
+				finalPage(rescued, effects, index+1, game);
+				}
+				else
+				{
+					System.out.println("YOU FUCKIN DID IT BABYCAKES");
+				}
+			}});
+		infoPaneAdd(butt);
+		
+		for(int i = 0; i < rescued.size(); i++)
+		{
+			if(i!=0 || applying.getType() != Effect.EFFECT_MULTIPLE_NON_PLAYER_CHARACTERS || applying.getType() != Effect.EFFECT_SINGLE_NON_PLAYER_CHARACTER){
+			Character current = rescued.get(i);
+			JLabel temp = new JLabel();
+			paintImage(current,temp);
+			temp.addMouseListener(new MouseAdapter(){
+				public void mouseClicked(MouseEvent me){
+					if(current.selected)
+					{
+						current.selected=false;
+						game.numSelected++;
+						temp.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+					}
+					else 
+					{
+						current.selected = true;
+						game.numSelected--;
+						temp.setBorder(null);
+					}
+				}
+			});
+			princessPane.add(temp);
+			}
+		}
+		
+		princessPane.revalidate();
+		princessPane.repaint();
+		}
+		/*
+		 * 
+		 * The plan here is pretty simple, First, we will evaluate whether the player has gotten any special bonuses like
+		 * Primeval princess, dragon queen, etc. and if they have we will add them
+		 * 
+		 * Then we will go through all the effects and for each one load
+		 * a page which lets you select some number of characters depending on some variable of the effect which tells how
+		 * many targets it can have
+		 * 
+		 * Then it will go through the list of all the selected characters and add the effect to each chosen character
+		 * 
+		 * Then, after all that's done it will call a method that will simply display all your shit.
+		 */
+	}
+	
 	///CLICK LISTENER//
 
 	void addObjectClick(Item clickedItem, Component comp, GameManager game) {
@@ -375,7 +582,7 @@ public class SimpleFrameTest extends JFrame {
 						Princess1 p = (Princess1)clickedItem;
 						//Princess1
 						//If this princess is in the wagon
-						if(game.getWagon().contains(clickedItem.name)) {
+						if(game.wagon1.contains(clickedItem.name) || game.wagon2.contains(clickedItem.name)) {
 							//Add remove button
 							JButton temp = new JButton("Remove");
 							if(!p.removable || !p.dowry1.removable || !p.dowry2.removable) temp.setEnabled(false);
@@ -394,6 +601,9 @@ public class SimpleFrameTest extends JFrame {
 							changeInfoPane(clickedItem, comp, game);
 							if(!game.getWagon().contains(p.dowry1.name)) princessCard.removeDowries(1);
 							if(!game.getWagon().contains(p.dowry2.name)) princessCard.removeDowries(2);
+							
+							if((game.pageNumber>2) || (game.wagon1.contains(p.name)&&game.pageNumber==2) || (game.wagon2.contains(p.name)&&game.pageNumber==1))temp.setEnabled(false);
+							
 							infoPaneAdd(temp);
 						} else {
 							//If this princess is not in the wagon
@@ -408,7 +618,7 @@ public class SimpleFrameTest extends JFrame {
 									updateFrameDefault(game);
 									//updateFrame(game, game.princesses1.get(game.princesses1.size()-1));
 								}
-							});
+							});							
 							changeInfoPane(clickedItem, comp, game);
 							if(!p.name.equals("Template")) infoPane.add(temp);
 							infoPane.revalidate();
@@ -420,7 +630,7 @@ public class SimpleFrameTest extends JFrame {
 						Princess2 p = (Princess2)clickedItem;
 						//Princess1
 						//If this princess is in the wagon
-						if(game.getWagon().contains(clickedItem.name)) {
+						if(game.wagon3.contains(clickedItem.name)) {
 							//Add remove button
 							JButton temp = new JButton("Remove");
 							if(!p.removable || !p.totem.removable) temp.setEnabled(false);
@@ -436,6 +646,7 @@ public class SimpleFrameTest extends JFrame {
 										//updateFrame(game, game.princesses2.get(game.princesses2.size()-1));
 								}
 							});
+							if(game.pageNumber!=3)temp.setEnabled(false);
 							changeInfoPane(clickedItem, comp, game);
 							infoPaneAdd(temp);
 						} else {
@@ -453,6 +664,7 @@ public class SimpleFrameTest extends JFrame {
 									//updateFrame(game, game.princesses1.get(game.princesses1.size()-1));
 								}
 							});
+							if(game.pageNumber!=3)temp.setEnabled(false);
 							changeInfoPane(clickedItem, comp, game);
 							if(!p.name.equals("Example")) infoPane.add(temp);
 							//Add add button
@@ -475,6 +687,7 @@ public class SimpleFrameTest extends JFrame {
 									//updateFrame(game, game.getPrincess2List().get(game.getPrincess2List().size()-1));
 								}
 							});
+							if(game.pageNumber!=3)temp.setEnabled(false);
 							infoPane.add(temp);
 							if(game.getStats()[2] < 3 || game.getWagon().contains(p.totem.name)) temp.setEnabled(false);
 							
@@ -496,6 +709,7 @@ public class SimpleFrameTest extends JFrame {
 								}
 							});
 							if(game.getStats()[3] < 3 || game.getWagon().contains(p.totem.name)) temp.setEnabled(false);
+							if(game.pageNumber!=3)temp.setEnabled(false);
 							infoPaneAdd(temp);
 						}
 						//Draw princess
@@ -518,6 +732,7 @@ public class SimpleFrameTest extends JFrame {
 											//updateFrame(game, game.getPrincess3List().get(game.getPrincess3List().size()-1));
 									}
 								});
+								if(game.pageNumber!=4)temp.setEnabled(false);
 								changeInfoPane(clickedItem, comp, game);
 								infoPaneAdd(temp);
 							} 
@@ -553,6 +768,7 @@ public class SimpleFrameTest extends JFrame {
 									
 									}
 								});
+								if(game.pageNumber!=4)temp.setEnabled(false);
 								changeInfoPane(clickedItem, comp, game);
 								if(!p.name.equals("Default")) infoPane.add(temp);
 								//Add add button
@@ -587,6 +803,7 @@ public class SimpleFrameTest extends JFrame {
 									
 								}
 							});
+							if(game.pageNumber!=4)temp.setEnabled(false);
 							changeInfoPane(clickedItem, comp, game);
 							infoPaneAdd(temp);
 						} else {
@@ -623,7 +840,7 @@ public class SimpleFrameTest extends JFrame {
 								temp.setText("Too many " + f.type + "s");
 								temp.setEnabled(false);
 							}
-							
+							if(game.pageNumber!=4)temp.setEnabled(false);
 							infoPaneAdd(temp);
 							//Add add button
 						}
@@ -749,6 +966,7 @@ public class SimpleFrameTest extends JFrame {
 									}
 								});
 								if(!t.removable) temp.setEnabled(false);
+								if(game.pageNumber!=3)temp.setEnabled(false);
 								infoPaneAdd(temp);
 							} else if(Arrays.equals(t.cost, new int[]{0,0,-3,0}) || Arrays.equals(t.cost, new int[]{0,0,0,-3})) {
 								//remove button
@@ -764,6 +982,7 @@ public class SimpleFrameTest extends JFrame {
 										//updateFrame(game, game.getPrincess2List().get(game.getPrincess2List().size()-1));
 									}
 								});
+								if(game.pageNumber!=3)temp.setEnabled(false);
 								infoPaneAdd(temp);
 							} else if(Arrays.equals(t.cost, new int[]{0,0,0,0}) && t.whichEffect == 2) {
 								//buyout
@@ -1101,7 +1320,7 @@ public class SimpleFrameTest extends JFrame {
 																clickedItem.removable = false;
 																//Set totem to worship
 																//add new
-																game.getWagon().squireAdd(c);
+																game.wagon4.squireAdd(c);
 																
 																scroll2.setSize(new Dimension(380,490));
 																remove(itemChoosePane);
@@ -1441,7 +1660,7 @@ public class SimpleFrameTest extends JFrame {
 																	@Override
 																	public void actionPerformed(ActionEvent ae) {
 																		
-																		Effect temp = new Effect("Unbreakable Alliance", "src/Effect icons/Noble Courtier.png");
+																		Effect temp = new Effect("Unbreakable Alliance", "src/Effect icons/Noble Courtier.png", -1);
 																		temp.description="An alliance has been forged between " + p1.name + " of " + p1.kingdom + " and " + p2.name + " of " + p2.kingdom + ".";
 																		
 																		p1.effects.add(temp);
@@ -1492,6 +1711,8 @@ public class SimpleFrameTest extends JFrame {
 								}
 							}
 						});
+						if(game.inOtherWagon(clickedItem.name))temp.setEnabled(false);
+						
 						changeInfoPane(clickedItem, comp, game);
 						infoPaneAdd(temp);
 						
@@ -1527,16 +1748,17 @@ public class SimpleFrameTest extends JFrame {
 															//Set unusable
 															clickedItem.useable = false;
 															//remove old
-															game.getWagon().removeItem("Amethyst Gossamer");
+															int source = game.removeFromAllWagons("Amethyst Gossamer");
+															
 															//Set non-removable (now Drider can't leave)
 															clickedItem.removable = false;
+															clickedItem.useable=false;
 															//add new
-															game.getWagon().addItem(dowry);
+															game.getWagon(source).addItem(dowry);
 															
 															scroll2.setSize(new Dimension(380,490));
 															remove(itemChoosePane);
 															updateFrameDefault(game);
-															//updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
 														}
 													});
 													changeInfoPane(dowry,temp,game);
@@ -1602,18 +1824,18 @@ public class SimpleFrameTest extends JFrame {
 									add(itemChoosePane);
 									itemChoosePane.revalidate();
 									
-									for(int i=0; i<game.getWagon().spaces.length; i++) {
-										if(game.getWagon().spaces[i] instanceof Princess1) {
+									for(int i=0; i<game.wagon1.spaces.length; i++) {
+										if(game.wagon1.spaces[i] instanceof Princess1) {
 											JLabel temp = new JLabel();
-											paintImage(game.getWagon().spaces[i], temp);
-											Princess1 p = (Princess1) game.getWagon().spaces[i];
+											paintImage(game.wagon1.spaces[i], temp);
+											Princess1 p = (Princess1) game.wagon1.spaces[i];
 											temp.addMouseListener(new MouseAdapter() {
 												@Override
 												public void mouseClicked(MouseEvent me) {
 													
 													JLabel dow = new JLabel();
 	
-													if(!game.getWagon().contains(p.dowry1.name)) {
+													if(!game.wagon1.contains(p.dowry1.name)) {
 													paintImage(p.dowry1, dow);
 													dow.addMouseListener(new MouseAdapter() {
 														@Override
@@ -1624,11 +1846,11 @@ public class SimpleFrameTest extends JFrame {
 																@Override
 																public void mouseClicked(MouseEvent me) {
 																	//remove old
-																	game.getWagon().removeItem(p.name);
+																	game.wagon1.removeItem(p.name);
 																	//Set non-removable (now Dragon can't leave)
 																	clickedItem.removable = false;
 																	//add new
-																	game.getWagon().addItem(p.dowry1);
+																	game.wagon1.addItem(p.dowry1);
 																	
 																	scroll2.setSize(new Dimension(380,490));
 																	remove(itemChoosePane);
@@ -1647,7 +1869,7 @@ public class SimpleFrameTest extends JFrame {
 													infoPane.add(dow);
 													
 													dow = new JLabel();
-													if(!game.getWagon().contains(p.dowry2.name)) {
+													if(!game.wagon1.contains(p.dowry2.name)) {
 													paintImage(p.dowry2, dow);
 													dow.addMouseListener(new MouseAdapter() {
 														@Override
@@ -1658,11 +1880,92 @@ public class SimpleFrameTest extends JFrame {
 																@Override
 																public void mouseClicked(MouseEvent me) {
 																	//remove old
-																	game.getWagon().removeItem(p.name);
+																	game.wagon1.removeItem(p.name);
 																	//Set non-removable (now Dragon can't leave)
 																	clickedItem.removable = false;
 																	//add new
-																	game.getWagon().addItem(p.dowry2);
+																	game.wagon1.addItem(p.dowry2);
+																	
+																	scroll2.setSize(new Dimension(380,490));
+																	remove(itemChoosePane);
+																	updateFrameDefault(game);
+																	//updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
+																}
+															});	
+														
+															changeInfoPane(p.dowry2, replace, game);
+															infoPaneAdd(replace);
+														}
+													});
+													}
+													infoPaneAdd(dow);
+												}
+											});
+											
+											itemChoosePane.add(temp);
+										}
+									}
+									for(int i=0; i<game.wagon2.spaces.length; i++) {
+										if(game.wagon2.spaces[i] instanceof Princess1) {
+											JLabel temp = new JLabel();
+											paintImage(game.wagon2.spaces[i], temp);
+											Princess1 p = (Princess1) game.wagon2.spaces[i];
+											temp.addMouseListener(new MouseAdapter() {
+												@Override
+												public void mouseClicked(MouseEvent me) {
+													
+													JLabel dow = new JLabel();
+	
+													if(!game.wagon2.contains(p.dowry1.name)) {
+													paintImage(p.dowry1, dow);
+													dow.addMouseListener(new MouseAdapter() {
+														@Override
+														public void mouseClicked(MouseEvent me) {
+															//add replace button
+															JButton replace = new JButton("Replace");
+															replace.addMouseListener(new MouseAdapter() {
+																@Override
+																public void mouseClicked(MouseEvent me) {
+																	//remove old
+																	game.wagon2.removeItem(p.name);
+																	//Set non-removable (now Dragon can't leave)
+																	clickedItem.removable = false;
+																	//add new
+																	game.wagon2.addItem(p.dowry1);
+																	
+																	scroll2.setSize(new Dimension(380,490));
+																	remove(itemChoosePane);
+																	updateFrameDefault(game);
+																	//updateFrame(game, game.getPrincess1List().get(game.getPrincess1List().size()-1));
+																}
+															});	
+															
+															
+															changeInfoPane(p.dowry1, replace, game);
+															infoPaneAdd(replace);
+														}
+													});
+													}
+													infoPane.removeAll();
+													infoPane.add(dow);
+													
+													dow = new JLabel();
+													if(!game.wagon2.contains(p.dowry2.name)) {
+													paintImage(p.dowry2, dow);
+													dow.addMouseListener(new MouseAdapter() {
+														@Override
+														public void mouseClicked(MouseEvent me) {
+															//add replace button
+															JButton replace = new JButton("Replace");
+															replace.addMouseListener(new MouseAdapter() {
+																@Override
+																public void mouseClicked(MouseEvent me) {
+																	//remove old
+																	game.wagon2.removeItem(p.name);
+																	//Set non-removable (now Dragon can't leave)
+																	clickedItem.removable = false;
+																	//add new
+																	game.wagon2.addItem(p.dowry2);
 																	
 																	scroll2.setSize(new Dimension(380,490));
 																	remove(itemChoosePane);
@@ -1769,10 +2072,17 @@ public class SimpleFrameTest extends JFrame {
 	 * @param game
 	 * @param i
 	 */
-	public void updateFrame(GameManager game, Item i) {
-		wagonPane.removeAll();
+	public void updateFrame(GameManager game, Item i){
+		
+		wagonPane1.removeAll();
+		wagonPane2.removeAll();
+		wagonPane3.removeAll();
+		wagonPane4.removeAll();
 		wagonPane(game);
-		wagonPane.repaint();
+		wagonPane1.repaint();
+		wagonPane2.repaint();
+		wagonPane3.repaint();
+		wagonPane4.repaint();
 		
 		statPane.removeAll();
 		statPane(game);

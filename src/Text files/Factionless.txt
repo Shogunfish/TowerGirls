@@ -1,23 +1,3 @@
-#Jackal Tactician
-0000ff
-Imageless Testing Kingdom
-Is a companion
-Her name exists in text files
-Is pretty cute
-Doesn't have a head cutout image
-Mostly just that first thing
-3
-5
-3
-0
-Ha
-Haha
-Hahaha
-Jackal Tactics - Does a thing that lets me test if effect 1 is working, plus now the effect is extra long so I can test if removing the second ability works the way it should work blah blah blah blah blah
-Something - Checking if this works too
-Jackel Kingdom - Makes your kingdom able to test kingdom modifiers as well
-The first companion who came to mind, Jackal Tactician is always willing to help me test things while waiting for Jasper to cut out images
-
 #Paladin General
 918C6F
 High Forest Kingdom
@@ -33,9 +13,9 @@ Borderline religious zealot
 Justice
 Missionary
 Frotting
-Crusader's Cross - Swords that may bring a loved one back from the dead, Entabgle the guilty in chains, and cure wounds with the wielder's fluids. The wielder must deliver a sermon to activate these effects.
+Crusader's Cross - Swords that may bring a loved one back from the dead, Entangle the guilty in chains, and cure wounds with the wielder's fluids. The wielder must deliver a sermon to activate these effects. - 5
 Nothing
-Paladin's Glory - The paladins will police your cities and teach your citizens from their holy scriptures.
+Paladin's Glory - The paladins will police your cities and teach your citizens from their holy scriptures. - 5
 A worshipper of Dei originating from the human kingdom. The paladins lead an army across the land, spreading their gospel and enforcing peace.
 
 #Barbarian General
@@ -53,9 +33,9 @@ Dislikes being ignored, eats comfort food
 Feasting
 Drunk sex
 Discipline
-Soldier's Symbol - A pin granted to those who can best the general in combat. The owner can tame and call upon any animal or beast that they best in combat, as long as that animal is set free.
+Soldier's Symbol - A pin granted to those who can best the general in combat. The owner can tame and call upon any animal or beast that they best in combat, as long as that animal is set free. - 5
 Nothing
-Barbarian Wilds - Your kingdom is filled with lush wilderness and your hunts always return with a bounty of meat.
+Barbarian Wilds - Your kingdom is filled with lush wilderness and your hunts always return with a bounty of meat. - 5
 The leader of a forsaken sect of orcs considered barbaric by many. Though his heart is gentle, he loses control when loved ones are at risk.
 
 #Incubus General
@@ -73,9 +53,9 @@ Cowardly, will run given the chance.
 Gangbangs
 Domming
 Hair pulling
-Temptor's Trinkets - Glittering strings of coins attatched to assorted pasties. Wearing these imbue the user with the knowledge of a seductive hip-thrusting move that can hypnotize others to bend to your will
+Temptor's Trinkets - Glittering strings of coins attatched to assorted pasties. Wearing these imbue the user with the knowledge of a seductive hip-thrusting move that can hypnotize others to bend to your will - 5
 Nothing
-Incubus' Luxury - Your kingdom's culture is enriched by the incubus general's traditional dancing and attire.
+Incubus' Luxury - Your kingdom's culture is enriched by the incubus general's traditional dancing and attire. - 5
 Thrown away from his own kingdom, this general rules over an army of sexual demons. They are always bringing the party along with them.
 
 #Border General
@@ -93,9 +73,9 @@ Appears to be hiding a large secret
 Neck licking
 Anal
 Groping
-Liar's Lament - This ability is kind of stupid, I think we can do better
+Liar's Lament - This ability is kind of stupid, I think we can do better - 5
 Nothing
-Border's Bounty - Your kingdom's borders are tall and difficult to invade, also your seas are rich with fish.
+Border's Bounty - Your kingdom's borders are tall and difficult to invade, also your seas are rich with fish. - 5
 As a childhood friend of the boy princess, this general guards the border to the endless fields. Not out of duty but out of friendship.
 
 #Jadeite Beast
@@ -115,7 +95,7 @@ Painting
 mice
 Nothing
 Nothing
-Pack Animal - Your kingdom is rich in Jade and beasts of burden to help with all sorts of monumental tasks.
+Pack Animal - Your kingdom is rich in Jade and beasts of burden to help with all sorts of monumental tasks. - 5
 This beast is capable of lifting up great weights. It is said that the most ancient of them hold up the very world itself. The jadeite beast can release a blast of sound that can shake boulders to gravel. Its primary use is for deforestation.
 
 
@@ -136,7 +116,7 @@ Beaches
 Cast nets
 Nothing
 Nothing
-Terror of the Deep - Your kingdom's seas are rich in all sorts of exotic fish, whales, and coral.
+Terror of the Deep - Your kingdom's seas are rich in all sorts of exotic fish, whales, and coral. - 5
 This leviathan is disturblingly fast on land, and terrifying beneath the sea. Holes along its side force steam from its body to catch prey. By inflating its throat, the lazulite beast can force a jet of water in any direction capable of sculpting rock. It's primary use is fishing in great quantities.
 
 
@@ -157,7 +137,7 @@ Still water
 Smoke
 Nothing
 Nothing
-Big Bugs - Your kingdom's insects are larger, but also significantly more useful. Your plants thrive and you are rich in silks and produce.
+Big Bugs - Your kingdom's insects are larger, but also significantly more useful. Your plants thrive and you are rich in silks and produce. - 5
 A titanic insect with the strength and abilities of a dragon. It is said that every flap of its wings causes a hurricane somewhere in the world. The rapid wingbeats of the sinhalite beast can generate enough force to alter wind patterns, affecting weather. It's primary use is for speedier flight.
 
 
@@ -178,7 +158,7 @@ Basking
 Cold temperatures
 Nothing
 Nothing
-Subterranian Splendor - Your kingdom is filled with prehistoric reptiles. Also, the ease of burrowing makes your kingdom rich with ore and gemstones.
+Subterranian Splendor - Your kingdom is filled with prehistoric reptiles. Also, the ease of burrowing makes your kingdom rich with ore and gemstones. - 5
 The empty husk of a lesser drake inhabited by a Lava-like slug. Every decade the husk deteriorates, forcing the beast to find a new host. The citrine beast's superheated breath can melt through nearly anything. It's primary use is for burrowing deep underground.
 
 
@@ -197,9 +177,9 @@ Disturbingly silent when entering
 Birdwatching
 Petrichor
 Awry Humors
-Caretaker's Course - Discover how to give body piercings in a pleasurable manner
-Custodian's Conference - Remove a single negative from a character's card
-Sawbones Extrordinaire - Your kingdom's military suffers low casualties and your citizenry stay in peak health.
+Caretaker's Course - Discover how to give body piercings in a pleasurable manner - 5
+Custodian's Conference - Remove a single negative from a character's card - 5
+Sawbones Extrordinaire - Your kingdom's military suffers low casualties and your citizenry stay in peak health. - 5
 Chattering crows taught this young doctor the secrets of the body. They seek to ease pain and increase pleasure with their mastery.
 
 #Wizard Master
@@ -217,9 +197,9 @@ Out of touch with the times
 Jelly Beans
 Smoking
 Dullards
-Sorcerer's Session - Learn how to alter hairstyles and grow beards with magic.
-Seer's Seminar - Swap a dowry or lust gift with another you don't own
-Magic and Wonder - Your citizenry is kept entertained with all manner of magic. Your buildings can be constructed with magic to enable otherwise impossible architecture.
+Sorcerer's Session - Learn how to alter hairstyles and grow beards with magic. - 5
+Seer's Seminar - Swap a dowry or lust gift with another you don't own - 5
+Magic and Wonder - Your citizenry is kept entertained with all manner of magic. Your buildings can be constructed with magic to enable otherwise impossible architecture. - 5
 A travelling wizard from an ancient race of magic progenitors. They put their vast knowledge  to use by teaching the lesson of enjoying life.
 
 #Huntress Master
@@ -237,9 +217,9 @@ The smell of the wilds ain't always great
 Starry skies
 New food
 Diseases
-Drifter's Dissertation - Through camping, you have discovered the secrets to being a good cook. Everyone gets a free apron.
-Departer's Disquisition - Pick wealth/power bonuses based on your lowest stat
-The Wild Hunt - Your kingdom's wilds are expanded and contain a wide variety of cervids and large birds.
+Drifter's Dissertation - Through camping, you have discovered the secrets to being a good cook. Everyone gets a free apron. - 5
+Departer's Disquisition - Pick wealth/power bonuses based on your lowest stat - 5
+The Wild Hunt - Your kingdom's wilds are expanded and contain a wide variety of cervids and large birds. - 5
 The spirits of the forest call upon this huntress to provide balance. She knows not just how to take, but how to return when dealing with survival.
 
 #Funk Master
@@ -257,9 +237,9 @@ Might be a demon
 Brick houses
 Uptown funk
 What is love
-Lover's Lesson - You gain an overwhelming amount of funk, enough to literally dance people's clothes off
-Lunatic's Lecture - Replace a character's positive aspects with anyone else's
-Funkytown - One of your cities becomes the capital city of dirty dancing and other funky pasttimes.
+Lover's Lesson - You gain an overwhelming amount of funk, enough to literally dance people's clothes off - 5
+Lunatic's Lecture - Replace a character's positive aspects with anyone else's - 5
+Funkytown - One of your cities becomes the capital city of dirty dancing and other funky pasttimes. - 5
 An anomaly with a close relationship to hell. This being overflows with charisma, though wishes to only teach one person their secrets.
 
 #Noble Courtier
@@ -277,9 +257,9 @@ Compulsively challenges others to duels
 Tentacles
 Tentacles
 Not tentacles
-Baroque Blandishment - Through his charm and wit, the noble courtier can convince two princesses and their kingdoms to like each other, regardless of past differences. This bond, once forged, cannot be broken.
+Baroque Blandishment - Through his charm and wit, the noble courtier can convince two princesses and their kingdoms to like each other, regardless of past differences. This bond, once forged, cannot be broken. - 5
 Nothing
-Tentacle Gentleman - Your kingdom gains a refined upper crust who enjoy fine foods and entertainment
+Tentacle Gentleman - Your kingdom gains a refined upper crust who enjoy fine foods and entertainment - 5
 The foreign tentacle beasts from across the sea have a wealth of knowledge, and charm, as well as literal wealth.
 
 #Squire Courtier
@@ -297,9 +277,9 @@ What is under those clothes god damn
 Head patting
 Blowjobs
 Yelling
-Lemminghearted Liberation - Wanting to do as you do, the squire will rescue a single princess from the tower of the third dragon. Wait, this is a companion you idiot! You huge idiot! You've saved a companion instead!
+Lemminghearted Liberation - Wanting to do as you do, the squire will rescue a single princess from the tower of the third dragon. Wait, this is a companion you idiot! You huge idiot! You've saved a companion instead! - 5
 Nothing
-Youthful Disciples - Your kingdom's armed forces are bolstered with girlish units and your kingdom's culture becomes a little more intimate.
+Youthful Disciples - Your kingdom's armed forces are bolstered with girlish units and your kingdom's culture becomes a little more intimate. - 5
 A young squire with an infatuation towards heroes. They hope to one day follow in the footsteps of a knight that once patted them on the head.
 
 #Friar Courtier
@@ -317,9 +297,9 @@ You are probably one of those predators
 Mud wrestling
 Dirty talk
 Spitroasting
-Holy Hog - You discover that part of a P'orc contains an incredibly strong aphrodesiac that can be extracted without killing them. Use it to immediately boost a princess' lust to full, granting you their lust gift/bonus.
+Holy Hog - You discover that part of a P'orc contains an incredibly strong aphrodesiac that can be extracted without killing them. Use it to immediately boost a princess' lust to full, granting you their lust gift/bonus. - 5
 Nothing
-The Last P'orc - Your kingdom has a wealth of expensive truffles and is educated in the history of the lost P'orc race.
+The Legacy of the P'orc - Your kingdom has a wealth of expensive truffles and is educated in the history of the lost P'orc race. - 5
 A member of a near extinct race that once populated the continent. With his fair share of close shaves, this P'orc turned to religion to find his answer.
 
 #Monk Courtier
@@ -337,9 +317,9 @@ Must fight to keep her rage in control
 Wrestling
 Breastplay
 Full monty
-Wordless Wrestler - The monk can prevent a princess from bringing harm to you in any shape or form by taking them down with an energy-infused lariat. The princess is unharmed afterwards.
+Wordless Wrestler - The monk can prevent a princess from bringing harm to you in any shape or form by taking them down with an energy-infused lariat. The princess is unharmed afterwards. - 5
 Nothing
-Expert Grappler - Your military are trained in unarmed grappling, making them formidable even without weapons.
+Expert Grappler - Your military are trained in unarmed grappling, making them formidable even without weapons. - 5
 A warrior of few words who strictly follows the code of a master they wish to avenge. This code involves grappling all of their enemies.
 
 #Bard Courtier
@@ -357,7 +337,7 @@ Incapable of being quiet
 Loud sex
 Drunken sex
 Quiet sex
-Bard's Balled - The bard's power is too similar to Noble/Friar's powers so I think it should be changed if we include it, but Friar's image could be used to make P'orc princess a gen 3 princess which would open up a slot for her
+Bard's Balled - The bard's power is too similar to Noble/Friar's powers so I think it should be changed if we include it, but Friar's image could be used to make P'orc princess a gen 3 princess which would open up a slot for her - 5
 Nothing
-Travelling Performers - Your kingdom is full of wandering musicians who liven up events and gatherings.
+Travelling Performers - Your kingdom is full of wandering musicians who liven up events and gatherings. - 5
 A travelling bard who, impressed by your deeds, has decided to write down your exploits and immortalize you in songs and tales.

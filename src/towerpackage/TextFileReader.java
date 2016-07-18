@@ -33,9 +33,9 @@ public Princess1 readPrincess1 (String textLocation, String princessName) throws
 		
 		Color princessColor = Color.decode("#" + princess.get(1));
 		Princess1 princessBuild = new Princess1(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
-		princessBuild.dowry1 = new Item(hyphenRegex(princess.get(15))[0], "src/Dowries/" + hyphenRegex(princess.get(15))[0] + ".png", hyphenRegex(princess.get(15))[1]);
-		princessBuild.dowry2 = new Item(hyphenRegex(princess.get(16))[0], "src/Dowries/" + hyphenRegex(princess.get(16))[0] + ".png", hyphenRegex(princess.get(16))[1]);
-		princessBuild.lustGift = new Item(hyphenRegex(princess.get(17))[0], "src/Lust items/" + hyphenRegex(princess.get(17))[0] + ".png", hyphenRegex(princess.get(17))[1]);
+		princessBuild.dowry1 = new Item(hyphenRegex(princess.get(15))[0], "src/Dowries/" + hyphenRegex(princess.get(15))[0] + ".png", hyphenRegex(princess.get(15))[1],Integer.parseInt(hyphenRegex(princess.get(15))[2]));
+		princessBuild.dowry2 = new Item(hyphenRegex(princess.get(16))[0], "src/Dowries/" + hyphenRegex(princess.get(16))[0] + ".png", hyphenRegex(princess.get(16))[1],Integer.parseInt(hyphenRegex(princess.get(16))[2]));
+		princessBuild.lustGift = new Item(hyphenRegex(princess.get(17))[0], "src/Lust items/" + hyphenRegex(princess.get(17))[0] + ".png", hyphenRegex(princess.get(17))[1],Integer.parseInt(hyphenRegex(princess.get(17))[2]));
 		
 		princessBuild.kinks = (new Preference[]{new Preference(princess.get(12),true), new Preference(princess.get(13),true)});
 		princessBuild.turnoff = new Preference(princess.get(14),false);
@@ -72,8 +72,8 @@ public Princess2 readPrincess2 (String textLocation, String princessName) throws
 		Color princessColor = Color.decode("#" + princess.get(1));
 		Princess2 princessBuild = new Princess2(princess.get(0), "src/Girls/" + princess.get(0) +  ".png", princessColor, princess.get(2), princess.get(princess.size()-1));
 		
-		princessBuild.totem = new Totem(princess.get(15), "src/Totems/" + commaRegex(princess.get(15))[0] +  ".png", princess.get(16), princess.get(17));
-		princessBuild.lustGift = new Item(hyphenRegex(princess.get(18))[0], "src/Lust items/" + hyphenRegex(princess.get(18))[0] + ".png", hyphenRegex(princess.get(18))[1]);
+		princessBuild.totem = new Totem(princess.get(15), "src/Totems/" + commaRegex(princess.get(15))[0] +  ".png", hyphenRegex(princess.get(16))[0], hyphenRegex(princess.get(17))[0],Integer.parseInt(hyphenRegex(princess.get(16))[1]),Integer.parseInt(hyphenRegex(princess.get(17))[1]));
+		princessBuild.lustGift = new Item(hyphenRegex(princess.get(18))[0], "src/Lust items/" + hyphenRegex(princess.get(18))[0] + ".png", hyphenRegex(princess.get(18))[1],Integer.parseInt(hyphenRegex(princess.get(18))[2]));
 		
 		princessBuild.kinks = (new Preference[]{new Preference(princess.get(12),true), new Preference(princess.get(13),true)});
 		princessBuild.turnoff = new Preference(princess.get(14),false);
@@ -114,14 +114,13 @@ public Princess3 readPrincess3 (String textLocation, String princessName) throws
 		princessBuild.companion.kinks = new Preference[]{new Preference(hyphenRegex(princess.get(15))[2],true),new Preference(hyphenRegex(princess.get(15))[3],true)};
 		princessBuild.companion.turnoff = new Preference(hyphenRegex(princess.get(15))[4],false);
 		
-		princessBuild.wealthGift = new Effect(princess.get(0) + " Wealth", "src/Effect icons/" + princess.get(0) +  ".png");
-		princessBuild.wealthGift.description=princess.get(16);
+		princessBuild.wealthGift = new Effect(princess.get(0) + " Wealth", "src/Effect icons/" + princess.get(0) +  ".png", Integer.parseInt(hyphenRegex(princess.get(16))[1]));
+		princessBuild.wealthGift.description=hyphenRegex(princess.get(16))[0];
 				
-		princessBuild.powerGift = new Effect(princess.get(0) + " Power", "src/Effect icons/" + princess.get(0) +  ".png");
-		princessBuild.powerGift.description=princess.get(17);
+		princessBuild.powerGift = new Effect(princess.get(0) + " Power", "src/Effect icons/" + princess.get(0) +  ".png",Integer.parseInt(hyphenRegex(princess.get(17))[1]));
+		princessBuild.powerGift.description=hyphenRegex(princess.get(17))[0];
 		
-		
-		princessBuild.lustGift = new Item(hyphenRegex(princess.get(18))[0], "src/Lust items/" + hyphenRegex(princess.get(18))[0] + ".png", hyphenRegex(princess.get(18))[1]);
+		princessBuild.lustGift = new Item(hyphenRegex(princess.get(18))[0], "src/Lust items/" + hyphenRegex(princess.get(18))[0] + ".png",hyphenRegex(princess.get(18))[1] ,Integer.parseInt(hyphenRegex(princess.get(18))[2]));
 		
 		princessBuild.kinks = (new Preference[]{new Preference(princess.get(12),true), new Preference(princess.get(13),true)});
 		princessBuild.turnoff = new Preference(princess.get(14),false);
@@ -173,14 +172,14 @@ public Factionless readFactionless(String textLocation, String companionName) th
 	companionBuild.power = Integer.parseInt(companion.get(11));
 
 	if(!companion.get(15).equals("Nothing")){
-	companionBuild.effect1 = new Effect(hyphenRegex(companion.get(15))[0], "src/Effect Icons/" + companion.get(0) +  ".png");
+	companionBuild.effect1 = new Effect(hyphenRegex(companion.get(15))[0], "src/Effect Icons/" + companion.get(0) +  ".png", Integer.parseInt(hyphenRegex(companion.get(15))[2]));
 	companionBuild.effect1.description=hyphenRegex(companion.get(15))[1];
 	}
 	if(!companion.get(16).equals("Nothing")){
-	companionBuild.effect2 = new Effect(hyphenRegex(companion.get(16))[0], "src/Effect Icons/" + companion.get(0) +  ".png");
+	companionBuild.effect2 = new Effect(hyphenRegex(companion.get(16))[0], "src/Effect Icons/" + companion.get(0) +  ".png",Integer.parseInt(hyphenRegex(companion.get(16))[2]));
 	companionBuild.effect2.description=hyphenRegex(companion.get(16))[1];
 	}
-	companionBuild.kingdomMod = new Effect(hyphenRegex(companion.get(17))[0], "src/Effect Icons/" + companion.get(0) +  ".png");
+	companionBuild.kingdomMod = new Effect(hyphenRegex(companion.get(17))[0], "src/Effect Icons/" + companion.get(0) +  ".png",Integer.parseInt(hyphenRegex(companion.get(17))[2]));
 	companionBuild.kingdomMod.description=hyphenRegex(companion.get(17))[1];
 	
 	return companionBuild;

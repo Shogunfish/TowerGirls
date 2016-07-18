@@ -1,9 +1,12 @@
 package towerpackage;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
 
 public class GameManager {
+	
+	public Character player;
 	
 	public Wagon wagon1;
 	public ArrayList<Princess1> princesses1;
@@ -23,13 +26,18 @@ public class GameManager {
 	
 	public boolean huntress;
 	
-		
-	
+	public int numSelected;
+	public ArrayList<Effect> kingdom;
+	public ArrayList<Effect> stash;
 	
 	public GameManager()
 	{
 		pageNumber=1;
 		huntress=false;
+		numSelected=0;
+		player = new Character("You", "src/Companions/Loyal Knight.png", Color.RED, "Player Character Kingdom", "This is you.");
+		kingdom = new ArrayList<Effect>();
+		stash = new ArrayList<Effect>();
 	}
 	
 	public ArrayList<Princess1> getPrincess1List()
@@ -67,6 +75,26 @@ public class GameManager {
 			return wagon2;
 		}
 		else if(pageNumber==3) 
+		{
+			return wagon3;
+		} 
+		else 
+		{
+			return wagon4;
+		}
+	}
+	
+	public Wagon getWagon(int p)
+	{
+		if(p==1)
+		{
+			return wagon1;
+		}
+		else if(p==2)
+		{
+			return wagon2;
+		}
+		else if(p==3) 
 		{
 			return wagon3;
 		} 
@@ -237,13 +265,10 @@ public class GameManager {
 		return out;
 	}
 	
-	
-	
 	public ArrayList<Character> getUnChosenCharacters()
 	{
 		return getUnChosenCharacters(getChosenCharacters());
 	}
-
 	
 	public void replaceLustGift(String name, Item gift) {
 		for(int i = 0; i < wagon1.spaces.length; i++){
@@ -336,4 +361,49 @@ public class GameManager {
 		}
 		return out;
 	}
+	
+	public boolean inOtherWagon(String name)
+	{
+		boolean out = false;
+		
+		if(pageNumber != 1) for(Item i : wagon1.spaces)
+		{
+			if(i!=null && i.name.equals(name))out=true;
+		}
+		if(pageNumber != 2) for(Item i : wagon2.spaces)
+		{
+			if(i!=null && i.name.equals(name))out=true;
+		}
+		if(pageNumber != 3) for(Item i : wagon3.spaces)
+		{
+			if(i!=null && i.name.equals(name))out=true;
+		}
+		if(pageNumber != 4) for(Item i : wagon4.spaces)
+		{
+			if(i!=null && i.name.equals(name))out=true;
+		}
+		
+		return out;
+		
+	}
+	
+	public int removeFromAllWagons(String n)
+	{
+		for(int i = 0; i<wagon1.spaces.length;i++) {if(wagon1.spaces[i]!=null && wagon1.spaces[i].name.equals(n)) {wagon1.spaces[i]=null; return 1;}}
+		for(int i = 0; i<wagon2.spaces.length;i++) {if(wagon2.spaces[i]!=null && wagon2.spaces[i].name.equals(n)) {wagon2.spaces[i]=null; return 2;}}
+		for(int i = 0; i<wagon3.spaces.length;i++) {if(wagon3.spaces[i]!=null && wagon3.spaces[i].name.equals(n)) {wagon3.spaces[i]=null; return 3;}}
+		for(int i = 0; i<wagon4.spaces.length;i++) {if(wagon4.spaces[i]!=null && wagon4.spaces[i].name.equals(n)) {wagon4.spaces[i]=null; return 4;}}
+		
+		return 0;
+	}
+
+	public ArrayList<Effect> getAllEffects() {
+		ArrayList<Effect> out = new ArrayList<Effect>();
+		for(Effect e : wagon1.effects) out.add(e);
+		for(Effect e : wagon2.effects) out.add(e);
+		for(Effect e : wagon3.effects) out.add(e);
+		for(Effect e : wagon4.effects) out.add(e);
+		return out;
+	}
+	
 }

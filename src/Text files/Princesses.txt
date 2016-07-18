@@ -1,3 +1,5 @@
+--------------------------------GENERATION I--------------------------------------
+
 #Template
 000000
 Template Kingdom
@@ -13,9 +15,9 @@ Con 2
 Fetish
 Fetish
 Turnoff
-Dowry - click to claim this Dowry if you claim the princess.
-Dowry - Claiming a Dowry will fill a spot in your wagon.
-Lust Item - Raising a princess's lust value to maximum will grant you her lust item.
+Dowry - click to claim this Dowry if you claim the princess. - 5
+Dowry - Claiming a Dowry will fill a spot in your wagon. - 5
+Lust Item - Raising a princess's lust value to maximum will grant you her lust item. - 5
 The princess of a fake kingdom used to teach the basics of knighthood to aspiring squires
 
 #Kobold
@@ -33,9 +35,9 @@ Lifespan half the length of yours
 Anal
 Tail Pulling
 Cum on Horns
-Red Candle - Match a lifespan to your own
-Warm Ore - Produce strong aura of heat
-Gemstone Plug - Can only be removed by a knight
+Red Candle - Match a lifespan to your own - 5
+Warm Ore - Produce strong aura of heat - 5
+Gemstone Plug - Can only be removed by a knight - 5
 A naive kobold with a sense of curiosity that often gets her into trouble. She wants to learn more about human culture.
 
 #Human
@@ -53,9 +55,9 @@ Sensitive about her weight
 Cum on belly
 BDSM
 Cum in hair
-Heir's Coin - Gain small fortune for every child
-P'orc Bone - Alter the size of body parts
-Mithril Rings - Anything placed through one ring will emerge from the other
+Heir's Coin - Gain small fortune for every child - 5
+P'orc Bone - Alter the size of body parts - 5
+Mithril Rings - Anything placed through one ring will emerge from the other - 5
 The official princess of the human race. Born with a silver spoon in her mouth and raised to be a housewife, she longs for a life of adventure.
 
 #Insect
@@ -73,9 +75,9 @@ Attracts jealous suitors
 Throatfucking
 Armpit sex
 Wasting jizz
-Pheromone Cluster - Produce cells/fluids instantly
-Shining Egg - Children are born 10x faster
-Royal Jelly - A delicious treat that increases the tiddy, ass and thighs
+Pheromone Cluster - Produce cells/fluids instantly - 5
+Shining Egg - Children are born 10x faster - 5
+Royal Jelly - A delicious treat that increases the tiddy, ass and thighs - 5
 The future of the insect princess had long since been decided for her as the kingdom's broodmother. Her heart, however, yearns for love.
 
 #Skeleton
@@ -93,9 +95,9 @@ Spooky and/or scary
 Skullfucking
 Paizuri
 Hotdogging
-Soul Dagger - Swap the appearance of two people
-Dorian's Painting - Conditional immortality
-Humming Stud - Share your sensations with a partner
+Soul Dagger - Swap the appearance of two people - 5
+Dorian's Painting - Conditional immortality - 5
+Humming Stud - Share your sensations with a partner - 5
 A lifetime of death has given this princess a humerus outlook on life. Only someone with a lot of guts can charm this hip maiden.
 
 #Slime
@@ -113,9 +115,9 @@ Is that a skeleton
 Dick Everywhere
 Creampies
 Watersports
-Life Pearl - Give objects sentience
-Supple moss - Stretch your body past its limits
-Vibrating Goo - Never stops moving
+Life Pearl - Give objects sentience - 5
+Supple moss - Stretch your body past its limits - 5
+Vibrating Goo - Never stops moving - 5
 A princess whose soul was enveloped in a gem, eventually becoming a slimegirl. A maiden's heart still remains within her original skeleton.
 
 #Mermaid
@@ -133,9 +135,9 @@ Must be carried across land
 Choking
 Hotdogging
 Footjobs
-Glass Conch - Produce large bubbles of water
-Humble Trident - Bestow a human form upon someone
-Moist Cloth - Rub upon a person to make them 'wet'
+Glass Conch - Produce large bubbles of water - 5
+Humble Trident - Bestow a human form upon someone - 5
+Moist Cloth - Rub upon a person to make them 'wet' - 5
 Once believed that a life under the ocean was all she needed until she was kidnapped. Now, she has a fascination for the bipedal form.
 
 #Knight
@@ -153,9 +155,9 @@ Her band is very protective
 Clothed sex
 Sweat
 Paizuri
-Grandfather's Sword - Guaranteed victory against evil
-Knight's Crest - Summon knights you have bested
-Lover's Handkerchief - The longer a lover is apart from you, the more aroused they become
+Grandfather's Sword - Guaranteed victory against evil - 5
+Knight's Crest - Summon knights you have bested - 5
+Lover's Handkerchief - The longer a lover is apart from you, the more aroused they become - 5
 Deemed the 'true' Human princess by her band of knights, she travels across the high forest kingdom fighting corrupt factions and evildoers.
 
 #Harpy
@@ -173,9 +175,9 @@ Distracted by shiny objects
 Egg laying
 Sex in the air
 Sticky feathers
-Golden Feather - Gain the ability of flight
-Phoenix Ashes - Death revives you as a harpy
-Swan's Down - Lower the physical age of you or a partner
+Golden Feather - Gain the ability of flight - 5
+Phoenix Ashes - Death revives you as a harpy - 5
+Swan's Down - Lower the physical age of you or a partner - 5
 A harpy who spends much of her life flying and collecting treasures. Despite her protective demeanor, there is no one to protect her.
 
 #Boy
@@ -193,9 +195,9 @@ Beauty is not eternal
 Large insertion
 Bukkake
 Being top
-Plentiful Horn - Affect the aging of living things
-Haystack's Needle - Convert non-combatants to soldiers
-Rooster's Bell - Reverse a target's sex
+Plentiful Horn - Affect the aging of living things - 5
+Haystack's Needle - Convert non-combatants to soldiers - 5
+Rooster's Bell - Reverse a target's sex - 5
 Hailed as the idol of the endless fields, this princess is worshipped by the high forest kingdom's countless farmers.
 
 #Orc
@@ -213,9 +215,9 @@ Take care of your pelvis son
 Snu-snu
 Little guys
 Handling tusks
-Primordial Dust - Gain strength to survive both the battlefield and the bedroom
-War Manual - Gain loot for every battle won
-Grunting Totem - Arouse everyone in your general vicinity
+Primordial Dust - Gain strength to survive both the battlefield and the bedroom - 5
+War Manual - Gain loot for every battle won - 5
+Grunting Totem - Arouse everyone in your general vicinity - 5
 An orc who gained her title through battle. She seeks a lover that can fuck for as long as she can fight, which could mean months.
 
 #Dwarf
@@ -233,9 +235,9 @@ Very embarrassed when naked
 Jackhammering
 Drunken sex
 Shaving
-Fungus Vodka - Consumer becomes passive, things appear much larger than they are
-Dire Brandy - Consumer can see through garments
-Golem's Belt - Sub becomes stuck to dom's genitals
+Fungus Vodka - Consumer becomes passive, things appear much larger than they are - 5
+Dire Brandy - Consumer can see through garments - 5
+Golem's Belt - Sub becomes stuck to dom's genitals - 5
 The youngest child and only daughter of an ancient dwarven king. She spends her days drinking and fighting with her hundreds of brothers.
 
 #Amazon
@@ -253,9 +255,9 @@ Violently jealous
 Cum lotion
 Dominance
 Cheating
-Lion's Pelt - Hide your tracks
-Ivory Sweat - Gain great size and strength
-Beastkin's Mantle - Become a dire beast
+Lion's Pelt - Hide your tracks - 5
+Ivory Sweat - Gain great size and strength - 5
+Beastkin's Mantle - Become a dire beast - 5
 A very possessive and violent princess, her body is a golden temple engraved with the scars of those who have crossed her path.
 
 #Ghost
@@ -273,9 +275,9 @@ Poltergeist levels of upset
 Masturbation
 Voyeurism
 Loud partners
-Bride's Veil - Gives voice to thoughts
-Moonlight Glass - Become selectively corporeal
-Desire's Mirror - Those reflected in it have their desires appear in the mirror
+Bride's Veil - Gives voice to thoughts - 5
+Moonlight Glass - Become selectively corporeal - 5
+Desire's Mirror - Those reflected in it have their desires appear in the mirror - 5
 Not a princess's ghost, but rather, the ethereal & mute ghost princess. If she ever turns red, run as fast as you can.
 
 #Golem
@@ -293,9 +295,9 @@ Must be recharged
 Erotic stories
 Dick in keyhole
 Cum on screen 
-Clockwork Heart - Convert a living being into an automaton
-Eternal Key - Every turn reduces fatigue
-Mystical Hole - Place to allow sensation of vagina for both parties
+Clockwork Heart - Convert a living being into an automaton - 5
+Eternal Key - Every turn reduces fatigue - 5
+Mystical Hole - Place to allow sensation of vagina for both parties - 5
 The first golem to be created by others of her kind. Born with an innate sense of wonder, she hopes to learn more about the world.
 
 #Succubus
@@ -313,9 +315,9 @@ Until you die from the heat
 Polyamory
 Piercings
 Clingy lovers
-Sun Diamond - Produce cold aura of breeze
-Shade Brace - Create a copy of a living thing
-Desert Oil - Morph limbs into other body parts
+Sun Diamond - Produce cold aura of breeze - 5
+Shade Brace - Create a copy of a living thing - 5
+Desert Oil - Morph limbs into other body parts - 5
 Princess who has trained in the art of dance and intense fucking sessions. She is constantly on the hunt for men and women to add to her harem.
 
 #Goblin
@@ -333,9 +335,9 @@ Goblins always try to get the D
 Ballsucking
 Impregnation
 Lover jerking it
-King's Crown - Charisma boost causes lovers to waive unfaithfulness
-Breeding Contract - Own anyone you knock up
-Stud's Draught - Produce an overflowing amount of seed that can impregnate anyone
+King's Crown - Charisma boost causes lovers to waive unfaithfulness - 5
+Breeding Contract - Own anyone you knock up - 5
+Stud's Draught - Produce an overflowing amount of seed that can impregnate anyone - 5
 The haughty, coquettish princess of a breeding empire. Rather than choose many partners, she wishes to mate with one partner forever.
 
 #Drider
@@ -353,9 +355,9 @@ Oh god why is it there
 Bondage
 Sensory Dep.
 Cum in eyes
-Octagonal Amulet - Produce extra body parts
-Amethyst Gossamer - Replace with another princess's gift
-Silk Robe - Heightens sensuality while worn
+Octagonal Amulet - Produce extra body parts - 5
+Amethyst Gossamer - Replace with another princess's gift - 5
+Silk Robe - Heightens sensuality while worn - 5
 The princess of a kingdom rejected for its horrifying inhabitants. In reality, she is a lonely mistress who wishes to quell those fears.
 
 #Mimic
@@ -373,9 +375,9 @@ That's it that's the only downside
 Roleplaying
 Vore
 Missionary
-Wonder Chest - Unlimited space for belongings
-Theatre Masks - Switch the fetishes of wearers
-Growling Choker - Turn the entire body into an erogenous zone
+Wonder Chest - Unlimited space for belongings - 5
+Theatre Masks - Switch the fetishes of wearers - 5
+Growling Choker - Turn the entire body into an erogenous zone - 5
 A mimic occupying the form of a former princess. The more flesh she consumes, the fuller her figure becomes.
 
 #Dragon
@@ -393,9 +395,9 @@ You are part of her hoard now
 Tongue play
 Size difference
 Throatfucking
-Draconic Ruby - Protection from fire and heat, summon the dragon princess
-Encrusted Chest - Swap princesses with their dowries
-Drake's Bane - A plant that multiplies when burned, causes immediate orgasm when eaten
+Draconic Ruby - Protection from fire and heat, summon the dragon princess - 5
+Encrusted Chest - Swap princesses with their dowries - 5
+Drake's Bane - A plant that multiplies when burned, causes immediate orgasm when eaten - 5
 The youngest in a vast line of royal dragons, this princess aims to build her hoard high. Unfortunately, she can't stop eating her treasures.
 
 #Merrow
@@ -413,9 +415,9 @@ Did you just swallow my boat
 Hypnotism
 Deepthroating
 Polygamy
-Bulbous Helm - Survive extreme pressure
-Cooling Chime - Lure any creature with its ringing
-Grotesque Shell - Fuse and unfuse with your partner at will
+Bulbous Helm - Survive extreme pressure - 5
+Cooling Chime - Lure any creature with its ringing - 5
+Grotesque Shell - Fuse and unfuse with your partner at will - 5
 The princess of a deep-sea kingdom. She has made an arduous journey to the surface to learn more about the world.
 
 #Demon
@@ -433,9 +435,9 @@ Wants to be good, but is awful at it
 Hand holding
 Role reversal
 Bossy partners
-The Burning Blade - A searing sword, it can slice anything
-Banner of the Legion - Summons a squad of demonic soldiers
-Writ of the Legate - For every child you have, you gain 100 soldiers for your army
+The Burning Blade - A searing sword, it can slice anything - 5
+Banner of the Legion - Summons a squad of demonic soldiers - 5
+Writ of the Legate - For every child you have, you gain 100 soldiers for your army - 5
 Daughter of a tyrannical demon lord, she wishes to leave her responsibilities behind and live a carefree life.
 
 #Gnome
@@ -453,9 +455,9 @@ Perpetually covered in dirt
 Deep anal
 Ass to mouth
 Open spaces
-Dire Mole - Destroy walls
-Dirty Map - Show your current location
-Spelunker's Supplies - A chest containing anything you would need for buttplay
+Dire Mole - Destroy walls - 5
+Dirty Map - Show your current location - 5
+Spelunker's Supplies - A chest containing anything you would need for buttplay - 5
 The burrowing gnomes are nomadic, creating and filling tunnels across the land. Their princess is idolized as a great explorer.
 
 #Lampad
@@ -473,30 +475,10 @@ Only animate when lit
 Branding
 Hot wax
 Blowing
-Wax Mask - Sculpt to alter appearance of wearer
-Undying Candelabra - Grants immortality if lit
-Azure Cinders - Can be used to contain a soul, cannot be extinguished once given one
+Wax Mask - Sculpt to alter appearance of wearer - 5
+Undying Candelabra - Grants immortality if lit - 5
+Azure Cinders - Can be used to contain a soul, cannot be extinguished once given one - 5
 A princess of a vassal kingdom to the witches. This lampade has slowly been losing her figure to the flames that keep her soul alive.
-
-#Rust
-c58a42
-Growling Swarm
-Affectionate and fluffy feelers
-Can corrode tough obstacles
-You're the only treasure she needs
-Eats your equipment and treasure
-Eats all your food too
-5
-2
-0
-2
-Rusty trombones
-Edible clothing
-Dry sex
-Rust Dust - Users coated in rust dust can deflect hostile magic
-Ravenous pot - Anything placed inside turns to food
-Banished Totem - Removes all inhibitions in a person, including the need for clothing
-A gentle and sporty princess from the dark depths of the world. Her race was banished there for their horribly destructive hunger
 
 #Kaiju
 67a076
@@ -513,9 +495,9 @@ Causes tsunamis when surfacing
 Size Difference
 Pompoir
 Crushing
-Conqueror's Scale - User can safely interact with the elements and the intangible
-Cursed Pearl - Swap the size of two people
-Abyssal Sponge - Climaxes last as long as the sex
+Conqueror's Scale - User can safely interact with the elements and the intangible - 5
+Cursed Pearl - Swap the size of two people - 5
+Abyssal Sponge - Climaxes last as long as the sex - 5
 After awakening from a long slumber this ancient being ruthlessly cowed the creatures of the trench into naming her princess
 
 #Serpent
@@ -533,9 +515,9 @@ Sexually insatiable, leaves you tired
 Constriction
 Aquaphilia
 Bondage
-Aqua Gem - Grants the ability to breathe underwater and swim like a fish
-Lust Balm - Lipstick induces lust in those kissed with it
-Serpent's Salve of Slipperiness - Transform the wearer's legs into a serpent's tail
+Aqua Gem - Grants the ability to breathe underwater and swim like a fish - 5
+Lust Balm - Lipstick induces lust in those kissed with it - 5
+Serpent's Salve of Slipperiness - Transform the wearer's legs into a serpent's tail - 5
 Once the scourge of the sea, serpent princess has been kidnapped. Not even her magic can free her from this land-locked prison.
 
 #Orphan
@@ -553,9 +535,9 @@ Is poor and weak
 Anything...
 ...you want
 Abandonment
-Mysterious Ring - A beautiful silver ring. How did she even get this?
-Old Doll - It's soft. She cries when she holds it.
-Indecipherable Cloth Map - A map to a long lost treasure
+Mysterious Ring - A beautiful silver ring. How did she even get this? - 5
+Old Doll - It's soft. She cries when she holds it. - 5
+Indecipherable Cloth Map - A map to a long lost treasure - 5
 The princess of a long lost kingdom, yadda yadda yadda I'll figure out what goes here later
 
 #Squid
@@ -573,9 +555,9 @@ Might have a beak down there
 Multiple penetration
 Tickling
 Missionary
-Kraken's Medallion - Command the loyalty of sea creatures
-Abyssal Harpoon - Dive to impossible depths with ease
-Shifter's Belt - Wearer's genitals become compatible with that of their partners
+Kraken's Medallion - Command the loyalty of sea creatures - 5
+Abyssal Harpoon - Dive to impossible depths with ease - 5
+Shifter's Belt - Wearer's genitals become compatible with that of their partners - 5
 Princess of the deepest depths, curious of surface life and culture. Clingy and affectionate, her thought process can be somewhat alien.
 
 #Book
@@ -593,9 +575,9 @@ No seriously, watch out
 Erotic reading
 Being read
 Scissoring
-Magic Bookmark - Teleport to the last place you read a book
-Future Almanac - Avoid a fatal attack once per year
-Origami Form - Allows her to take an anthropomorphic form. Writing upon her pages alters her form.
+Magic Bookmark - Teleport to the last place you read a book - 5
+Future Almanac - Avoid a fatal attack once per year - 5
+Origami Form - Allows her to take an anthropomorphic form. Writing upon her pages alters her form. - 5
 She's a fucking book. I'll write this later
 
 #Shark
@@ -613,9 +595,9 @@ Likes the taste of your blood
 Bloodplay
 Olfactophilia
 Giving oral
-Sun Tan Lotion - Gain a resistance to sun and heat, plus a great tan
-Sea-goer Surf Board - The user may gain a tail, fins and gills on command
-Bloody Mary - The drinker gains incredibly fast blood regeneration
+Sun Tan Lotion - Gain a resistance to sun and heat, plus a great tan - 5
+Sea-goer Surf Board - The user may gain a tail, fins and gills on command - 5
+Bloody Mary - The drinker gains incredibly fast blood regeneration - 5
 From a kingdom of layabouts and other relaxing types, Shark Princess is content to fuck, drink, and likely fuck some more
 
 #Shadow
@@ -633,9 +615,9 @@ Two-dimensional personality
 Dominating
 Surprise sex
 Exhibitionism
-Flickering Candle - Become an intangible shadow like Shadow Princess
-Subtle Boots - Enter the shadow realm at will
-Simple Locket - Know the desires and fears of the person whose picture is put inside
+Flickering Candle - Become an intangible shadow like Shadow Princess - 5
+Subtle Boots - Enter the shadow realm at will - 5
+Simple Locket - Know the desires and fears of the person whose picture is put inside - 5
 A princess of a kingdom of living shadows. She has no physical form but can affect things by interacting with their shadows.
 
 #Gargoyle
@@ -653,9 +635,9 @@ A tad unfeeling at times
 Watching you
 Massages
 Cum on wings
-Spell Ward - Protects you from evil magics
-Stone Amulet - Gain immunity to petrification
-Reverse Fossilizer - Converts stone into organic material
+Spell Ward - Protects you from evil magics - 5
+Stone Amulet - Gain immunity to petrification - 5
+Reverse Fossilizer - Converts stone into organic material - 5
 Like their princess, the gargoyles are a strong and dutiful people. Despite her cold exterior, she'll quickly warm up to the right person.
 
 #Candy
@@ -673,9 +655,9 @@ A big tasty lollipop
 Foodplay
 Oral
 Heat
-Magic Taffy - Gives stretchy powers to whomever eats it
-Super Bubblegum - Can be blown to the size of a hot air balloon, allowing you flight
-Box of Chocolates - Eat one of these chocolates to gain super-human energy
+Magic Taffy - Gives stretchy powers to whomever eats it - 5
+Super Bubblegum - Can be blown to the size of a hot air balloon, allowing you flight - 5
+Box of Chocolates - Eat one of these chocolates to gain super-human energy - 5
 A sucker for treats, candy princess is quite the chiclet. Even if he is a guy, he's still sweet enough to be kidnapped and put in a tower.
 
 #Wyvern
@@ -693,10 +675,154 @@ Anxiety over proving she's a dragon
 Cuddling
 Affirmation
 Acupuncture
-Poison-tipped Spear - Those stabbed can only end their pain by submitting sexually
-Pandora's Picnic Basket - Can store any princess' sins and flaws
-Dragon's Mask - While you wear it, all will believe your lies, no matter how blatant
+Poison-tipped Spear - Those stabbed can only end their pain by submitting sexually - 5
+Pandora's Picnic Basket - Can store any princess' sins and flaws - 5
+Dragon's Mask - While you wear it, all will believe your lies, no matter how blatant - 5
 I'm a real dragon! See my awesome hoard! Stop cuddling me! I am fire from above. I am death!
+
+#Alien
+9d8aad
+Fallen Star Kingdom
+Plus
+Plus
+Plus
+You might get probed
+Minus
+5
+5
+5
+5
+Kink
+Kink
+Turn-off
+Dowry - Effect - 5
+Dowry - Effect - 5
+Lust Item - Effect - 5
+Description
+
+#Smuggler
+5a2f58
+Shady Underground
+Loaded with rare goods
+Will buy whatever you are selling
+At a high price
+Deals in an archaic form of payment
+Is always one step ahead of you
+0
+3
+5
+1
+Money shots
+Golden showers
+Freebies
+Dowry - Effect - 5
+Dowry - Effect - 5
+Lust Item - Effect - 5
+The heir to an underworld market, this princess cares more about collecting exotic goods than the throne.
+
+#Lion
+7e1822
+Desert Colosseum
+A strong warrior
+Purrs when aroused
+Will protect you from enemies
+Won't protect you from herself
+Sharp claws
+1
+4
+0
+4
+Scratching
+Biting
+Doggystyle
+Dowry - Effect - 5
+Dowry - Effect - 5
+Lust Item - Effect - 5
+The Desert Colosseum is a gathering point for many beasts and warriors of renown. The princess of the Colosseum must fight to maintain her title.
+
+#Wild
+b0b7d1
+The Great Hunt
+Plus
+Plus
+Plus
+Minus
+Minus
+5
+5
+5
+5
+Kink
+Kink
+Turn-off
+Dowry - Effect - 5
+Dowry - Effect - 5
+Lust Item - Effect - 5
+Description
+
+#Elephant
+915d9b
+Gargantuan Jungle Kingdom
+Plus
+Plus
+Plus
+Minus
+Minus
+5
+5
+5
+5
+Kink
+Kink
+Turn-off
+Dowry - Effect - 5
+Dowry - Effect - 5
+Lust Item - Effect - 5
+Description
+
+#P'orc
+ff424f
+Long Lost P'orc Kingdom
+Plus
+Plus
+Plus
+Minus
+Minus
+5
+5
+5
+5
+Kink
+Kink
+Turn-off
+Dowry - Effect - 5
+Dowry - Effect - 5
+Lust Item - Effect - 5
+Description
+
+#Frankenstein
+7aaeb3
+Shadowy Lab
+Plus
+Plus
+Interchangable parts
+Minus
+Minus
+5
+5
+5
+5
+Kink
+Kink
+Turn-off
+Dowry - Effect - 5
+Dowry - Effect - 5
+Lust Item - Effect - 5
+Description
+
+
+--------------------------------GENERATION II--------------------------------------
+
 
 #Dawn Elf
 bcd480
@@ -714,9 +840,9 @@ Outdoor sex
 Body paint
 Swallowing
 Aurilla, Goddess of Luxury
-Kingdom becomes a haven of pleasures
-Clothes you wear instantly turn into body paint
-Eden's Fruit - Makes bodily fluids taste irresistable
+Kingdom becomes a haven of pleasures - 5
+Clothes you wear instantly turn into body paint - 5
+Eden's Fruit - Makes bodily fluids taste irresistable - 5
 An elf with a relaxed Demeanor who wants to spend her days smoking and fighting. She finds her kingdon's orc obsession hilarious.
 
 #Example
@@ -735,9 +861,9 @@ Fetish
 Fetish
 Turnoff
 Idol, Goddess of Examples
-Bonus received for worshiping
-Problems incurred otherwise
-Lust Item - Raising a princess's lust value to maximum will grant you her lust item.
+Bonus received for worshiping - 5
+Problems incurred otherwise - 5
+Lust Item - Raising a princess's lust value to maximum will grant you her lust item. - 5
 A Sister of Template princess, her kingdom's origins are just as fictitious.
 
 #Assassin
@@ -756,9 +882,9 @@ Pony play
 Roleplay
 Sensory play
 The Holy Eye, God of Clairvoyance
-Your state church is incorruptible
-Your cum becomes a thick choking hazard that blurs memories
-Memory of Future's Vision - Fuck my shit up fam
+Your state church is incorruptible - 5
+Your cum becomes a thick choking hazard that blurs memories - 5
+Memory of Future's Vision - Fuck my shit up fam - 5
 Assassin Princess was sent by the Church of the Holy Eye to kill you. If you can defeat her, she will follow you.
 
 #Nomad
@@ -777,9 +903,9 @@ Anal beads
 Exhibitionism
 Sand in butt
 Anasyrma, Goddess of Androgyny
-Citizens are dangerously attractive
-Be cursed with beautiful, ageless androgyny
-Cactus Juice - Drink to make the booty grow big, supple, and smooth
+Citizens are dangerously attractive - 5
+Be cursed with beautiful, ageless androgyny - 5
+Cactus Juice - Drink to make the booty grow big, supple, and smooth - 5
 The Many Hands consider their brightest jewel to be their princess, a silent wanderer who picks up anything he fancies.
 
 #Ninja
@@ -798,9 +924,9 @@ In the dark
 Choking
 Nudity
 Starl, God of the Nightward
-Kingdom becomes a hidden city known for its nightlife
-As king, you are thought of to be illegitimate and dishonorable
-Dark Sash - Master voyeurism by hiding within a target's own clothing
+Kingdom becomes a hidden city known for its nightlife - 5
+As king, you are thought of to be illegitimate and dishonorable - 5
+Dark Sash - Master voyeurism by hiding within a target's own clothing - 5
 The High Forest Kingdom's Hidden Castle is home to a league of killers, the best of which is their 'princess'. They have never missed a mark
 
 #Ogre
@@ -819,9 +945,9 @@ Spanking
 Musk
 Ass 2 Mouth
 Shride, Goddess of Athletics
-Subjects are gentle, healthy, and athletic
-Become tall, fat, and ogre-like in appearance
-Crunchy Ring - Increases sweat & pheremone production
+Subjects are gentle, healthy, and athletic - 5
+Become tall, fat, and ogre-like in appearance - 5
+Crunchy Ring - Increases sweat & pheremone production - 5
 A lone ogre who wandered into the Rolling Cloud Kingdom and became worshipped by its inhabitants. She has not realized yet.
 
 #Zombie
@@ -840,9 +966,9 @@ Biting
 Subservience
 Kamasutra
 Goerica, Goddess of Plagues
-Citizens cannot die from diseases or accidents
-Gain the desire to bite and be bitten by other people
-Frankenstein's Bolt - Gives a small sensual shock when pressed against skin
+Citizens cannot die from diseases or accidents - 5
+Gain the desire to bite and be bitten by other people - 5
+Frankenstein's Bolt - Gives a small sensual shock when pressed against skin - 5
 Considered the least revolting of her kind, this princess wants to quell the fears that surround her people. A difficult task.
 
 #Plant
@@ -861,9 +987,9 @@ Tentacles
 Being watered
 Stray roots
 Chloelle, Goddess of Growth
-Kingdom will always have bountiful harvests
-Cursed with a set of tentacles Grafted to your back
-Budding Rose - Hypnotizing scent
+Kingdom will always have bountiful harvests - 5
+Cursed with a set of tentacles Grafted to your back - 5
+Budding Rose - Hypnotizing scent - 5
 Bloomed into existence and hasn't done much else. This princess prefers a lazy life. She wasn't hard to kidnap.
 
 #Witch
@@ -882,9 +1008,9 @@ Bestiality
 Cowgirl
 Missionary
 Pridellius, God of Death & Magic
-Kingdoms gain a plethora of magic schools
-Every night, you are cursed to become a werecreature
-Black Broomstick - Vibrates at the owner's command
+Kingdoms gain a plethora of magic schools - 5
+Every night, you are cursed to become a werecreature - 5
+Black Broomstick - Vibrates at the owner's command - 5
 Though she might appear human, the witch princess is anything but. Her mansion is home to a myriad of spooky creatures.
 
 #Fairy
@@ -903,9 +1029,9 @@ Public sex
 Cum inflation
 Cum on wings
 Panthus, God of Trickery
-Kingdom's mirth is increased tenfold
-You begin to leak cum when you see someone you like
-Pixie's Stockings - Warer's orifices can be stretched beyond their limits without pain
+Kingdom's mirth is increased tenfold - 5
+You begin to leak cum when you see someone you like - 5
+Pixie's Stockings - Warer's orifices can be stretched beyond their limits without pain - 5
 The lovable, cheery princess of the Meadow Wilds. Is no stranger to sex and loves to find new creatures and objects to experiment with
 
 #Centaur
@@ -924,9 +1050,9 @@ Doggystyle
 Riding crop
 Teethplay
 Wondle, God of Scholars
-Grant superb parks for your kingdom
-Your genitals turn into that of a horse's
-Capricious Bow - Whoever you strike will fuck the next person they see
+Grant superb parks for your kingdom - 5
+Your genitals turn into that of a horse's - 5
+Capricious Bow - Whoever you strike will fuck the next person they see - 5
 An unremarkable centaur with no defining features of her own. With nothing expected of her she looks towards other lands for adventure.
 
 #Gorgon
@@ -945,9 +1071,9 @@ Stone toys
 Eye contact
 Blindfolds
 Marbellum, Goddess of the Arts
-The kingdom's art and architecture are renowned
-Gain a hypnotic cock that addicts people when they see it
-Perseus Shield - Stay hard for days without complications
+The kingdom's art and architecture are renowned - 5
+Gain a hypnotic cock that addicts people when they see it - 5
+Perseus Shield - Stay hard for days without complications - 5
 The Slithering Mausoleum is a small, but wealthy kingdom of priceless antiques. Their princess seeks to add more to her collection.
 
 #Frog
@@ -966,9 +1092,9 @@ Deep kissing
 Tonguejob
 Inflation
 Perogelch, God of the Rivers
-Kingdom is abundant with delicious water
-Limbs become rubbery and stretchable
-Lily's Pad - A bed that absorbs moisture for intense lovemaking
+Kingdom is abundant with delicious water - 5
+Limbs become rubbery and stretchable - 5
+Lily's Pad - A bed that absorbs moisture for intense lovemaking - 5
 A rather odd princess who lives in a marshy kingdom. Maybe it would help if someone kissed her?
 
 #Angel
@@ -987,9 +1113,9 @@ Eating nice food
 Wing massages
 Lewd people
 Dei, God of Pearls
-Subjects are rich in food, song, and purity
-Grants a demonic phallus with addictive cum
-Worthy Harp - Emits an aura that draws people to obey your commands
+Subjects are rich in food, song, and purity - 5
+Grants a demonic phallus with addictive cum - 5
+Worthy Harp - Emits an aura that draws people to obey your commands - 5
 The princess of this kingdom is not born, but created. She has been tasked to observe the world and be wary of lewd beings.
 
 #Monkey
@@ -1008,9 +1134,9 @@ Tantric sex
 Handjobs
 Tail pulling
 Nanbi, God of the Sun
-Kingdom is a group of peaceful warriors
-Grow to a random size during sex
-Wukong Dong - Stretch or shrink to five times your size, as long as this is in you
+Kingdom is a group of peaceful warriors - 5
+Grow to a random size during sex - 5
+Wukong Dong - Stretch or shrink to five times your size, as long as this is in you - 5
 A strong, playful soul who rules the Peaceful Peak in solitude. She plays with travellers, seeking one who can best her in battle.
 
 #Cat
@@ -1029,9 +1155,9 @@ Heavy petting
 The pussy
 Watersports
 Verda, God of Sexuality
-The kingdom's populace triples in size
-Become the absolute best at blowjobs
-Tinkling Bell - Flip sexual orientations
+The kingdom's populace triples in size - 5
+Become the absolute best at blowjobs - 5
+Tinkling Bell - Flip sexual orientations - 5
 This charming princess stalks the night, hunting giant beasts. She hopes to one day slay something as large as a dragon.
 
 #Arcane
@@ -1050,9 +1176,9 @@ Sensory dep.
 Licking
 Abuse
 Gallau, Goddess of Energy & Space
-Kingdom becomes a drug empire
-Gain a dependancy on licking princesses
-Crystal Salts - Stores a target's sensations and releases them at once when touched
+Kingdom becomes a drug empire - 5
+Gain a dependancy on licking princesses - 5
+Crystal Salts - Stores a target's sensations and releases them at once when touched - 5
 A primordial princess born from great sorcery. Her body is not covered in flames, but a cold, burning magic. She feels soft to the touch.
 
 #Armor
@@ -1071,9 +1197,9 @@ Cunnilingus
 Kamasutra
 Oral
 Pollj, Goddess of the Offensive
-Greatly increase the strength of your armed forces
-Must lick out a princess once a day or you will be mute
-Heart Band - Combine with Mind's Key for a bonus
+Greatly increase the strength of your armed forces - 5
+Must lick out a princess once a day or you will be mute - 5
+Heart Band - Combine with Mind's Key for a bonus - 5
 A princess torn apart at the brink of civil war. Her peppy, can-do attitude hides the fact that she feels as if a piece of her is missing.
 
 #Crest
@@ -1092,9 +1218,9 @@ Giving head
 Facials
 Dick in neck
 Casque, Goddess of the Defensive
-Settlements cannot be conquered by mortal men
-Weakened unless you cum on a girl's face each morning
-Mind's Key - Combine with Heart Band for a bonus
+Settlements cannot be conquered by mortal men - 5
+Weakened unless you cum on a girl's face each morning - 5
+Mind's Key - Combine with Heart Band for a bonus - 5
 A princess torn apart at the brink of civil war. With her memories missing she struggles to accept her true identity.
 
 #Merchant
@@ -1113,9 +1239,9 @@ Femdom
 Punishment
 Cum in drills
 Govei, God of Merchantry
-Kingdom backed by a bounty of wealthy merchants
-Become a sex slave to the princesses you have rescued
-Bronze Sack - Semen turns into coins at will
+Kingdom backed by a bounty of wealthy merchants - 5
+Become a sex slave to the princesses you have rescued - 5
+Bronze Sack - Semen turns into coins at will - 5
 The merchants of the Human Kingdom worship their own princess, the heiress of the Colossal Caravans. She aims to buy her own kingdom.
 
 #Ice Dragon
@@ -1134,9 +1260,9 @@ Erotic literature
 Penis Inspection
 Naughtiness
 Freyda, Dragon Priestess of Ice
-Steal a max lust gift or worship bonus
-Renounced effects are applied to your whole party
-Vanilla Ice - Protects you from the biting cold of ice, ice baby
+Steal a max lust gift or worship bonus - 5
+Renounced effects are applied to your whole party - 5
+Vanilla Ice - Protects you from the biting cold of ice, ice baby - 5
 A hoarder of Knowledge, this great dragon seeks to combine the effects of deities to turn the Dragon Kingdom into a formidable superpower.
 
 #Pirate
@@ -1155,10 +1281,14 @@ Anything
 Seriously
 Netorare
 Santun, Goddess of Inebriation
-Kingdom turns into a large seaworthy fleet
-For every princess you marry, pirate princess drinks heavily
-Lost Dubloon - If heads, partner tops, if tails, partner is bottom
+Kingdom turns into a large seaworthy fleet - 5
+For every princess you marry, pirate princess drinks heavily - 5
+Lost Dubloon - If heads, partner tops, if tails, partner is bottom - 5
 Despite her age, this powerful princess is yet to be wed. She often tells friends that she is focusing on her career.
+
+
+--------------------------------GENERATION III--------------------------------------
+
 
 #Holstaur
 db9097
@@ -1176,9 +1306,9 @@ Milking
 Breastplay
 Cold hands
 The Milk Maidens - A group of Holstauri tasked with milking the princess - Expansion - Breastplay - Branding
-The Maidens massage female princesses to increase milk production, in turn increasing their breast size
-The maidens may massage you, slowly turning you into a beefy, cowlike beastman
-Maiden's Milk - One gulp turns you into a futanari, another turns you back
+The Maidens massage female princesses to increase milk production, in turn increasing their breast size - 5
+The maidens may massage you, slowly turning you into a beefy, cowlike beastman - 5
+Maiden's Milk - One gulp turns you into a futanari, another turns you back - 5
 The princess of a rolling green pasture that prides itself in the quality of its milk. A subserviant race of milkmaids help with daily chores.
 
 #Mouse
@@ -1197,9 +1327,9 @@ Footjobs
 Lineup fucking
 Surprise sex
 The Hourly Sisters - The eleven sisters of Mouse Princess, they share everything - Sharing - Toys - Knifeplay
-The hourly sisters have built a mechanical stockade in the middle of your kingdom to keep twelve people inside
-Harness power for your kingdom by locking volunteers and criminals into sex machines that generate energy from pleasure
-Clockwork Dildos - One for each sister, they vibrate when its time to fuck
+The hourly sisters have built a mechanical stockade in the middle of your kingdom to keep twelve people inside - 5
+Harness power for your kingdom by locking volunteers and criminals into sex machines that generate energy from pleasure - 5
+Clockwork Dildos - One for each sister, they vibrate when its time to fuck - 5
 A gargantuan clock tower sits amidst a vast mechanical sprawl. Its inhabitants are the mice, their princess a plucky tinkerer.
 
 #Rabbit
@@ -1218,9 +1348,9 @@ Incest
 Ageplay
 Abuse
 The Bunny Colony - The princess' many kids, they all rely on their mother - Humping - Thumping - Slow sex
-Arranging marriages with other families is simple, take an extra dowry from a gen 1 princess you have saved
-Family takes care of itself - you will always have an extra pair of hands/ears/eyes/etc to help with any task or challenge
-Rabbit Idol - You can be reborn as one of the princess' children, aging naturally as her favorite
+Arranging marriages with other families is simple, take an extra dowry from a gen 1 princess you have saved - 5
+Family takes care of itself, you will always have an extra pair of hands/ears/eyes/etc to help with any task or challenge - 5
+Rabbit Idol - You can be reborn as one of the princess' children, aging naturally as her favorite - 5
 The lonely princess of the Cotton Vineyards. Her mother often tells her to get married but for some reason, suiters are scarce.
 
 #Dusk Elf
@@ -1239,9 +1369,9 @@ Cum cuisine
 Being a good girl
 Sluts
 Bodyguard Orc Trio - A trio of gay orcs who try hard to keep the princess safe - Ass slapping - Feats of strength - Fashion disasters
-The orc trio, being expert fashionistas, create a line of accidentally seductive and skimpy outfits for everyone
-The orcs teach you a type of martial arts that grants a manly chest capable of deflecting attacks - but your behind becomes a dangerous weak point
-Soggy Biscuit - The Orc Trio convert semen into food in an attempt to censor it
+The orc trio, being expert fashionistas, create a line of accidentally seductive and skimpy outfits for everyone - 5
+The orcs teach you a type of martial arts that grants a manly chest capable of deflecting attacks... but your behind becomes a dangerous weak point - 5
+Soggy Biscuit - The Orc Trio convert semen into food in an attempt to censor it - 5
 The princess of an elven kingdom who wants to undo the prejudice that her people are irredeemable sluts. It has not gone well so far.
 
 #Vampire
@@ -1260,9 +1390,9 @@ Hickeys
 Wax candles
 Morning sex
 The Bat Brides - These familiars are drained to quench the princess' thirst - Biting - Upside-down sex - Crudeness
-The brides are exceptional hostesses, attracting and beguiling guests to act according to your will
-Allowing a target to feed the princess with their blood extends their lifespan at the cost of inevitably becoming an aged vampire themselves
-Bathory's Bathwater - Vampire Princess' own blood can grant the gift of youth to a female target (lolify)
+The brides are exceptional hostesses, attracting and beguiling guests to act according to your will - 5
+Allowing a target to feed the princess with their blood extends their lifespan at the cost of inevitably becoming an aged vampire themselves - 5
+Bathory's Bathwater - Vampire Princess' own blood can grant the gift of youth to a female target (lolify) - 5
 The daughter of a powerful vampire king. Entheusiastic to play the part of a gloomy undead sage, this princess is less than a century old.
 
 #Dog
@@ -1281,9 +1411,9 @@ Your scent
 Nakadashi
 Netorare
 Dog Princess - HUH? Is dog princess not good enough for you? - You - You - Not you
-Love can't be bought; Dog Princess can provide anything you need, just don't ask how she gets it
-She will act as a decoy for you in battle - In fact, she will do anything you ask as long as you are willing to do the same in the end
-Dog Dungeon - All other princesses are locked away, you don't need them anyway
+Love can't be bought; Dog Princess can provide anything you need, just don't ask how she gets it - 5
+She will act as a decoy for you in battle, In fact, she will do anything you ask as long as you are willing to do the same in the end - 5
+Dog Dungeon - All other princesses are locked away, you don't need them anyway - 5
 A princess who longed to be united with her prince. After latching onto a passing dragon, she departed to a tower and waited for them to arrive.
 
 #Djinn
@@ -1302,9 +1432,9 @@ Lamp-rubbing
 Frotting
 Tight spaces
 Ifrit Catamite - A fiery djinn with a burning sexual urge to power bottom - Bottoming - Giving head - Tight spaces
-Rubbing your cock with djinn semen as lube grants a cock-shaped gold statue with every jerk
-You are granted a magical fever that increases strength and speed, but will cause great fatigue unless blown by a male character
-Djinn's 'Lamp' - Rubbing it can tighten and loosen a target's clothing
+Rubbing your cock with djinn semen as lube grants a cock-shaped gold statue with every jerk - 5
+You are granted a magical fever that increases strength and speed, but will cause great fatigue unless blown by a male character - 5
+Djinn's 'Lamp' - Rubbing it can tighten and loosen a target's clothing - 5
 The Burning Lantern Kingdom is a cold, empty desert lit up by millions of lamps, each one housing a soul. Their princess is but one of many.
 
 #Triclops
@@ -1323,9 +1453,9 @@ Animalistic sex
 Ball massage
 Sheepishness
 The Princess' Herd - A collection of giant creatures who tower over other species - Grazing - Charging - Fences
-Gain an enourmous set of herds that supply meats, hides, furs, and milk to your kingdom
-Your kingdom's cavalry is replaced with dinosaur-mounted soldiery and minor beasts that become your eyes and ears
-Eye of the Beast-Holder - Her third eye can turn any beast or beastfolk into a subservient pet
+Gain an enourmous set of herds that supply meats, hides, furs, and milk to your kingdom - 5
+Your kingdom's cavalry is replaced with dinosaur-mounted soldiery and minor beasts that become your eyes and ears - 5
+Eye of the Beast-Holder - Her third eye can turn any beast or beastfolk into a subservient pet - 5
 The princess from a kingdom of giants. She herds animals many humans would deem to be ferocious beasts.
 
 #Raider
@@ -1344,9 +1474,9 @@ Electrostimulation
 Branding
 Quickies
 The Draught Wolf - A trusty canine who provides warriors with frostbeer - Head scratching - Chasing things - Mailmen
-The raiders have large fountains filled with alchoholic beverages adorning your streets
-You are granted the power to absorb electricity and temporarily grow harder, better, faster, and stronger - you charge this power by yelling
-Trample Stamps - Use lightning runes to imprint tattoos on you and your party
+The raiders have large fountains filled with alchoholic beverages adorning your streets - 5
+You are granted the power to absorb electricity and temporarily grow harder, better, faster, and stronger, you charge this power by yelling - 5
+Trample Stamps - Use lightning runes to imprint tattoos on you and your party - 5
 The High Forest's north is a cold, deadly mistress, guared by the crew of the Everharsh Glacier and their princess, a barbaric warrior.
 
 #Eldritch
@@ -1365,9 +1495,9 @@ Dreamplay
 Somnophilia
 Heresy
 The Pleasant Cultists - A group of cheerful worshippers who idolize their princess - Worshipping - Tentacles - Rudeness
-The princess' eldritch religion spreads to other kingdoms, influencing fans to pay your church a tithe
-The Eldritch Princess' presence grants you a single premonition every day, the contents of which are confusing but ultimately correct if uninterrupted
-Unwokeus Pocus - Connect your lucid dreams to those of your princess'
+The princess' eldritch religion spreads to other kingdoms, influencing fans to pay your church a tithe - 5
+The Eldritch Princess' presence grants you a single premonition every day, the contents of which are confusing but ultimately correct if uninterrupted - 5
+Unwokeus Pocus - Connect your lucid dreams to those of your princess' - 5
 A minor anomaly worshipped by the cultists of the Winking Dark kingdom. Her presence is eerily comforting.
 
 #Lamia
@@ -1386,9 +1516,9 @@ Constriction
 Forced orgasms
 Bottoming
 The Kind Shrouds - Immortal maids who wait on the princess hand and foot - Shedding - Warm rocks - Badgers
-The shrouds weave a fine set of clothes from sparkling snakeskin that grant a resistance against poison
-Once you've built a resistance to the Lamia Princess' venom, you are able to counteract the magic of other reptilian races, such as gorgons
-Serpentine Choker - The princess' personal necklace can grant you with two cocks
+The shrouds weave a fine set of clothes from sparkling snakeskin that grant a resistance against poison - 5
+Once you've built a resistance to the Lamia Princess' venom, you are able to counteract the magic of other reptilian races, such as gorgons - 5
+Serpentine Choker - The princess' personal necklace can grant you with two cocks - 5
 A haughty princess from a recently unearthed kingdom of snakepeople. She dislikes gorgons and wants everything her way.
 
 #Imp
@@ -1407,9 +1537,9 @@ Hairjobs
 Tailjobs
 Subbing
 The Devilish Do-Gooders - Despite attempts to be evil, these folks are natural altruists - Mischief - Kink 2 - turn-off
-You will be cursed with a renounced effect of your choice, though you can always trick them into removing one
-The hijinks of the cavalcade will accidentally reveal the weak points of various powerful monsters and foes for you to take advantage of
-Imp's Mischief - Turn dislikes into kinks
+You will be cursed with a renounced effect of your choice, though you can always trick them into removing one - 5
+The hijinks of the cavalcade will accidentally reveal the weak points of various powerful monsters and foes for you to take advantage of - 5
+Imp's Mischief - Turn dislikes into kinks - 5
 A small travelling encampment led by an impish princess. She uses her hellish powers to form minor contracts with others.
 
 #Moth
@@ -1428,9 +1558,9 @@ Cuddling
 Wingjobs
 Butt stuff
 The Twin Wisps - Young lights raised to guide the princess away from harm - Being helpful - Swamps - The dark
-The wisps guide silkworms to weave unmatched quantities of strong and durable silk
-The wisps can guide you not only through the darkness, but any dangerous situation that you might be stuck in
-Wisply Intervention - The wisps can possess your dick to help you determine your child's inherited traits
+The wisps guide silkworms to weave unmatched quantities of strong and durable silk - 5
+The wisps can guide you not only through the darkness, but any dangerous situation that you might be stuck in - 5
+Wisply Intervention - The wisps can possess your dick to help you determine your child's inherited traits - 5
 The nosy princess of an insect empire. Her fuzzy wings can spread a fine psychedelic dust that more often than not gets her into trouble.
 
 #Sphinx
@@ -1449,9 +1579,9 @@ Orgasm denial
 Post-orgasm sex
 Incest
 Jackal Tactician - An expert of strategy that indulges the princess' cravings - Puzzles - Doggy style - No foreplay
-Erect enormous statues of yourself that confront people who enter with challenges of your choosing
-Thanks to the Jackal tactician, wars involving your kingdom are decided through traditional games
-Dodickehedron - Determines how many hours you last in bed
+Erect enormous statues of yourself that confront people who enter with challenges of your choosing - 5
+Thanks to the Jackal tactician, wars involving your kingdom are decided through traditional games - 5
+Dodickehedron - Determines how many hours you last in bed - 5
 The Glittering Dunes are ruled by a family of great feline warriors. The only daughter of this family takes advantage of this prestigious position.
 
 #Yeti
@@ -1470,9 +1600,9 @@ Grooming
 Kissing
 Shaving
 The Stray Ro-Lang - The other inhabitants of the peak bother the princess for food - Food - Warmth - Neglect
-You make a killing in the ice business with your ability to create an unlimited amount of frozen treats
-You and your armies spread ice and snow wherever you go, the severity of which depends on how faithful you are to Yeti Princess
-Shimmering Popsicle - Your dick is always solid, and you can control the flavor of your cum
+You make a killing in the ice business with your ability to create an unlimited amount of frozen treats - 5
+You and your armies spread ice and snow wherever you go, the severity of which depends on how faithful you are to Yeti Princess - 5
+Shimmering Popsicle - Your dick is always solid, and you can control the flavor of your cum - 5
 A lone wanderer in a frozen tundra, this yeti is a master of survival. A fire burns in her heart, keeping it warm with thoughts of love.
 
 #Sword
@@ -1491,9 +1621,9 @@ Bathing together
 Polishing with cum
 Public nudity
 The Shield Maiden - A young nurse trapped within a trusty shield - Safe sex - Threesomes - Penetration
-The more treasure you find, the better material Sword Princess will become, from bronze, to diamond and beyond
-The sword princess shines brilliantly when drawn, revealing things hidden within a small radius, including emotions, liars, and traps
-Spoils of War - Victory in battle allows Sword Princess' spirit to be tangible for a day
+The more treasure you find, the better material Sword Princess will become, from bronze, to diamond and beyond - 5
+The sword princess shines brilliantly when drawn, revealing things hidden within a small radius, including emotions, liars, and traps - 5
+Spoils of War - Victory in battle allows Sword Princess' spirit to be tangible for a day - 5
 An ancient princess of the High Forest Kingdom trapped within a sword. She rules an army of spirits who possess inanimate objects.
 
 #Jester
@@ -1512,9 +1642,9 @@ Contortionism
 Omnisexuality
 Humiliation
 The Puppet Princesses - Dolls surrounded by an odd aura, almost as if they were living - Role-playing - Rough sex - Fireplay
-Your kingdom becomes the capital of lucrative casinos, betting games, and assorted festivities
-The puppets can gain control of a menagerie of playful beasts both mundane and fantastic, eager to entertain you
-Deck of Many Kinks - Draw a card and gain a fetish for a whole day
+Your kingdom becomes the capital of lucrative casinos, betting games, and assorted festivities - 5
+The puppets can gain control of a menagerie of playful beasts both mundane and fantastic, eager to entertain you - 5
+Deck of Many Kinks - Draw a card and gain a fetish for a whole day - 5
 An entertainer born from the High Forest's secret sect of dark magicians, hidden under the guise of merry festival-throwers.
 
 #Faun
@@ -1533,9 +1663,9 @@ Aromas
 Harem orgies
 Cum in her booze
 Lyrical Nymph Band - A group of musical spirits who provide background music - Loud sex - Group sex - Cum on instruments
-The Nymphs follow your every movement to ensure that your actions are accompanied by music
-Whenever the band begins to play a party begins to form, turning foes into friends for the duration
-Free Refills - The larger your personal orgie, the larger your volume of cum spray
+The Nymphs follow your every movement to ensure that your actions are accompanied by music - 5
+Whenever the band begins to play a party begins to form, turning foes into friends for the duration - 5
+Free Refills - The larger your personal orgie, the larger your volume of cum spray - 5
 The soulful soprano of the Melodic Valley. Her desire to drink and eat is as powerful as the ballads she sings to the forest below.
 
 #Crystal
@@ -1554,9 +1684,9 @@ Circlejerking
 Voyeurism
 Piquerism
 Supportive Geode Dad - Finds great relief in you getting her out of the house for once - Dad jokes - Fishing - Infidelity
-Being probably the only king you've ever seen, you and Geode Dad bond over family fishing trips, selling gemfish for coin
-The exterior of your kingdom is fortified with crystal armaments, powered by the souls of enemies you have trapped within these armed diamond prisons
-The (Ball) Buster Sword - All the cum you've ever spilt returns to you as a great sword
+Being probably the only king you've ever seen, you and Geode Dad bond over family fishing trips, selling gemfish for coin - 5
+The exterior of your kingdom is fortified with crystal armaments, powered by the souls of enemies you have trapped within these armed diamond prisons - 5
+The (Ball) Buster Sword - All the cum you've ever spilt returns to you as a great sword - 5
 Due to a misunderstanding with her servants, this prim princess grew an interest in male on male romace, much to the disappointment of her parents.
 
 #Toxic Dragon
@@ -1575,9 +1705,9 @@ Smothering
 Nippleplay
 Neglect
 False Knight Companion - A figment of her imagination, and Toxic Dragon Princess' only friend - Moral support - Hypothetical sex - Cuddling
-The bag of chocolate dick holding grants you an unlimited supply of assorted tasty chocolate dicks
-You slowly transform into a powerful acolyte of the war dragons, granting two extra arms and the ability to release a toxic breath storm at will
-Tantalizing Toothbrush - Filters poison and grants excellent oral skills to those who lack them
+The bag of chocolate dick holding grants you an unlimited supply of assorted tasty chocolate dicks - 5
+You slowly transform into a powerful acolyte of the war dragons, granting two extra arms and the ability to release a toxic breath storm at will - 5
+Tantalizing Toothbrush - Filters poison and grants excellent oral skills to those who lack them - 5
 A mighty warrior who passively releases noxious fumes from her body. Because of this, she has a hard time getting close to people.
 
 #Paladin
@@ -1596,9 +1726,9 @@ Handholding
 Kissing
 Lewdness
 Cleric Princess - The Paladin's sister: she'll heal your body and soul - Caretaking - Being helpful - Incest
-The sisters establish a theocratic branch of your kingdom and collect a tithe in your name
-Paladin Princess summons her friends and allies, forming a knighthood dedicated to your kingdom
-Book of Lewd Heresy - Whosoever reads this book will forever love kinky sex
+The sisters establish a theocratic branch of your kingdom and collect a tithe in your name - 5
+Paladin Princess summons her friends and allies, forming a knighthood dedicated to your kingdom - 5
+Book of Lewd Heresy - Whosoever reads this book will forever love kinky sex - 5
 The holy Eye Kingdom is built on unrelenting faith and the will to carry out the word of their god. Few are as dedicated as their princess
 
 #Default
@@ -1617,7 +1747,35 @@ Fetish
 Fetish
 Turnoff
 Companion - Companion's description - kink 1 - kink 2 - turn-off
-Bonus for having more wealth than power
-Bonus for having more power than wealth
-Lust Item - Raising a princess's lust value to maximum will grant you her lust item.
+Bonus for having more wealth than power - 5
+Bonus for having more power than wealth - 5
+Lust Item - Raising a princess's lust value to maximum will grant you her lust item. - 5
 Yet another fake princess, you really gotta watch out for these sir knight...
+
+
+-------------------------------UNUSED PRINCESSES---------------------------
+
+
+#Rust
+c58a42
+Growling Swarm
+
+#Mech Dragon
+e7b848
+Mechanist's Tower Kingdom
+
+#Squirrel
+2d8f3a
+The World Tree
+
+#Dryad
+2d8f3a
+Sylvan Glade Kingdom
+
+#Genie
+53d8ae
+Lost Trove Kingdom
+
+#Scylla
+6ea3d9
+Shipwreck Isle

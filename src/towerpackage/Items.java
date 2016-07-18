@@ -11,14 +11,25 @@ import java.util.Scanner;
 		public String description;
 		public boolean useable;
 		public boolean removable;
+		public int type;
 		
-		Item(String n, String i, String d) {
+		Item(String n, String i, String d, int t) {
 			name = n; 
 			image = i; 
 			description = d; 
 			removable=true;
 			useable=true;
+			type=t;
 		}	
+		
+		public Effect makeEffect() {
+			Effect out = new Effect(name, image, type);
+			out.description=this.description;
+			return out;
+			
+		}
+		
+		
 	}
 
 	class Preference {
@@ -37,10 +48,11 @@ import java.util.Scanner;
 	class Character extends Item {
 	  Character(String n, String i, Color c, String k, String d) 
 	  {
-		  super(n,i,d); 
+		  super(n,i,d, -1); 
 		  col = c;
 		  kingdom = k;
 		  effects = new ArrayList<Effect>();
+		  selected = false;
 	  }
 	  
 	  public Color col;
@@ -58,6 +70,8 @@ import java.util.Scanner;
 	  public Preference turnoff;
 
 	  public ArrayList<Effect> effects;
+	  
+	  public boolean selected;
 	  
 	  public void corrupt() {turnoff.corrupt();}
 	}
@@ -258,9 +272,26 @@ class Wagon
 	//For things that don't take up space but have effects
 class Effect extends Item
 	{
-		Effect(String n, String i) {
-			super(n, i, null);
-			// TODO Auto-generated constructor stub
+		public static final int EFFECT_DO_NOTHING = 0;
+		public static final int EFFECT_STASH = 1;
+		public static final int EFFECT_PLAYER = 2;
+		public static final int EFFECT_KINGDOM = 3;
+		public static final int EFFECT_SINGLE_CHARACTER = 4;
+		public static final int EFFECT_MULTIPLE_CHARACTERS = 5;
+		public static final int EFFECT_SINGLE_NON_PLAYER_CHARACTER = 6;
+		public static final int EFFECT_MULTIPLE_NON_PLAYER_CHARACTERS = 7;
+		
+		Effect(String n, String i, int t) {
+			super(n, i, null, t);
+		}
+
+		public int getType() {
+			return type;
+		}
+		
+		public String getEffect()
+		{
+			return description;
 		}
 	}
 
@@ -270,14 +301,23 @@ class Totem extends Effect
 	public String renounce;
 	public int whichEffect;
 	public int[] cost;
-
-	public Totem(String n, String i, String w, String r) {
-		super(n, i);
+	public int typeRenounce;
+	
+	public Totem(String n, String i, String w, String r, int t1, int t2) {
+		super(n, i, t1);
 		cost = new int[] {0,0,0,0};
 		worship = w;
 		renounce = r;
 		whichEffect = 0;
 		description = null;
+		typeRenounce = t2;
+	}
+	
+	public int getType()
+	{
+		if(whichEffect==1) return type;
+		else if(whichEffect==2) return typeRenounce;
+		else return 0;
 	}
 	
 	public String getEffect()
